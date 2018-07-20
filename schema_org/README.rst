@@ -17,9 +17,11 @@ The general pattern for discovery of schema.org resources given a domain name is
 
 3. For each entry in the sitemap.xml file:
 
-   a. Parse the resource and extract the schema.org information
+   a. If the entry is sitemap, go to step 2 and process the referenced sitemap.
 
-   b. If sufficient and appropriate schema.org information is available, then add the
+   b. Otherwise, load and parse the resource, extract the schema.org information
+
+   c. If sufficient and appropriate schema.org information is available, then add the
       referenced resource or resources to the set of items to be processed. Note that
       the sitemap.xml may point to Dataset or a DataCatalog instance. In the latter case,
       the DataCatalog item should be processed to discover the contained Dataset
