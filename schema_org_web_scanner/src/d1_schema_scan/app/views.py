@@ -78,8 +78,28 @@ def view(request, scan_id):
 def _get_result_dict(scan_model):
     return {
         "scan_id": str(scan_model.scan_id),
-        "scan_url": scan_model.scan_url,
+        "scan_url_esc": encode_path_element(scan_model.scan_url),
+        "scan_url_unesc": scan_model.scan_url,
         "scan_start": d1_schema_scan.app.util.format_ts(scan_model.start_timestamp),
         "scan_end": d1_schema_scan.app.util.format_ts(scan_model.end_timestamp),
         "exit_code": d1_schema_scan.app.util.format_exit_code(scan_model.exit_code),
     }
+
+
+def encode_path_element(element):
+    """Encode a URL path element according to RFC3986."""
+    return urllib.parse.quote(
+        (
+            element.encode("utf-8")
+            if isinstance(element, str)
+            else str(element)
+            if isinstance(element, int)
+            else element
+        ),
+        safe=":@$!()',~*&=",
+    )
+
+
+def decode_path_element(element):
+    """Decode a URL path element according to RFC3986."""
+    return urllib.parse.unquote(element)

@@ -22,7 +22,7 @@
 {% block body-bottom %}
 
       <div class="grid-outer">
-        <a href="{% url 'new' scan_url %}" class="nav-button">Restart scan</a>
+        <a href="{% url 'new' scan_url_esc %}" class="nav-button">Restart scan</a>
         <a id="but-stop-scan" href="{% url 'view' scan_id %}" class="nav-button">
           Stop scan
         </a>
