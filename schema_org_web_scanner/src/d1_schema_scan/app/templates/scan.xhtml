@@ -1,0 +1,54 @@
+{% extends "base.xhtml" %}
+
+{% block script %}
+
+  <script type="text/javascript">
+    // Run when doc is ready.
+    $(function () {
+      connectSocket("{{ scan_id }}");
+    });
+  </script>
+
+{% endblock %}
+
+{% block body-top %}
+
+      <p>
+        Scanning schema.org sitemap:
+      </p>
+
+{% endblock %}
+
+{% block body-bottom %}
+
+      <div class="grid-outer">
+        <a href="{% url 'new' scan_url %}" class="nav-button">Restart scan</a>
+        <a id="but-stop-scan" href="{% url 'view' scan_id %}" class="nav-button">
+          Stop scan
+        </a>
+        <a href="{% url 'index' %}" class="nav-button">New scan
+        </a>
+      </div>
+
+      <ul>
+        <li>
+          After completed scan, click <b>View</b> to open a shareable page for the log of this scan.
+        </li>
+        <li>
+          Closing this window or clicking the navigation buttons above will stop the scan.
+        </li>
+      </ul>
+
+      <div class="hline">
+        <div id="scan-log" class="grid-outer"></div>
+      </div>
+
+      <p>
+        <a class="nav-button" onclick="toTop();">To Top</a>
+      </p>
+
+{% endblock %}
+
+Remove the copyright notice on the scan page.
+{% block copyright %}
+{% endblock %}

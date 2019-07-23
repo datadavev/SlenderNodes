@@ -1,0 +1,35 @@
+<html>
+<head>
+  <script>
+    let scanSocket;
+
+    function connectSocket() {
+      // scanSocket = new WebSocket('wss://echo.websocket.org/');
+      scanSocket = new WebSocket('wss://gmn.test.dataone.org/wss2/');
+
+      scanSocket.onmessage = function (e) {
+        console.log("Received: " + e.data)
+      };
+
+      scanSocket.onclose = function (e) {
+        console.error('Socket closed');
+      };
+    }
+
+    function closeSocket() {
+      scanSocket.close()
+    }
+
+
+    function sendSomething() {
+      scanSocket.send("Test message");
+    }
+  </script>
+
+</head>
+<body>
+  <button onclick="connectSocket();">Connect</button>
+  <button onclick="sendSomething();">Send Something</button>
+</body>
+</html>
+
