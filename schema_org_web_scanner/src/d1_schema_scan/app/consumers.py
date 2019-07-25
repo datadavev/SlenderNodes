@@ -26,7 +26,7 @@ class ClientLogConsumer(channels.generic.websocket.AsyncWebsocketConsumer):
         super(ClientLogConsumer, self).__init__(*args, **kwargs)
         self.redis = redis.Redis()
         self.scan_id = None
-        self.scan_url = None
+        self.scan_dict = None
 
     async def connect(self):
         """Handle: Client is attempting to establish a WebSocket connection.
@@ -39,9 +39,9 @@ class ClientLogConsumer(channels.generic.websocket.AsyncWebsocketConsumer):
         watch the progress.
         """
         self.scan_id = self.scope["url_route"]["kwargs"]["scan_id"]
-        self.scan_url = await self._get_scan_url()
+        self.scan_dict = await self._get_scan_dict()
         log.debug(
-            f'Client connecting. scan_id="{self.scan_id}" scan_url="{self.scan_url}"'
+            f'Client connecting. scan_id="{self.scan_id}" scan_url="{self.scan_dict["scan_url"]}" format_id="{self.scan_dict["format_id"]}"'
         )
 
         await self.channel_layer.group_add(self.scan_id, self.channel_name)
@@ -52,7 +52,8 @@ class ClientLogConsumer(channels.generic.websocket.AsyncWebsocketConsumer):
             {
                 "type": "start.scan",
                 "scan_id": self.scan_id,
-                "scan_url": self.scan_url,
+                "scan_url": self.scan_dict['scan_url'],
+                "format_id": self.scan_dict['format_id'],
                 "log_path": d1_schema_scan.app.util.get_abs_log_file_path(self.scan_id),
             },
         )
@@ -96,12 +97,14 @@ class ClientLogConsumer(channels.generic.websocket.AsyncWebsocketConsumer):
         await self.send(text_data=json.dumps(d))
 
     @channels.db.database_sync_to_async
-    def _get_scan_url(self):
+    def _get_scan_dict(self):
         """Get the URL to scan for a given scan_id."""
         try:
-            return d1_schema_scan.app.models.Scan.objects.get(
-                scan_id=self.scan_id
-            ).scan_url
+            scan_model = d1_schema_scan.app.models.Scan.objects.get(scan_id=self.scan_id)
+            return {
+                'scan_url': scan_model.scan_url,
+                'format_id': scan_model.format_id,
+            }
         except d1_schema_scan.app.models.Scan.DoesNotExist:
             log.warning(f"Unknown scan_id: {self.scan_id}")
 
@@ -114,15 +117,16 @@ class ScannerConsumer(channels.generic.websocket.AsyncWebsocketConsumer):
         self.log_file = None
         self.scan_id = None
         self.scan_url = None
+        self.format_id = None
         self.log_path = None
         self.max_log_lines = None
 
     async def start_scan(self, msg_dict):
         """Handle: Consumer requests new scan."""
         log.debug(f"New scan requested: {msg_dict}")
-
         self.scan_id = msg_dict["scan_id"]
         self.scan_url = msg_dict["scan_url"]
+        self.format_id = msg_dict["format_id"]
         self.log_path = msg_dict["log_path"]
         self.max_log_lines = int(django.conf.settings.MAX_LOG_LINES)
 
@@ -152,13 +156,25 @@ class ScannerConsumer(channels.generic.websocket.AsyncWebsocketConsumer):
         log.debug(f'Scan exit. scan_id="{self.scan_id}"')
 
     async def _run_scan(self):
-        self.popen_obj = subprocess.Popen(
-            [
-                django.conf.settings.PY_BIN_PATH,
-                "-u",  # unbuffered
+        arg_list = [
+            django.conf.settings.PY_BIN_PATH,
+            "-u",  # unbuffered
+        ]
+        if self.format_id:
+            arg_list.extend([
+                django.conf.settings.D1_VALIDATE_SCHEMA_PATH,
+                self.scan_url,
+                self.format_id,
+            ])
+        else:
+            arg_list.extend([
                 django.conf.settings.D1_CHECK_SITE_PATH,
                 self.scan_url,
-            ],
+            ])
+
+        log.info('Launching scanner subprocess: {}'.format(', '.join(arg_list)))
+
+        self.popen_obj = subprocess.Popen(arg_list,
             bufsize=0,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,

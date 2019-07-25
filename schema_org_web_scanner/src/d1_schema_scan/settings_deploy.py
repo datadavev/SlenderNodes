@@ -127,5 +127,6 @@ LOGGING = {
     },
 }
 
-PY_BIN_PATH = "/var/local/dataone/schema_org_scan/venv/bin/python"
-D1_CHECK_SITE_PATH = "/var/local/dataone/schema_org_scan/venv/bin/d1-check-site"
+PY_BIN_PATH = "/home/gmn/.pyenv/versions/schema_org/bin/python"
+D1_CHECK_SITE_PATH = "/home/gmn/.pyenv/versions/schema_org/bin/d1-check-site"
+D1_VALIDATE_SCHEMA_PATH = "/home/gmn/.pyenv/versions/schema_org/bin/dataone-validate"

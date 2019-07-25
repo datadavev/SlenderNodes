@@ -35,15 +35,6 @@
   <link href="{% static 'scan.css' %}" rel="stylesheet" type="text/css"/>
   <script src="{% static 'scan.js' %}" type="text/javascript"></script>
 
-  <script type="text/javascript">
-    $(function () {
-      $("form").submit(function (event) {
-        const url_input = $("#url-input").val();
-        window.location.href = 'new/' + encodeURIComponent(url_input) + '/';
-        event.preventDefault();
-      });
-    });
-  </script>
 
   {% block script %}
 
@@ -68,36 +59,15 @@
           <div class="grid-inner-2-col">
 
             <div class="grid-item">Scan ID:</div>
-
-            <div class="grid-item">
-
-              <!--      <div class="grid-outer nopad">-->
-              <!--        <div class="grid-inner-2-col nopad">-->
-
-              <!--          <div class="grid-item nopad">-->
-
-              <!--            <label for="scan-uuid">-->
-              <!--        <textarea id="scan-uuid"-->
-              <!--                  cols="40" rows="1"-->
-              <!--                  readonly="readonly">{{ scan_id }}</textarea>-->
-              <!--            </label>-->
-
-              <!--          </div>-->
-
-              <!--          <div class="grid-item">-->
-              <!--          <a class="nav-button" href="#"-->
-              <!--             onclick="copy_to_clipboard()">Copy</a>-->
-              <!--        </div>-->
-
-              {{ scan_id }}
-
-              <!--      </div>-->
-              <!--      </div>-->
-
-            </div>
+            <div class="grid-item">{{ scan_id }}</div>
 
             <div class="grid-item">URL:</div>
             <div class="grid-item">{{ scan_url_unesc }}</div>
+
+            {% if format_id_unesc %}
+              <div class="grid-item">Format ID:</div>
+              <div class="grid-item">{{ format_id_unesc }}</div>
+            {% endif %}
 
             <div class="grid-item">Start:</div>
             <div class="grid-item">{{ scan_start }}</div>
@@ -117,17 +87,18 @@
 
       {% endblock %}
 
+      {% block copyright %}
+
+        <div class="footer">
+          <div class="copyright">
+            Copyright © 2019 Participating institutions in DataONE
+          </div>
+        </div>
+
+      {% endblock %}
+
     </div>
 
-    {% block copyright %}
-
-      <div class="footer">
-        <div class="copyright">
-          Copyright © 2018 Participating institutions in DataONE
-        </div>
-      </div>
-
-    {% endblock %}
 
   </div>
 </div>

@@ -22,9 +22,27 @@ def index(request):
     return django.shortcuts.render(request, "index.xhtml", {}, content_type="text/html")
 
 
-def new(request, scan_url):
+def sitemap(request):
+    return django.shortcuts.render(request, "sitemap.xhtml", {}, content_type="text/html")
+
+
+def xmlschema(request):
+    return django.shortcuts.render(request, "xmlschema.xhtml", {}, content_type="text/html")
+
+
+def new_sitemap(request, scan_url):
+    print('1'*100)
     scan_model = d1_schema_scan.app.models.Scan.objects.create(
         scan_url=urllib.parse.unquote(scan_url)
+    )
+    scan_model.save()
+    return django.shortcuts.redirect(scan, scan_model.scan_id)
+
+
+def new_xmlschema(request, scan_url, format_id):
+    scan_model = d1_schema_scan.app.models.Scan.objects.create(
+        scan_url=urllib.parse.unquote(scan_url),
+        format_id=urllib.parse.unquote(format_id),
     )
     scan_model.save()
     return django.shortcuts.redirect(scan, scan_model.scan_id)
@@ -80,6 +98,8 @@ def _get_result_dict(scan_model):
         "scan_id": str(scan_model.scan_id),
         "scan_url_esc": encode_path_element(scan_model.scan_url),
         "scan_url_unesc": scan_model.scan_url,
+        "format_id_esc": encode_path_element(scan_model.format_id) if scan_model.format_id else None,
+        "format_id_unesc": scan_model.format_id if scan_model.format_id else None,
         "scan_start": d1_schema_scan.app.util.format_ts(scan_model.start_timestamp),
         "scan_end": d1_schema_scan.app.util.format_ts(scan_model.end_timestamp),
         "exit_code": d1_schema_scan.app.util.format_exit_code(scan_model.exit_code),

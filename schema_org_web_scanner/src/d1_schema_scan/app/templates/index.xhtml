@@ -4,53 +4,28 @@
 {% endblock %}
 
 {% block body-top %}
-      <p>
-        Scan schema.org based data provider and report on issues that may affect
-        automated DataONE processing.
-      </p>
-      <p>
-      </p>
-      <form action="#">
-        <div class="grid-outer">
-          <div class="grid-inner-2-col">
-            <div class="grid-item">schema.org sitemap:</div>
-            <div class="grid-item">
-              <label for="url-input">
-                <input id="url-input" type="url" name="url-input-name"
-                       placeholder="http://example.com/sitemap.xml"
-                       pattern="https?://.*" size="80"
-                       required="required"/>
-              </label>
-            </div>
-            <div class="grid-item"></div>
-            <div class="grid-item">
-                <input id="run" type="submit" name="url-submit-name" value="Scan" class="nav-button" />
-            </div>
-            <div style="padding-top: 1em;">
-              Examples:
-            </div>
-            <div style="padding-top: 1em;">
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fno_site_map%2Fsitemap.xml">No sitemap</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fno_landing_page%2Fsitemap.xml">Two documents listed in sitemap, but one landing page is missing</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Finvalid-json-ld%2Fsitemap.xml">A landing page has invalid JSON-LD</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fmissing-json-ld-script-element%2Fsitemap.xml">A landing page is missing its JSON-LD SCRIPT element</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fmissing-json-ld-id%2Fsitemap.xml">A landing page is missing its JSON-LD ID</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fmissing-metadata-document%2Fsitemap.xml">Two documents listed, but one metadata XML document is missing</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fmetadata-document-has-invalid-xml%2Fsitemap.xml">Two documents listed, but one metadata XML document has invalid XML</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fmetadata-document-does-not-validate%2Fsitemap.xml">Two documents listed, but the first document does not validate, which is different than having invalid XML</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fsitemap-is-gzipped%2Fsitemap.xml.gz">The sitemap is gzipped</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fsitemap-url-is-sitemap-index-file%2Fsitemap_index_file.xml">The sitemap file is actually a sitemap index file, meaning there are multiple levels of sitemaps</a></div>
-              <div class="grid-inner-1-col"><a href="new/http%3A%2F%2F104.236.112.76%2Fdemo%2Fsitemap-is-not-xml%2Fsitemap.txt">The sitemap file is text instead of XML</a></div>
-
-              <div class="hline"></div>
-
-              <div class="grid-inner-1-col"><a href="new/https%3A%2F%2Fdata.nodc.noaa.gov%2Fsitemap.xml">NOAA</a></div>
-              <div class="grid-inner-1-col"><a href="new/https%3A%2F%2Fschema.org%2Fdocs%2Fsitemap.xml">Schema.org Demo</a></div>
-
-
-            </div>
-          </div>
-        </div>
-      </form>
+  <p>
+    Scan data provider endpoints and report on issues that may affect automated DataONE
+    processing.
+  </p>
+  <p>
+  </p>
+  <form action="#">
+    <div class="grid-outer">
+      <div class="grid-inner-1-col">
+        <ul>
+          <li>
+            <a class="select" href="{% url 'xmlschema' %}">Validate XML metadata by XMLSchema</a>
+          </li>
+          <li>
+            <div class="grid-space">
+            <a class="select" href="{% url 'sitemap' %}">Scan schema.org based data provider by
+              sitemap</a>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </form>
 
 {% endblock %}

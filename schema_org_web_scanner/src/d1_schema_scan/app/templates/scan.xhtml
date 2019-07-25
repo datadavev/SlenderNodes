@@ -13,39 +13,50 @@
 
 {% block body-top %}
 
-      <p>
-        Scanning schema.org sitemap:
-      </p>
+  <p>
+    {% if format_id_unesc %}
+      Validating XML metadata by XMLSchema:
+    {% else %}
+      Scanning schema.org sitemap:
+    {% endif %}
+  </p>
 
 {% endblock %}
 
 {% block body-bottom %}
 
-      <div class="grid-outer">
-        <a href="{% url 'new' scan_url_esc %}" class="nav-button">Restart scan</a>
-        <a id="but-stop-scan" href="{% url 'view' scan_id %}" class="nav-button">
-          Stop scan
-        </a>
-        <a href="{% url 'index' %}" class="nav-button">New scan
-        </a>
-      </div>
+  <div class="grid-outer">
 
-      <ul>
-        <li>
-          After completed scan, click <b>View</b> to open a shareable page for the log of this scan.
-        </li>
-        <li>
-          Closing this window or clicking the navigation buttons above will stop the scan.
-        </li>
-      </ul>
+    {% if format_id_unesc %}
+      <a href="{% url 'new-xmlschema' scan_url_esc format_id_esc %}" class="nav-button">Restart
+        validation</a>
+    {% else %}
+      <a href="{% url 'new-sitemap' scan_url_esc %}" class="nav-button">Restart scan</a>
+    {% endif %}
 
-      <div class="hline">
-        <div id="scan-log" class="grid-outer"></div>
-      </div>
+    <a id="but-stop-scan" href="{% url 'view' scan_id %}" class="nav-button">
+      Stop scan
+    </a>
+    <a href="{% url 'index' %}" class="nav-button">New scan</a>
+  </div>
 
-      <p>
-        <a class="nav-button" onclick="toTop();">To Top</a>
-      </p>
+  <ul>
+    <li>
+      After completed scan, click <b>View</b> to open a shareable page for the log of
+      this scan.
+    </li>
+    <li>
+      Closing this window or clicking the navigation buttons above will stop the scan.
+    </li>
+  </ul>
+
+  <div class="hline">
+    <div id="scan-log" class="grid-outer"></div>
+  </div>
+
+  <p>
+    <a class="nav-button" onclick="toTop();">To Top</a>
+  </p>
 
 {% endblock %}
 

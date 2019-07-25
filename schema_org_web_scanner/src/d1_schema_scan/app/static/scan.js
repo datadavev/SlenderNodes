@@ -30,7 +30,7 @@ function connectSocket(scanId) {
   };
 
   scanSocket.onclose = function (e) {
-    console.error('scanSocket closed unexpectedly');
+    // console.log('scanSocket closed');
   };
 }
 
@@ -47,7 +47,6 @@ function add_log_line_list(log_line_list) {
     el.appendChild(node);
     document.getElementById("scan-log").appendChild(el);
   });
-
 }
 
 function closeSocket() {
@@ -73,3 +72,29 @@ function copy_to_clipboard() {
   document.execCommand('copy');
   window.close()
 }
+
+function doubleenc(v) {
+  return encodeURIComponent(encodeURIComponent(v))
+}
+
+$(document).ready( function() {
+  $(function () {
+    $("form").submit(function (event) {
+      const url_input = $("#url-input").val();
+      const format_id = $("#format-id-input").val();
+      let enc_url = doubleenc(url_input);
+      console.log('');
+      console.log(url_input);
+      console.log(format_id);
+      if(typeof format_id === "undefined") {
+        console.log('sitemap');
+        window.location.href = '../new/sitemap/' + enc_url + '/';
+      }
+      else {
+        console.log('xmlschema');
+        window.location.href = '../new/xmlschema/' + enc_url + '/' + doubleenc(format_id) + '/'
+      }
+      event.preventDefault();
+    });
+  });
+});
