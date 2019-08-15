@@ -1,0 +1,31 @@
+{% extends "base.xhtml" %}
+
+{% block result-grid %}
+{% endblock %}
+
+{% block body-top %}
+  <p>
+    Scan data provider endpoints and report on issues that may affect automated DataONE
+    processing.
+  </p>
+  <p>
+  </p>
+  <form action="#">
+    <div class="grid-outer">
+      <div class="grid-inner-1-col">
+        <ul>
+          <li>
+            <a class="select" href="{% url 'xmlschema' %}">Validate XML metadata by XMLSchema</a>
+          </li>
+          <li>
+            <div class="grid-space">
+            <a class="select" href="{% url 'sitemap' %}">Scan schema.org based data provider by
+              sitemap</a>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}

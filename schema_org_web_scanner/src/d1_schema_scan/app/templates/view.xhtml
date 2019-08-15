@@ -1,0 +1,48 @@
+{% extends "base.xhtml" %}
+
+{% block script %}
+
+  <script type="text/javascript">
+    // Run when doc is ready.
+    $(function () {
+      add_log_line_list({{ scan_log | safe }});
+    });
+  </script>
+
+{% endblock %}
+
+{% block body-top %}
+
+  <p>
+    Result for completed scan:
+  </p>
+
+{% endblock %}
+
+{% block body-bottom %}
+
+  <div class="grid-outer">
+    <p>
+      {% if format_id_unesc %}
+        <a href="{% url 'new-xmlschema' scan_url_esc format_id_esc %}"
+           class="nav-button">Restart
+          validation</a>
+      {% else %}
+        <a href="{% url 'new-sitemap' scan_url_esc %}" class="nav-button">Restart
+          scan</a>
+      {% endif %}
+      <a href="{% url 'index' %}" class="nav-button">New scan</a>
+    </p>
+  </div>
+
+  <ul>
+    <li>
+      This log will remain available for a limited time at this address and Scan ID.
+    </li>
+  </ul>
+
+  <div class="hline">
+    <div id="scan-log" class="grid-outer"></div>
+  </div>
+
+{% endblock %}

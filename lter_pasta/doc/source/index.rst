@@ -12,7 +12,7 @@ Installation and usage of the :term:`PASTA-GMN Adapter`.
   bootstrap
   use
   implementation
-  local_glossary
+  glossary
 
 
 Indices and tables

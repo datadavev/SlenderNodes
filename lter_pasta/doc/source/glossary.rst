@@ -6,6 +6,28 @@ DataONE Terms
 
 .. glossary::
 
+  LTER PASTA
+    Provenance Aware Synthesis Tracking Architecture
+
+    The Provenance Aware Synthesis Tracking Architecture (PASTA) is a developing
+    model for dynamically harvesting and archiving site-based data and metadata
+    of the LTER Network for use in generating synthetically derived data
+    products.
+
+    http://lno.lternet.edu/projects/pasta
+
+
+  PASTA-GMN
+    PASTA-GMN is a :term:`DataONE` :term:`Member Node <MN>` based on
+    :term:`LTER PASTA`, which uses :term:`GMN` for providing a DataONE
+    interface.
+
+
+  PASTA-GMN Adapter
+    The PASTA-GMN Adapter is a web service which integrates :term:`LTER PASTA`
+    and :term:`GMN` to implement the :term:`PASTA-GMN` Member Node.
+
+
   DataONE
     Data Observation Network for Earth
 
@@ -172,10 +194,10 @@ Authentication and security
 
 
   Self signed certificate
-    A :term:`certificate` that is signed by its own creator. A self signed
+    A :term:`certificate` that is signed by its own creator. A cls signed
     certificate is not a part of a :term:`chain of trust` and so, it is not
     possible to validate the information stored in the certificate. Because of
-    this, self signed certificates are useful mostly for testing in an
+    this, cls signed certificates are useful mostly for testing in an
     implicitly trusted environment.
 
     http://en.wikipedia.org/wiki/Self-signed_certificate

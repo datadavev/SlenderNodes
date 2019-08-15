@@ -8,7 +8,7 @@ The Adapter does not limit access to its pasta and admin endpoints. It is
 assumed that access to the Adapter is controlled at the firewall level. By
 default, the Adapter runs on port 80. Only PASTA should have access to the
 http://fqdn/pasta/new_package endpoint and only the PASTA-GMN administrator
-should have access to http://fqdn/admin/*. All other systems must be blocked
+should have access to http://fqdn/admin/\*. All other systems must be blocked
 with firewall rules.
 
 
@@ -29,7 +29,7 @@ Initialize the database
 ::
 
   $ cd /var/local/dataone/pasta_gmn_adapter
-  $ psql --dbname pasta_gmn_adapter --file pasta_gmn_adapter.sql
+  $ psql --dbname pasta_gmn_adapter --file deployment/pasta_gmn_adapter.sql
 
 The above procedure can also be used for clearing the database.
 

@@ -10,40 +10,44 @@
 #
 ### DataONE SYSTEM METADATA CONFIGURATIONS: ###################################################
 #
-#   > nodeID - The DataONE assigned nodeID
+#   > node_id - The DataONE assigned node_id
 #   > node_base_url - base URL of Member Node web server for making DataONE API calls
 #   > cert_path / cert_key_path - This script needs to know where to find the certificate and
 #               private key issued for each individual Member Node.
 #   > sci_md_formatId - The appropriate DataONE METADATA formatID from https://cn.dataone.org/cn/v2/formats
 #   > submitter / rightsholder - Use the full identity string of the Member Node found
 #               in the ReadMe.txt file that came with the certificate/key bundle issued.
-#   > authoritativeMN - Which node currently has modification rights in D1 systems. Use the nodeID.
-#   > originMN - The MN who originally submitted this node to D1. Use the nodeID.
+#   > authoritativeMN - Which node currently has modification rights in D1 systems. Use the node_id.
+#   > originMN - The MN who originally submitted this node to D1. Use the node_id.
 #
 ##############################################################################################
 
-- nodeID: urn:node:mnTestCARY
+- node_id: urn:node:mnTestCARY
   # OAI-PMH configurations
-  oaipmh_base_url: 'https://api.figsh.com/v2/oai'
-  oaipmh_set: 'portal_2750'
+  oaipmh_base_url: 'https://api.figshare.com/v2/oai'
+  oaipmh_set: 'portal_376'
   oaipmh_md_prefix: 'oai_dc'
   sci_md_xml_element: '{http://www.openarchives.org/OAI/2.0/oai_dc/}dc'
+  dataone_contact_email: 'mihli1@utk.edu'
+  last_harvest_time: '1900-01-01T00:00:00Z'
   # D1 System Metadata configurations
   node_base_url: 'https://figshare-orc-1.test.dataone.org/mn'
-  cert_path: './certs/CARY/urn_node_mnTestCARY.crt'
-  cert_key_path: './certs/CARY/urn_node_mnTestCARY.key'
-  sci_md_formatId: 'http://ns.dataone.org/metadata/schema/dcx-figshare/v1.0'
+  cert_path: 'MY_CERT.pem'
+  cert_key_path: 'MY_CERT.key'
+  sci_md_formatId: 'http://www.openarchives.org/OAI/2.0/oai_dc/'
   submitter: 'DC=org,DC=dataone,CN=urn:node:mnTestCARY'
   rightsholder: 'DC=org,DC=dataone,CN=urn:node:mnTestCARY'
   authoritativeMN: 'urn:node:mnTestCARY'
   originMN: 'urn:node:mnTestCARY'
 
-#- nodeID: urn:node:mnTestKITTY
+#- node_id: urn:node:mnTestKITTY
 #  # OAI-PMH configurations
 #  oaipmh_base_url: 'https://api.figsh.com/v2/oai'
 #  oaipmh_set: 'portal_2750'
 #  oaipmh_md_prefix: 'oai_dc'
 #  sci_md_xml_element: '{http://www.openarchives.org/OAI/2.0/oai_dc/}dc'
+#  dataone_contact_email: 'mihli1@utk.edu'
+#  last_harvest_time: '1900-01-01T00:00:00Z'
 #  # D1 System Metadata configurations
 #  node_base_url: 'https://figshare-orc-1.test.dataone.org/mn'
 #  cert_path: '../certs/KITTY/urn_node_mnTestKITTY.crt'

@@ -3,7 +3,7 @@ PASTA-GMN Adapter setup overview
 
 Setting up the PASTA-GMN Adapter.
 
-This procedure has been verified on Ubuntu 14.04 LTS Server.
+This procedure has been verified on Ubuntu 18.04 LTS Server.
 
 The setup process for the PASTA-GMN Adapter closely resembles the one for GMN.
 The PASTA-GMN Adapter is designed to be installed side by side with GMN, on a

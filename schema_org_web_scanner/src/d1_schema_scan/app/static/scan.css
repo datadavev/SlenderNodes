@@ -1,0 +1,155 @@
+body {
+    font-family: "helvetica", sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0.5em 0;
+}
+
+ul {
+    padding-left: 2em;
+}
+
+li {
+
+    /*padding: 0.5em 0;*/
+
+}
+
+.container {
+    margin: 2em;
+}
+
+.container-grid {
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.textwrapper {
+    border: 1px solid #a0a0a0;
+    border-collapse: collapse;
+    margin: 2em 0;
+    /*padding: 1em;*/
+}
+
+/*Button*/
+
+.round-button, .nav-button {
+    display: inline-block;
+    font-family: "helvetica", sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+    background: none;
+    border-radius: 2em / 2em;
+    color: #505050;
+    border: solid 0.15em #505050;
+    cursor: pointer;
+    padding: 0 0.8em;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 0.25em;
+}
+
+.nav-button {
+    font-weight: bold;
+    margin: 0.25em 0;
+    font-size: 1.2em;
+}
+
+.center-button {
+    display: inline-block;
+}
+
+.round-button-disabled {
+    background-color: #c0c0c0;
+    color: #808080;
+}
+
+.round-button:hover:not(.round-button-disabled), .nav-button:hover {
+    background: #909090;
+    color: white;
+}
+
+/* Log */
+
+#scan-log {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.log-err {
+    color: #a20000;
+}
+
+.log-warn {
+    color: #e08e11;
+}
+
+/* Grid */
+
+.grid-outer {
+    padding-top: 1.0em;
+    /*padding-bottom: 1.5em;*/
+    align-items: center;
+}
+
+.grid-inner-1-col {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-gap: 0.1em 2em;
+}
+
+.grid-inner-2-col {
+    padding-top: 1.0em;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-gap: 0.1em 2em;
+}
+
+.grid-space {
+    padding-top: 1.0em;
+}
+
+/* Misc */
+
+.hline {
+    padding-bottom: 1.5em;
+    border-top-width: 0.5pt;
+    border-top-style: solid;
+    border-top-color: gray;
+    margin-top: 1.5em;
+}
+
+.copyright {
+    padding-top: 2em;
+    font-size: .8em;
+    color: gray;
+    text-align: left;
+}
+
+p {
+    margin: 0;
+}
+
+.select {
+}
+
+/* Dark theme */
+
+* {
+    background-color: #181a1b;
+    color: #e8e6e3;
+}
+
+a {
+    color: #3391ff;
+}
+
+.round-button, .nav-button {
+    color: #c0c0c0;
+    border: solid 0.15em #606060;
+}

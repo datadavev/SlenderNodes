@@ -52,7 +52,7 @@ extensions = [
   'sphinx.ext.todo',
   'sphinx.ext.graphviz',
   'sphinx.ext.autosummary',
-  'rst2pdf.pdfbuilder',
+  # 'rst2pdf.pdfbuilder',
 ]
 
 # PDF

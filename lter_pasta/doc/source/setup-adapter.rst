@@ -30,7 +30,7 @@ This setup documentation describes how to set the adapter up to run in the same
 Python virtual environment as GMN and sharing GMN's dependencies. Thus, the
 first step in setting up the adapter is setting up GMN. GMN is distributed via
 PyPI. Install GMN as described in the documentation hosted on PyPI, at
-http://pythonhosted.org/dataone.generic_member_node/.
+https://dataone-python.readthedocs.io/en/latest/gmn/index.html.
 
 
 PASTA-GMN Adapter software stack
@@ -38,4 +38,3 @@ PASTA-GMN Adapter software stack
 
 PASTA-GMN Adapter is distributed via git.
 
-<TODO: Add instructions on how to install the Adapter from git>
