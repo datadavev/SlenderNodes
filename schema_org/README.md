@@ -73,7 +73,7 @@ has a single component of data in `text/csv` format that is located at
             "identifier": {
                 "@type": ["PropertyValue", "datacite:ResourceIdentifier"],
                 "datacite:usesIdentifierScheme": {
-                    "@id": "datacite:uuid"
+                    "@id": "datacite:local-resource-identifier-scheme"
                 },
                 "propertyId":"UUID",
                 "value": "uuid:ef74c986-bf6e-11e9-9cb5-2a2ae2dbcce4"              
