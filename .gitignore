@@ -3,6 +3,7 @@ certificates/
 certs/
 settings_site.py
 stores/
+README_ADMIN.md
 
 # IntelliJ / PyCharm
 .idea/

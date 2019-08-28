@@ -1,0 +1,76 @@
+{% extends "base.xhtml" %}
+
+{% load static %}
+
+{% block result-grid %}
+{% endblock %}
+
+
+{% block body-top %}
+  <p>
+    Validate XML metadata against DataONE XMLSchema (.xsd).
+  </p>
+  <p>
+  </p>
+  <form>
+    <div class="grid-outer">
+      <div class="grid-inner-2-col">
+        <div class="grid-item">XML metadata:</div>
+        <div class="grid-item">
+          <label for="url-input">
+            <input id="url-input" type="url" name="url-input-name"
+                   placeholder="http://example.com/xml-metadata.xml"
+                   pattern="https?://.*" size="80"
+                {#                   value="https://gmn.test.dataone.org/ieda/earthchem/v2/object/http%3A%2F%2Fget.iedadata.org%2Fmetadata%2Fiso%2F111214"#}
+                   required="required"/>
+          </label>
+        </div>
+        <div class="grid-item">DataONE FormatID:</div>
+        <div class="grid-item">
+          <label for="format-id-input">
+            <select id="format-id-input">
+              <option>datacite-3.0</option>
+              <option>datacite-3.1</option>
+              <option>http://datacite.org/schema/kernel-3.0</option>
+              <option>http://datacite.org/schema/kernel-3.1</option>
+              <option>http://datadryad.org/profile/v3.1</option>
+              <option>http://purl.org/dryad/terms/</option>
+              <option>http://rs.tdwg.org/dwc/xsd/simpledarwincore/</option>
+              <option>eml://ecoinformatics.org/eml-2.0.0</option>
+              <option>eml://ecoinformatics.org/eml-2.0.1</option>
+              <option>eml://ecoinformatics.org/eml-2.1.0</option>
+              <option>eml://ecoinformatics.org/eml-2.1.1</option>
+              <option>FGDC-STD-001-1998</option>
+              <option>FGDC-STD-001.1-1999</option>
+              <option selected="selected">http://www.isotc211.org/2005/gmd</option>
+              <option>http://www.isotc211.org/2005/gmd-noaa</option>
+              <option>http://www.isotc211.org/2005/gmd-pangaea</option>
+              <option>http://www.openarchives.org/OAI/2.0/oai_dc/</option>
+              <option>http://ns.dataone.org/metadata/schema/onedcx/v1.0</option>
+              <option>http://purl.org/ornl/schema/mercury/terms/v1.0"</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid-item"></div>
+        <div class="grid-space">
+          <input id="run" type="submit" name="url-submit-name" value="Scan"
+                 class="nav-button"/>
+        </div>
+        <div style="padding-top: 1em;">
+          Examples:
+        </div>
+        <div style="padding-top: 1em;">
+          <div class="grid-inner-1-col">
+            <a href="{% url 'new-xmlschema' samples_base_url|add:"%2Fvalid_1.xml" 'http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd' %}">valid
+              1</a>
+            <a href="{% url 'new-xmlschema' samples_base_url|add:"%2Finvalid_1.xml" 'http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd' %}">invalid
+              1</a>
+            <a href="{% url 'new-xmlschema' samples_base_url|add:"%2Finvalid_2.xml" 'http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd' %}">invalid
+              2</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}

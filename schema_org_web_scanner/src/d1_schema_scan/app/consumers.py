@@ -164,6 +164,7 @@ class ScannerConsumer(channels.generic.websocket.AsyncWebsocketConsumer):
             arg_list.extend([
                 django.conf.settings.D1_VALIDATE_SCHEMA_PATH,
                 self.scan_url,
+                "--format-id",
                 self.format_id,
             ])
         else:

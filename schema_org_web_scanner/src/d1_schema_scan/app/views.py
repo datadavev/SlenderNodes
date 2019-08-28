@@ -18,20 +18,33 @@ def get_static_path(rel_path):
     return django.contrib.staticfiles.templatetags.staticfiles.static(rel_path)
 
 
+def get_abs_static_url(request, rel_path):
+    import django.contrib.staticfiles.storage
+
+    return request.build_absolute_uri(
+        django.contrib.staticfiles.storage.staticfiles_storage.url(rel_path)
+    )
+
+
 def index(request):
-    return django.shortcuts.render(request, "index.xhtml", {}, content_type="text/html")
+    return django.shortcuts.render(
+        request, "index.xhtml", _gen_context_dict(request), content_type="text/html"
+    )
 
 
 def sitemap(request):
-    return django.shortcuts.render(request, "sitemap.xhtml", {}, content_type="text/html")
+    return django.shortcuts.render(
+        request, "sitemap.xhtml", _gen_context_dict(request), content_type="text/html"
+    )
 
 
 def xmlschema(request):
-    return django.shortcuts.render(request, "xmlschema.xhtml", {}, content_type="text/html")
+    return django.shortcuts.render(
+        request, "xmlschema.xhtml", _gen_context_dict(request), content_type="text/html"
+    )
 
 
 def new_sitemap(request, scan_url):
-    print('1'*100)
     scan_model = d1_schema_scan.app.models.Scan.objects.create(
         scan_url=urllib.parse.unquote(scan_url)
     )
@@ -54,11 +67,17 @@ def scan(request, scan_id):
     except d1_schema_scan.app.models.Scan.DoesNotExist:
         return django.shortcuts.redirect(index)
 
-    if scan_model.exit_code is not None or d1_schema_scan.app.workers.status.is_stop_requested(scan_id):
+    if (
+        scan_model.exit_code is not None
+        or d1_schema_scan.app.workers.status.is_stop_requested(scan_id)
+    ):
         return django.shortcuts.redirect(view, scan_id)
 
     return django.shortcuts.render(
-        request, "scan.xhtml", _get_result_dict(scan_model), content_type="text/html"
+        request,
+        "scan.xhtml",
+        _gen_context_dict(request, scan_model=scan_model),
+        content_type="text/html",
     )
 
 
@@ -85,12 +104,20 @@ def view(request, scan_id):
     return django.shortcuts.render(
         request,
         "view.xhtml",
-        {
-            **{"scan_log": log_str.splitlines(keepends=False)},
-            **_get_result_dict(scan_model),
-        },
+        _gen_context_dict(request, log_str, scan_model),
         content_type="text/html",
     )
+
+
+def _gen_context_dict(request, log_str=None, scan_model=None):
+    arg_dict = {
+        "samples_base_url": encode_path_element(get_abs_static_url(request, "samples"))
+    }
+    if log_str:
+        arg_dict["scan_log"] = log_str.splitlines(keepends=False)
+    if scan_model:
+        arg_dict.update(_get_result_dict(scan_model))
+    return arg_dict
 
 
 def _get_result_dict(scan_model):
@@ -98,7 +125,9 @@ def _get_result_dict(scan_model):
         "scan_id": str(scan_model.scan_id),
         "scan_url_esc": encode_path_element(scan_model.scan_url),
         "scan_url_unesc": scan_model.scan_url,
-        "format_id_esc": encode_path_element(scan_model.format_id) if scan_model.format_id else None,
+        "format_id_esc": encode_path_element(scan_model.format_id)
+        if scan_model.format_id
+        else None,
         "format_id_unesc": scan_model.format_id if scan_model.format_id else None,
         "scan_start": d1_schema_scan.app.util.format_ts(scan_model.start_timestamp),
         "scan_end": d1_schema_scan.app.util.format_ts(scan_model.end_timestamp),

@@ -115,6 +115,8 @@ LOGGING = {
     },
 }
 
+STATIC_ROOT = os.path.join(BASE_DIR, "d1_schema_scan/app/static")
+
 PY_BIN_PATH = sys.executable
 D1_CHECK_SITE_PATH = (os.path.join(os.path.split(sys.executable)[0], "d1-check-site"))
 D1_VALIDATE_SCHEMA_PATH = (os.path.join(os.path.split(sys.executable)[0], "dataone-validate"))
