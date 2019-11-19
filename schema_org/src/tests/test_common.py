@@ -131,6 +131,21 @@ class TestCommon(unittest.TestCase):
         """
         self.assertLogMessage(cm_output, expected_messages, level='ERROR')
 
+    def assertWarningLogCallCount(self, cm_output, n=1):
+        """
+        Verify we see this many log messages at the WARNING level.
+
+        Parameters
+        ----------
+        cm_output : list of str
+            Log messages provided by assertLogs
+        n : int
+            How many log calls at the ERROR level to verify.
+        tokens : str or list
+            Verify that these strings appear in the messages.
+        """
+        self.assertLogLevelCallCount(cm_output, level='WARNING', n=n)
+
     def assertErrorLogCallCount(self, cm_output, n=1):
         """
         Verify we see this many log messages at the ERROR level.
@@ -154,13 +169,15 @@ class TestCommon(unittest.TestCase):
         ----------
         cm_output : list of str
             Log messages provided by assertLogs
+        level : str
+            Log level
         n : int
             How many log calls at the given level to verify.
         """
-        msgs = [msg for msg in cm_output if msg.startswith(level)]
-        actual_count = len(msgs)
+        actual_count = self.logLevelCallCount(cm_output, level=level)
 
         if actual_count > 0:
+            msgs = [msg for msg in cm_output if msg.startswith(level)]
             printable = '\n'.join(msgs)
             msg = (
                 f"Detected messages a log level {level} are as follows:"
@@ -171,6 +188,20 @@ class TestCommon(unittest.TestCase):
             msg = ''
 
         self.assertEqual(actual_count, n, msg)
+
+    def logLevelCallCount(self, cm_output, level='ERROR'):
+        """
+        Count the log messages with the specified level.
+
+        Parameters
+        ----------
+        cm_output : list of str
+            Log messages provided by assertLogs
+        level : str
+            Log level
+        """
+        msgs = [msg for msg in cm_output if msg.startswith(level)]
+        return len(msgs)
 
     def setUpRequestsMocking(self, obj, contents=None, status_codes=None,
                              headers=None, protocol='https'):

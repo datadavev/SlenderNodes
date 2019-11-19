@@ -7,6 +7,8 @@ try:
 except ImportError:  # pragma:  nocover
     import importlib_resources as ir
 import io
+import json
+import logging
 import re
 import string
 from unittest.mock import patch
@@ -15,6 +17,7 @@ from unittest.mock import patch
 import dateutil.parser
 import lxml.etree
 import numpy as np
+from pythonjsonlogger import jsonlogger
 
 # local imports
 from schema_org.core import CoreHarvester, SlenderNodeJob, SkipError
@@ -337,3 +340,54 @@ class TestSuite(TestCommon):
             """
             messages = message.split()
             self.assertErrorLogMessage(cm.output, messages)
+
+    def test_custom_logging(self):
+        """
+        SCENARIO:  The sitemap has 3 documents.  Invoke with a custom JSON
+        logger that logs to a string.  We should see three documents.
+
+        EXPECTED RESULT:  the get_log_messages method returns a string that
+        can be loaded by the json module.
+        """
+        logger = logging.getLogger('test')
+        logger.setLevel(logging.INFO)
+
+        logstrings = io.StringIO()
+        stream = logging.StreamHandler(logstrings)
+
+        format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        formatter = jsonlogger.JsonFormatter(format)
+
+        stream.setFormatter(formatter)
+        logger.addHandler(stream)
+
+        harvester = CoreHarvester(logger=logger)
+
+        content = ir.read_binary('tests.data.ieda', 'sitemap3.xml')
+        doc = lxml.etree.parse(io.BytesIO(content))
+        last_harvest = dateutil.parser.parse('1900-01-01T00:00:00Z')
+
+        records = harvester.extract_records_from_sitemap(doc)
+        records = harvester.post_process_sitemap_records(records, last_harvest)
+
+        # Retrieve the log messages from the string.
+        s = logstrings.getvalue()
+        log_entries = s.splitlines()
+        s = f"[{','.join(log_entries)}]"
+        records = json.loads(s)
+
+        self.assertEqual(len(records), 3)
+
+    def test_lowercase_charset_utf8_xml_header(self):
+        """
+        SCENARIO:  The Content-Type header for a sitemap is
+        'text/xml;charset=utf-8'.
+
+        EXPECTED RESULT:  No warnings are logged.
+        """
+        headers = {'Content-Type': 'text/xml;charset=utf-8'}
+        harvester = CoreHarvester()
+        with self.assertLogs(logger=harvester.logger, level='DEBUG') as cm:
+            harvester.check_xml_headers(headers)
+
+        self.assertWarningLogCallCount(cm.output, n=0)

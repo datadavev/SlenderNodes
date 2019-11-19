@@ -92,7 +92,7 @@ class JSONLD_Validator(object):
         ):
             msg = (
                 f"JSON-LD top-level '@id' key \"{j['@id']}\" does not look "
-                f"like an IRI."
+                f"like an IRI/URI/URL."
             )
             raise JsonLdError(msg)
 

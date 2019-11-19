@@ -47,7 +47,7 @@ class TestSuite(TestCommon):
 
         harvester = SchemaDotOrgHarvester()
         with self.assertRaises(RuntimeError):
-            harvester.extract_jsonld(doc)
+            harvester.get_jsonld(doc)
 
     def test_jsonld_script_element_has_no_dataset(self):
         """
@@ -63,7 +63,7 @@ class TestSuite(TestCommon):
 
         harvester = SchemaDotOrgHarvester()
         with self.assertRaises(RuntimeError):
-            harvester.extract_jsonld(doc)
+            harvester.get_jsonld(doc)
 
     def test_jsonld_script_element_is_first(self):
         """
@@ -78,7 +78,7 @@ class TestSuite(TestCommon):
         doc = lxml.etree.HTML(text)
 
         harvester = SchemaDotOrgHarvester()
-        j = harvester.extract_jsonld(doc)
+        j = harvester.get_jsonld(doc)
         self.assertEqual(j['@type'], 'Dataset')
 
     def test_jsonld_script_element_is_second(self):
@@ -94,7 +94,7 @@ class TestSuite(TestCommon):
         doc = lxml.etree.HTML(text)
 
         harvester = SchemaDotOrgHarvester()
-        j = harvester.extract_jsonld(doc)
+        j = harvester.get_jsonld(doc)
         self.assertEqual(j['@type'], 'Dataset')
 
     @patch('schema_org.core.logging.getLogger')
@@ -147,7 +147,7 @@ class TestSuite(TestCommon):
         mock_load_science_metadata.return_value = True
 
         harvester = SchemaDotOrgHarvester(host='test.arm.gov')
-        harvester.sitemap = 'https://www.archive.arm.gov/metadata/adc/sitemap.xml'  # noqa: E501
+        harvester.sitemap_url = 'https://www.archive.arm.gov/metadata/adc/sitemap.xml'  # noqa: E501
 
         # External calls to read the:
         #
@@ -251,7 +251,7 @@ class TestSuite(TestCommon):
         doc = lxml.etree.HTML(text)
 
         with self.assertRaises(json.decoder.JSONDecodeError):
-            harvester.extract_jsonld(doc)
+            harvester.get_jsonld(doc)
 
     @patch('schema_org.core.logging.getLogger')
     def test_truncated(self, mock_logger):
@@ -266,7 +266,7 @@ class TestSuite(TestCommon):
         doc = lxml.etree.HTML(text)
 
         with self.assertRaises(json.decoder.JSONDecodeError):
-            harvester.extract_jsonld(doc)
+            harvester.get_jsonld(doc)
 
     def test_ieda_601015_over_escaped_double_quotes(self):
         """
@@ -280,7 +280,7 @@ class TestSuite(TestCommon):
         doc = lxml.etree.HTML(text)
 
         with self.assertRaises(json.decoder.JSONDecodeError):
-            harvester.extract_jsonld(doc)
+            harvester.get_jsonld(doc)
 
     @aioresponses()
     def test_site_map_retrieval_failure(self, aioresp_mocker):
@@ -444,8 +444,9 @@ class TestSuite(TestCommon):
                 asyncio.run(harvester.harvest_document(doi, '1',
                                                        doc, record_date))
 
-            # Did we see a warning?
-            self.assertLogLevelCallCount(cm.output, level='INFO', n=1)
+            # Did we see at least one information message?
+            log_msg_count = self.logLevelCallCount(cm.output, level='INFO')
+            self.assertTrue(log_msg_count > 1)
 
             # Did we increase the update count?
             self.assertEqual(harvester.updated_count, update_count + 1)
@@ -723,7 +724,7 @@ class TestSuite(TestCommon):
         obj = SchemaDotOrgHarvester()
 
         with self.assertLogs(logger=obj.logger, level='DEBUG'):
-            j = obj.extract_jsonld(doc)
+            j = obj.get_jsonld(doc)
 
         json.dumps(j)
 

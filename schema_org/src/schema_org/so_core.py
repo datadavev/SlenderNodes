@@ -23,18 +23,14 @@ class SchemaDotOrgHarvester(CoreHarvester):
     ----------
     jsonld_validator : obj
         Run conformance checks on the JSON-LD extracted from a site page.
-    sitemap : str
-        URL for XML site map.  This must be overridden for each custom client.
     """
 
     def __init__(self, id='', **kwargs):
         super().__init__(id=id, **kwargs)
 
-        self.jsonld_validator = JSONLD_Validator(id=id, logger=self.logger)
+        self._jsonld_validator = JSONLD_Validator(id=id, logger=self.logger)
 
-        self.sitemap = ''
-
-    def extract_jsonld(self, doc):
+    def get_jsonld(self, doc):
         """
         Extract JSON-LD from HTML document.
 
@@ -48,7 +44,7 @@ class SchemaDotOrgHarvester(CoreHarvester):
         -------
         Dictionary of JSON-LD data.
         """
-        self.logger.debug('extract_jsonld:')
+        self.logger.debug('Retrieving JSON-LD from landing page...')
         path = './/script[@type="application/ld+json"]'
         scripts = doc.xpath(path)
         if len(scripts) == 0:
@@ -106,6 +102,38 @@ class SchemaDotOrgHarvester(CoreHarvester):
         identifier = f"doi:{m.group('doi')}"
         return identifier
 
+    async def retrieve_landing_page_content(self, landing_page_url):
+        """
+        Read the remote document.
+
+        Parameters
+        ----------
+        landing_page_url : str
+            URL for remote landing page HTML
+
+        Returns
+        -------
+        doc : ElementTree
+            ElementTree corresponding to the HTML in the landing page.
+        """
+        self.logger.info(f"Requesting landing page {landing_page_url}...")
+        content, headers = await self.retrieve_url(landing_page_url)
+        if 'text/html' not in headers['Content-Type']:
+            msg = (
+                f"Landing page was {headers['Content-Type']} "
+                f"and not text/html."
+            )
+            raise RuntimeError(msg)
+        doc = lxml.etree.HTML(content)
+        return doc
+
+    def validate_dataone_so_jsonld(self, jsonld):
+        """
+        Validate JSON-LD as conforming to our particular flavor of schema.org.
+        Retrieve the JSON-LD from the landing page URL and validate it.
+        """
+        self._jsonld_validator.check(jsonld)
+
     async def retrieve_record(self, landing_page_url):
         """
         Read the remote document, extract the JSON-LD, and load it into the
@@ -126,15 +154,10 @@ class SchemaDotOrgHarvester(CoreHarvester):
             metadata record to be archived.
         doc : ElementTree
         """
-        self.logger.debug(f'retrieve_record')
-        self.logger.info(f"Requesting {landing_page_url}...")
-        content = await self.retrieve_url(landing_page_url)
-        doc = lxml.etree.HTML(content)
+        doc = await self.retrieve_landing_page_content(landing_page_url)
+        jsonld = self.get_jsonld(doc)
 
-        self.preprocess_landing_page(doc)
-
-        jsonld = self.extract_jsonld(doc)
-        self.jsonld_validator.check(jsonld)
+        self.validate_dataone_so_jsonld(jsonld)
 
         sid = self.extract_series_identifier(jsonld)
         self.logger.debug(f"Series ID (sid): {sid}")

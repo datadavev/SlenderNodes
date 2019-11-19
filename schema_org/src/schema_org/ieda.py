@@ -26,8 +26,8 @@ from .so_core import SchemaDotOrgHarvester
 class IEDAHarvester(SchemaDotOrgHarvester):
 
     def __init__(self, **kwargs):
+        kwargs['sitemap_url'] = 'http://get.iedadata.org/sitemaps/usap_sitemap.xml'  # noqa : E501
         super().__init__(id='ieda', **kwargs)
-        self.sitemap = 'http://get.iedadata.org/sitemaps/usap_sitemap.xml'
 
         self.sys_meta_dict['authoritativeMN'] = 'urn:node:mnTestIEDA'
         self.sys_meta_dict['originMN'] = 'urn:node:mnTestIEDA'

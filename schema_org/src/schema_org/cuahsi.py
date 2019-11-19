@@ -33,6 +33,7 @@ from .core import SkipError, XMLMetadataParsingError
 class CUAHSIHarvester(SchemaDotOrgHarvester):
 
     def __init__(self, **kwargs):
+        kwargs['sitemap_url'] = 'https://www.hydroshare.org/sitemap.xml'
         super().__init__(id='cuahsi', **kwargs)
 
         # Create an XSLT stylesheet for transforming the CUAHSI documents
@@ -41,12 +42,28 @@ class CUAHSIHarvester(SchemaDotOrgHarvester):
         xslt_tree = lxml.etree.XML(content)
         self.transform_to_dataone_simple_dc = lxml.etree.XSLT(xslt_tree)
 
-        self.sitemap = 'https://www.hydroshare.org/sitemap.xml'
-
         self.sys_meta_dict['authoritativeMN'] = 'urn:node:mnTestHydroshare'
         self.sys_meta_dict['originMN'] = 'urn:node:mnTestHydroshare'
         self.sys_meta_dict['rightsholder'] = 'CN=urn:node:mnTestHydroshare,DC=dataone,DC=org'  # noqa : E501
         self.sys_meta_dict['submitter'] = 'CN=urn:node:mnTestHydroshare,DC=dataone,DC=org'  # noqa : E501
+
+    async def retrieve_landing_page_content(self, landing_page_url):
+        """
+        Read the remote document.
+
+        Parameters
+        ----------
+        landing_page_url : str
+            URL for remote landing page HTML
+
+        Returns
+        -------
+        doc : ElementTree
+            ElementTree corresponding to the HTML in the landing page.
+        """
+        doc = super().retrieve_landing_page_content(landing_page_url)
+        self.preprocess_landing_page(doc)
+        return doc
 
     def preprocess_landing_page(self, landing_page_doc):
         """
@@ -106,7 +123,7 @@ class CUAHSIHarvester(SchemaDotOrgHarvester):
         """
         self.logger.debug(f'retrieve_record')
         self.logger.info(f"Requesting {landing_page_url}...")
-        content = await self.retrieve_url(landing_page_url)
+        content, _ = await self.retrieve_url(landing_page_url)
         self.logger.debug(f'got the landing page')
         doc = lxml.etree.HTML(content)
         self.logger.debug(f'got the doc')
@@ -185,7 +202,7 @@ class CUAHSIHarvester(SchemaDotOrgHarvester):
         self.logger.debug(f'Requesting bagit zip archive: {url}')
 
         # Retrieve the metadata document.
-        zip_content = await self.retrieve_url(url)
+        zip_content, _ = await self.retrieve_url(url)
         self.logger.debug(f'zip archive length: {len(zip_content)}')
 
         b = io.BytesIO(zip_content)

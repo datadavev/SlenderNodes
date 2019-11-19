@@ -40,7 +40,7 @@ class TestSuite(TestCommon):
         doc = lxml.etree.HTML(contents)
 
         harvester = IEDAHarvester()
-        j = harvester.extract_jsonld(doc)
+        j = harvester.get_jsonld(doc)
 
         sid = harvester.extract_series_identifier(j)
 
@@ -73,7 +73,7 @@ class TestSuite(TestCommon):
 
         harvester = IEDAHarvester()
 
-        j = harvester.extract_jsonld(doc)
+        j = harvester.get_jsonld(doc)
         sid = harvester.extract_series_identifier(j)
 
         self.assertEqual(sid, 'urn:usap-dc:metadata:609246')
@@ -170,8 +170,9 @@ class TestSuite(TestCommon):
                 asyncio.run(harvester.harvest_document(doi, pid, doc,
                                                        record_date))
 
-            # Did we see a warning?
-            self.assertLogLevelCallCount(cm.output, level='INFO', n=1)
+            # Did we see an informational message?
+            log_msg_count = self.logLevelCallCount(cm.output, level='INFO')
+            self.assertTrue(log_msg_count > 1)
 
             # Did we increase the update count?
             self.assertEqual(harvester.updated_count, update_count + 1)
@@ -223,7 +224,7 @@ class TestSuite(TestCommon):
         status_codes = [200, 200, 200, 200]
         headers = [
             {'Content-Type': 'application/xml'},
-            {'Content-Type': 'application/html'},
+            {'Content-Type': 'text/html'},
             {'Content-Type': 'application/xml'},
             {'Content-Type': 'application/xml'},
         ]
@@ -308,7 +309,7 @@ class TestSuite(TestCommon):
         status_codes = [200, 200, 200, 200]
         headers = [
             {'Content-Type': 'application/xml'},
-            {'Content-Type': 'application/html'},
+            {'Content-Type': 'text/html'},
             {'Content-Type': 'application/xml'},
             {'Content-Type': 'application/xml'},
         ]
@@ -384,7 +385,7 @@ class TestSuite(TestCommon):
         status_codes = [200, 200, 200]
         headers = [
             {'Content-Type': 'application/xml'},
-            {'Content-Type': 'application/html'},
+            {'Content-Type': 'text/html'},
             {'Content-Type': 'application/xml'},
         ]
         regex = [

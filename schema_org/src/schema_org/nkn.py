@@ -56,9 +56,8 @@ class NKNHarvester(CoreHarvester):
     SITEMAP_NAMESPACE = {'xhtml': 'http://www.w3.org/1999/xhtml'}
 
     def __init__(self, **kwargs):
+        kwargs['sitemap_url'] = 'https://www.northwestknowledge.net/data/'
         super().__init__(id='core', **kwargs)
-
-        self.sitemap = 'https://www.northwestknowledge.net/data/'
 
         self.sys_meta_dict['authoritativeMN'] = 'urn:node:mnTestNKN'
         self.sys_meta_dict['originMN'] = 'urn:node:mnTestNKN'
@@ -122,14 +121,14 @@ class NKNHarvester(CoreHarvester):
         """
         self.logger.debug(f'retrieve_record')
         self.logger.info(f"Requesting {landing_page_url}...")
-        content = await self.retrieve_url(landing_page_url)
+        content, _ = await self.retrieve_url(landing_page_url)
         lxml.etree.HTML(content.decode('utf-8'))
 
         # Get the metadata document.  Right now the relative URL is just
         # "metadata.xml".
         url = f"{landing_page_url}/metadata.xml"
         try:
-            content = await self.retrieve_url(url)
+            content, _ = await self.retrieve_url(url)
         except aiohttp.ClientResponseError as e:
             if '404' in str(e):
                 msg = f"No metadata.xml document found in {landing_page_url}"

@@ -71,7 +71,7 @@ class TestSuite(TestCommon):
         status_codes = [200, 200, 200, 200]
         headers = [
             {'Content-Type': 'application/xml'},
-            {'Content-Type': 'application/html'},
+            {'Content-Type': 'text/html'},
             {'Content-Type': 'application/xml'},
             {'Content-Type': 'application/xml'},
         ]
@@ -146,7 +146,7 @@ class TestSuite(TestCommon):
         status_codes = [200, 200, 200]
         headers = [
             {'Content-Type': 'application/xml'},
-            {'Content-Type': 'application/html'},
+            {'Content-Type': 'text/html'},
             {'Content-Type': 'application/xml'},
         ]
         regex = [
@@ -204,11 +204,18 @@ class TestSuite(TestCommon):
             ir.read_binary('tests.data.arm', 'nsanimfraod1michC2.c1.fixed.html'),  # noqa: E501
             ir.read_binary('tests.data.arm', 'nsanimfraod1michC2.c1.xml'),
         ]
+        headers = [
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+        ]
         status_codes = [200, 200, 400]
 
         with aioresponses() as m:
-            for content, status_code in zip(contents, status_codes):
-                m.get(self.regex, body=content, status=status_code)
+            z = zip(contents, headers, status_codes)
+            for content, header, status_code in z:
+                m.get(self.regex, body=content, headers=header,
+                      status=status_code)
 
             with self.assertLogs(logger=harvester.logger, level='DEBUG') as cm:
                 asyncio.run(harvester.run())

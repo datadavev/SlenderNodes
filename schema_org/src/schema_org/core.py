@@ -13,6 +13,7 @@ import io
 import logging
 import re
 import sys
+import time
 
 # 3rd party library imports
 import aiohttp
@@ -50,6 +51,8 @@ ERROR_RETRY_CANDIDATES = (
     aiohttp.ClientPayloadError, aiohttp.ClientResponseError,
     asyncio.TimeoutError
 )
+
+_TOO_OLD_HARVEST_DATETIME = dateutil.parser.parse('1950-01-01T00:00:00Z')
 
 
 @dataclass
@@ -146,6 +149,11 @@ class CoreHarvester(object):
         rejection occurs.
     logger : logging.Logger
         All events are recorded by this object.
+    _logstrings : io.StringIO
+        If log_to_string is set to True, logs will also be stored here for
+        later retrieval.
+    _log_to_json : bool
+        If true, log to JSON-compatible format.
     max_num_errors : int
         Abort if this threshold is reached.
     mn_base_url : str
@@ -161,6 +169,12 @@ class CoreHarvester(object):
     regex : str
         If not None, restrict documents to those that match this regular
         expression.
+    sitemaps : list
+        List of all sitemaps processed (only the leafs, though)
+    sitemap_records : list
+        List of the URLSET records (url and lastmod times) for all sitemaps.
+    sitemap_url : str
+        URL for XML site map.  This must be overridden for each custom client.
     session : requests.sessions.Session
         Makes all URL requests.
     sys_meta_dict : dict
@@ -175,7 +189,8 @@ class CoreHarvester(object):
     def __init__(self, host=None, port=None, certificate=None,
                  private_key=None, verbosity='INFO', id='none',
                  num_documents=-1, num_workers=1, max_num_errors=3,
-                 regex=None, retry=0, ignore_harvest_time=False):
+                 regex=None, retry=0, ignore_harvest_time=False,
+                 no_harvest=False, logger=None, sitemap_url=None):
         """
         Parameters
         ----------
@@ -185,6 +200,8 @@ class CoreHarvester(object):
         certificate, private_key : str or path or None
             Paths to client side certificates.  None if no verification is
             desired.
+        logger : logging.Logger
+            Use this logger instead of the default.
         max_num_errors : int
             Abort if this threshold is reached.
         num_documents : int
@@ -193,7 +210,8 @@ class CoreHarvester(object):
         """
         self.mn_host = host
         self.setup_session(certificate, private_key)
-        self.setup_logging(id, verbosity)
+
+        self.setup_logging(id, verbosity, logger=logger)
 
         self.mn_base_url = f'https://{host}:{port}/mn'
         self.sys_meta_dict = {
@@ -230,8 +248,32 @@ class CoreHarvester(object):
 
         self.regex = re.compile(regex) if regex is not None else None
         self.ignore_harvest_time = ignore_harvest_time
+        self.no_harvest = no_harvest
+
+        self.sitemap_url = sitemap_url
+        self._sitemaps = []
+        self._sitemap_records = []
 
         requests.packages.urllib3.disable_warnings()
+
+    def get_sitemaps(self):
+        """
+        Return list of sitemaps (plural, in case the sitemap is nested).
+        """
+        return self._sitemaps
+
+    def get_sitemaps_urlset(self):
+        """
+        Return list of landing page URLs and last modified times of the landing
+        pages.
+
+        Filter the items if no lastmod time was listed.  Replace the too-old
+        time with None.
+        """
+        return [
+            (item[0], None) if item[1] is _TOO_OLD_HARVEST_DATETIME else item
+            for item in self._sitemap_records
+        ]
 
     def setup_session(self, certificate, private_key):
         """
@@ -256,7 +298,7 @@ class CoreHarvester(object):
             'From': 'jevans97@utk.edu'
         }
 
-    def setup_logging(self, logid, verbosity):
+    def setup_logging(self, logid, verbosity, logger=None):
         """
         We will log both to STDOUT and to a file.
 
@@ -264,18 +306,31 @@ class CoreHarvester(object):
         ----------
         logid : str
             Use this to help name the physical log file.
+        logger : logging.Logger
+            Use this logger instead of the default.
         verbosity : str
             Level of logging verbosity.
         """
+        if logger is not None:
+            self.logger = logger
+            return
+
         level = getattr(logging, verbosity)
 
         self.logger = logging.getLogger('datatone')
         self.logger.setLevel(level)
 
+        # Do NOT change the formatting unless you review the
+        # "extract_log_messages" method down below.
         format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
         formatter = logging.Formatter(format)
 
-        # Log to file
+        # Use UTC, and fix the millisecond format so that javaScript can use
+        # it
+        formatter.default_msec_format = '%s.%03d'
+        formatter.converter = time.gmtime
+
+        # Log to file no matter what.
         #
         # I admit that the use of "delay" is only to prevent warnings being
         # issued during testing.
@@ -283,10 +338,10 @@ class CoreHarvester(object):
         fh.setFormatter(formatter)
         self.logger.addHandler(fh)
 
-        # Also log to stdout.
-        sh = logging.StreamHandler(sys.stdout)
-        sh.setFormatter(formatter)
-        self.logger.addHandler(sh)
+        # Also log to stdout
+        stream = logging.StreamHandler(sys.stdout)
+        stream.setFormatter(formatter)
+        self.logger.addHandler(stream)
 
     def generate_system_metadata(self, *,
                                  scimeta_bytes=None,
@@ -343,7 +398,7 @@ class CoreHarvester(object):
             sys_meta.identifier = record_version
 
         sys_meta.dateUploaded = record_date
-        sys_meta.dateSysMetadataModified = dt.datetime.now()
+        sys_meta.dateSysMetadataModified = dt.datetime.now(dt.timezone.utc)
         sys_meta.rightsHolder = self.sys_meta_dict['rightsholder']
         sys_meta.submitter = self.sys_meta_dict['submitter']
         sys_meta.authoritativeMemberNode = self.sys_meta_dict['authoritativeMN']  # noqa:  E501
@@ -379,6 +434,8 @@ class CoreHarvester(object):
         -------
         datetime of last harvest
         """
+        if self.ignore_harvest_time:
+            return None
 
         last_harvest_time_str = self.client_mgr.get_last_harvest_time()
         last_harvest_time = dateutil.parser.parse(last_harvest_time_str)
@@ -391,6 +448,8 @@ class CoreHarvester(object):
         """
         Produce a text summary for the logs about how the harvest went.
         """
+        if self.no_harvest:
+            return
 
         self.logger.info("\n\n")
         self.logger.info("Job Summary")
@@ -573,7 +632,7 @@ class CoreHarvester(object):
         url = f"{self.mn_base_url}/v2/object/{existing_sid}"
 
         # Get the existing document.
-        content = await self.retrieve_url(url, headers={'Accept': 'text/xml'})
+        content, _ = await self.retrieve_url(url, headers={'Accept': 'text/xml'})  # noqa : E501
 
         old_doc = lxml.etree.parse(io.BytesIO(content))
 
@@ -668,7 +727,7 @@ class CoreHarvester(object):
         # If the URLs do not begin with 'http', then they may be relative?
         # If so, tack the sitemap URL onto them.
         urls = [
-            f"{self.sitemap}/{url}" if not url.startswith('http') else url
+            f"{self.sitemap_url}/{url}" if not url.startswith('http') else url
             for url in urls
         ]
 
@@ -676,10 +735,8 @@ class CoreHarvester(object):
                              namespaces=self.SITEMAP_NAMESPACE)
         if len(lastmods) == 0:
             # Sometimes a sitemap has no <lastmod> items at all.  That's ok.
-            lastmods = [
-                dateutil.parser.parse('1950-01-01T00:00:00Z')
-                for url in urls
-            ]
+            # Use a datetime that we know is too old to be valid.
+            lastmods = [_TOO_OLD_HARVEST_DATETIME for url in urls]
         else:
             # Parse the last modification times.  It is possible that the dates
             # have no timezone information in them, so we will assume that it
@@ -758,7 +815,7 @@ class CoreHarvester(object):
         self.logger.info(msg)
         return records
 
-    async def retrieve_url(self, url, headers=None, check_xml_headers=False):
+    async def retrieve_url(self, url, headers=None):
         """
         Return the contents pointed to by a URL.
 
@@ -771,9 +828,9 @@ class CoreHarvester(object):
 
         Returns
         -------
-        Binary contents of the body of the response object.
+        Binary contents of the body of the response object, response headers
         """
-        self.logger.debug(f'retrieve_url: {url}')
+        self.logger.info(f'Retrieving URL {url}')
 
         headers = {
             'User-Agent': 'DataONE adapter for schema.org harvest',
@@ -788,28 +845,26 @@ class CoreHarvester(object):
 
                 response.raise_for_status()
 
-                if check_xml_headers:
-                    self.check_xml_headers(response)
+                return await response.read(), response.headers
 
-                return await response.read()
-
-    def check_xml_headers(self, response):
+    def check_xml_headers(self, headers):
         """
         Check the headers returned by the sitemap request response.
 
         Parameters
         ----------
-        response : aiohttp.ClientResponse
-            Response for the sitemap.
+        headers : dict
+            HTTP response headers
         """
+        self.logger.debug('Checking XML headers...')
         exp_headers = [
             'text/xml',
-            'text/xml;charset=UTF-8',
+            'text/xml;charset=utf-8',
             'application/x-gzip',
             'application/xml'
         ]
-        if response.headers['Content-Type'] not in exp_headers:
-            msg = f"get_sitemap_document: headers are {response.headers}"
+        if headers['Content-Type'].lower() not in exp_headers:
+            msg = f"get_sitemap_document: headers are {headers}"
             self.logger.debug(msg)
             self.logger.warning(SITEMAP_NOT_XML_MESSAGE)
 
@@ -819,7 +874,7 @@ class CoreHarvester(object):
         last_harvest_time = self.get_last_harvest_time()
 
         try:
-            await self.process_sitemap(self.sitemap, last_harvest_time)
+            await self.process_sitemap(self.sitemap_url, last_harvest_time)
         except Exception as e:
             self.logger.error(repr(e))
 
@@ -844,7 +899,7 @@ class CoreHarvester(object):
         msg = f'requesting {metadata_url}'
         self.logger.info(msg)
         # Retrieve the metadata document.
-        content = await self.retrieve_url(metadata_url)
+        content, _ = await self.retrieve_url(metadata_url)
 
         try:
             doc = lxml.etree.parse(io.BytesIO(content))
@@ -991,19 +1046,6 @@ class CoreHarvester(object):
                 # Reset the format ID to the one that worked.
                 self.sys_meta_dict['formatId_custom'] = format_id
 
-    def preprocess_landing_page(self, landing_page_doc):
-        """
-        Check the landing page for any information we may need OTHER than
-        JSON-LD.
-
-        Parameters
-        ----------
-        landing_page_doc : lxml element tree
-            Document corresponding to the HTML landing page.
-        """
-        # Nothing to do in the general case.
-        pass
-
     async def retrieve_record(self, document_url):
         """
         Parameters
@@ -1052,6 +1094,7 @@ class CoreHarvester(object):
         else:
 
             self.logger.debug("process_sitemap:  This is a sitemap leaf.")
+            self._sitemaps.append(sitemap_url)
             await self.process_sitemap_leaf(doc, last_harvest)
 
     async def get_sitemap_document(self, sitemap_url):
@@ -1066,8 +1109,8 @@ class CoreHarvester(object):
         self.logger.info(f'Requesting sitemap document from {sitemap_url}')
 
         try:
-            content = await self.retrieve_url(sitemap_url,
-                                              check_xml_headers=True)
+            content, headers = await self.retrieve_url(sitemap_url)
+            self.check_xml_headers(headers)
         except Exception as e:
             msg = f"{SITEMAP_RETRIEVAL_FAILURE_MESSAGE} due to {repr(e)}"
             self.logger.error(msg)
@@ -1114,10 +1157,16 @@ class CoreHarvester(object):
         """
         self.logger.debug(f'process_sitemap_leaf:')
 
-        sitemap_queue = asyncio.Queue()
-
         records = self.extract_records_from_sitemap(doc)
         records = self.post_process_sitemap_records(records, last_harvest)
+
+        self._sitemap_records.extend(records)
+
+        if self.no_harvest:
+            return
+
+        sitemap_queue = asyncio.Queue()
+
         for url, lastmod_time in records:
             job = SlenderNodeJob(url, '', lastmod_time, 0, None)
             sitemap_queue.put_nowait(job)

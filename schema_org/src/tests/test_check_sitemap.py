@@ -64,10 +64,17 @@ class TestSuite(TestCommon):
             ir.read_text('tests.data.arm', 'nsasondewnpnS01.b1.fixed.html'),
             ir.read_text('tests.data.arm', 'nsasondewnpnS01.b1.fixed.xml'),
         ]
-        aioresp_mocker.get(self.pattern, body=contents[0])
-        aioresp_mocker.get(self.pattern, status=400)
-        aioresp_mocker.get(self.pattern, body=contents[2])
-        aioresp_mocker.get(self.pattern, body=contents[3])
+        headers = [
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+        ]
+        status_codes = [200, 400, 200, 200]
+
+        for content, header, status in zip(contents, headers, status_codes):
+            aioresp_mocker.get(self.pattern, body=content, headers=header,
+                               status=status)
 
         sitemap = 'https://www.archive.arm.gov/metadata/adc/sitemap_not.xml'
         obj = D1CheckSitemap(sitemap_url=sitemap)
@@ -102,8 +109,15 @@ class TestSuite(TestCommon):
             ir.read_text('tests.data.arm', 'nsasondewnpnS01.b1.fixed.html'),
             ir.read_text('tests.data.arm', 'nsanimfraod1michC2.c1.fixed.xml'),
         ]
-        for content in contents:
-            aioresp_mocker.get(self.pattern, body=content)
+        headers = [
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+        ]
+
+        for header, content in zip(headers, contents):
+            aioresp_mocker.get(self.pattern, headers=header, body=content)
 
         sitemap = 'https://www.archive.arm.gov/metadata/adc/sitemap.xml'
         obj = D1CheckSitemap(sitemap_url=sitemap)
@@ -138,8 +152,15 @@ class TestSuite(TestCommon):
             ir.read_text('tests.data.arm', 'nsasondewnpnS01.b1.fixed.html'),
             ir.read_text('tests.data.arm', 'nsanimfraod1michC2.c1.fixed.xml'),
         ]
-        for content in contents:
-            aioresp_mocker.get(self.pattern, body=content)
+        headers = [
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+        ]
+
+        for header, content in zip(headers, contents):
+            aioresp_mocker.get(self.pattern, headers=header, body=content)
 
         url = 'https://www.archive.arm.gov/metadata/adc/sitemap.xml'
         obj = D1CheckSitemap(sitemap_url=url)
@@ -226,8 +247,15 @@ class TestSuite(TestCommon):
             ir.read_text('tests.data.arm', 'nsasondewnpnS01.b1.fixed.html'),
             ir.read_text('tests.data.arm', 'nsanimfraod1michC2.c1.fixed.xml'),  # noqa: E501
         ]
-        for content in contents:
-            aioresp_mocker.get(self.pattern, body=content)
+        headers = [
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+        ]
+        for header, content in zip(headers, contents):
+            aioresp_mocker.get(self.pattern, headers=header, body=content)
 
         url = 'https://www.archive.arm.gov/metadata/adc/sitemap.xml'
         obj = D1CheckSitemap(sitemap_url=url)
@@ -265,8 +293,15 @@ class TestSuite(TestCommon):
             ir.read_text('tests.data.arm', 'nsasondewnpnS01.b1.fixed.html'),
             ir.read_text('tests.data.arm', 'nsanimfraod1michC2.c1.fixed.xml'),
         ]
-        for content in contents:
-            aioresp_mocker.get(self.pattern, body=content)
+        headers = [
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+        ]
+        for header, content in zip(headers, contents):
+            aioresp_mocker.get(self.pattern, headers=header, body=content)
 
         url = 'https://www.archive.arm.gov/metadata/adc/sitemap.xml'
         obj = D1CheckSitemap(sitemap_url=url)
@@ -304,8 +339,16 @@ class TestSuite(TestCommon):
             ir.read_text('tests.data.arm', 'nsasondewnpnS01.b1.fixed.html'),
             ir.read_text('tests.data.arm', 'nsanimfraod1michC2.c1.fixed.xml'),
         ]
-        for content in contents:
-            aioresp_mocker.get(self.pattern, body=content)
+        headers = [
+            {'Content-Type': 'application/x-gzip'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+        ]
+
+        for header, content in zip(headers, contents):
+            aioresp_mocker.get(self.pattern, headers=header, body=content)
 
         url = 'https://www.archive.arm.gov/metadata/adc/sitemap.xml'
         obj = D1CheckSitemap(sitemap_url=url)
@@ -353,8 +396,24 @@ class TestSuite(TestCommon):
             ir.read_text('tests.data.arm', 'nsasondewnpnS01.b1.fixed.html'),
             ir.read_text('tests.data.arm', 'nsanimfraod1michC2.c1.fixed.xml'),  # noqa: E501
         ]
-        for content in contents:
-            aioresp_mocker.get(self.pattern, body=content)
+        header_types = [
+            'application/xml',
+
+            'application/x-gzip',
+            'text/html',
+            'application/xml',
+            'text/html',
+            'application/xml',
+
+            'application/x-gzip',
+            'text/html',
+            'application/xml',
+            'text/html',
+            'application/xml',
+        ]
+        for header, content in zip(header_types, contents):
+            aioresp_mocker.get(self.pattern, headers={'Content-Type': header},
+                               body=content)
 
         url = 'https://www.archive.arm.gov/metadata/adc/sitemap_index_file.xml'
         obj = D1CheckSitemap(sitemap_url=url)
@@ -469,8 +528,15 @@ class TestSuite(TestCommon):
             ir.read_text('tests.data.arm', 'nsasondewnpnS01.b1.fixed.html'),
             ir.read_text('tests.data.arm', 'nsanimfraod1michC2.c1.fixed.xml'),
         ]
-        for content in contents:
-            aioresp_mocker.get(self.pattern, body=content)
+        headers = [
+            {'Content-Type': 'application/x-gzip'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+            {'Content-Type': 'text/html'},
+            {'Content-Type': 'application/xml'},
+        ]
+        for header, content in zip(headers, contents):
+            aioresp_mocker.get(self.pattern, headers=header, body=content)
 
         url = 'https://www.archive.arm.gov/metadata/adc/sitemap2.xml'
         obj = D1CheckSitemap(sitemap_url=url, num_workers=2)
