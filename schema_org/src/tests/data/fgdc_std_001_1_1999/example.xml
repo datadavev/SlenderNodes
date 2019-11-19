@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Jay Alder</origin>
+        <origin>Steve Hostetler</origin>
+        <origin>U.S. Geological Survey</origin>
+        <pubdate>20181201</pubdate>
+        <title>Data Release for The dependence of hydroclimate projections in snow-dominated regions of the western U.S. on the choice of statistically downscaled climate data</title>
+        <geoform>NetCDF</geoform>
+        <onlink>https://doi.org/10.5066/P9O9EB1C</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Climate change information simulated by global climate models is downscaled using statistical methods to translate spatially course regional projections to finer resolutions needed by researchers and managers to assess local climate impacts. Several statistical downscaling methods have been developed over the past fifteen years, resulting in multiple datasets derived by different methods. We apply a simple monthly water-balance model (MWBM) to demonstrate how the differences among these datasets result in disparate projections of snow loss and future changes in runoff. We apply the MWBM to six statistically downscaled datasets for 14 general circulation models (GCMs) from the Climate Model Intercomparison Program Phase 5 (CMIP5) for the RCP 8.5 emission scenario (1950 - 2099). 
+
+The statistically downscaled datasets are as follows:
+BCCA: Bias Corrected Constructed Analogs (Reclamation, 2013)
+BCSD-C: Bias Corrected Spatial Disaggregation (Reclamation, 2013)
+BCSD-F: Bias Corrected Spatial Disaggregation (Thrasher et al., 2013)
+LOCA: Localized Constructed Analogs (Pierce et al., 2014)
+MACA-L: Multivariate Adaptive Constructed Analogs (Abatzoglou &amp; Brown, 2012, bias corrected by Livneh et al., 2013)
+MACA-M: Multivariate Adaptive Constructed Analogs (Abatzoglou &amp; Brown, 2012, bias corrected by METDATA, Abatzoglou, 2013)
+
+Users interested in the downscaled temperature and precipitation files are referred to the dataset home pages:
+BCCA, BCSD-C: http://gdo-dcp.ucllnl.org/downscaled_cmip_projections/dcpInterface.html
+BCSD-F: https://cds.nccs.nasa.gov/nex/
+LOCA: http://loca.ucsd.edu/
+MACA-L, MACA-M: http://maca.northwestknowledge.net
+
+The GCMs are the following:
+bcc-csm1-1, CanESM2, CNRM-CM5, CSIRO-Mk3-6-0, GFDL-ESM2G, GFDL-ESM2M, inmcm4, IPSL-CM5A-LR, IPSL-CM5A-MR, MIROC-ESM, MIROC-ESM-CHEM, MIROC5, MRI-CGCM3, NorESM1-M
+</abstract>
+      <purpose>The dataset contains snow and runoff projections simulated by the monthly water-balance model (MWBM) when driven by temperature and precipitation time series from six commonly used statistically downscaled datasets. Differences in hydroclimate projections highlight uncertainty stemming from both the GCMs and statistically downscaling methods.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>19500101</begdate>
+          <enddate>20991231</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>publication date</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <descgeog>Contiguous United States</descgeog>
+      <bounding>
+        <westbc>-125.969</westbc>
+        <eastbc>-66.0312</eastbc>
+        <northbc>53.9688</northbc>
+        <southbc>23.4062</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>BCSD</themekey>
+        <themekey>BCCA</themekey>
+        <themekey>LOCA</themekey>
+        <themekey>MACA</themekey>
+        <themekey>snow water equivalent</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>runoff</themekey>
+        <themekey>hydrologic processes</themekey>
+        <themekey>snow and ice cover</themekey>
+        <themekey>effects of climate change</themekey>
+      </theme>
+      <theme>
+        <themekt>Marine Realms Information Bank (MRIB) keywords</themekt>
+        <themekey>numerical modeling</themekey>
+      </theme>
+      <place>
+        <placekt>Common geographic areas</placekt>
+        <placekey>United States</placekey>
+      </place>
+      <place>
+        <placekt>None</placekt>
+        <placekey>Contiguous United States</placekey>
+      </place>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the data set's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Jay Alder</cntper>
+          <cntorg>Geosciences and Environmental Change Science Center / U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntpos>Physical Scientist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>104 CEOAS Admin Building</address>
+          <city>Corvallis</city>
+          <state>OR</state>
+          <postal>97331</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>541-737-5629</cntvoice>
+        <cntemail>jalder@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>No formal attribute accuracy tests were conducted.</attraccr>
+    </attracc>
+    <logic>No formal logical accuracy tests were conducted.</logic>
+    <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Bureau of Reclamation</origin>
+            <pubdate>20130507</pubdate>
+            <title>Downscaled CMIP3 and CMIP5
+Climate Projections</title>
+            <geoform>NetCDF</geoform>
+            <onlink>https://gdo-dcp.ucllnl.org/downscaled_cmip_projections/techmemo/downscaled_climate.pdf</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>NetCDF</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19500101</begdate>
+              <enddate>20991231</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>BCCA</srccitea>
+        <srccontr>Temperature and precipitation input fields</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Bureau of Reclamation</origin>
+            <pubdate>20130507</pubdate>
+            <title>Downscaled CMIP3 and CMIP5
+Climate Projections</title>
+            <geoform>NetCDF</geoform>
+            <onlink>https://gdo-dcp.ucllnl.org/downscaled_cmip_projections/techmemo/downscaled_climate.pdf</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>NetCDF</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19500101</begdate>
+              <enddate>20991231</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>BCSD-C</srccitea>
+        <srccontr>Temperature and precipitation input fields</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Bridget Thrasher</origin>
+            <origin>Jun Xiong</origin>
+            <origin>Weile Wang</origin>
+            <origin>Forrest Melton</origin>
+            <origin>Andrew Michaelis</origin>
+            <origin>Ramakrishna Nemani</origin>
+            <pubdate>20130910</pubdate>
+            <title>Downscaled Climate Projections Suitable for Resource Management</title>
+            <geoform>NetCDF</geoform>
+            <serinfo>
+              <sername>Eos, Transactions American Geophysical Union</sername>
+              <issue>vol. 94, issue 37</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace>n/a</pubplace>
+              <publish>American Geophysical Union (AGU)</publish>
+            </pubinfo>
+            <othercit>ppg. 321-323</othercit>
+            <onlink>http://dx.doi.org/10.1002/2013EO370002</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>NetCDF</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19500101</begdate>
+              <enddate>20991231</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>BCSD-F</srccitea>
+        <srccontr>Temperature and precipitation input fields</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>David W. Pierce</origin>
+            <origin>Daniel R. Cayan</origin>
+            <origin>Bridget L. Thrasher</origin>
+            <pubdate>201412</pubdate>
+            <title>Statistical Downscaling Using Localized Constructed Analogs (LOCA)</title>
+            <geoform>NetCDF</geoform>
+            <serinfo>
+              <sername>Journal of Hydrometeorology</sername>
+              <issue>vol. 15, issue 6</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace>n/a</pubplace>
+              <publish>American Meteorological Society</publish>
+            </pubinfo>
+            <othercit>ppg. 2558-2585</othercit>
+            <onlink>http://dx.doi.org/10.1175/JHM-D-14-0082.1</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>NetCDF</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19500101</begdate>
+              <enddate>20991231</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>LOCA</srccitea>
+        <srccontr>Temperature and precipitation input fields</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>John T. Abatzoglou</origin>
+            <origin>Timothy J. Brown</origin>
+            <pubdate>20110317</pubdate>
+            <title>A comparison of statistical downscaling methods suited for wildfire applications</title>
+            <geoform>NetCDF</geoform>
+            <serinfo>
+              <sername>International Journal of Climatology</sername>
+              <issue>vol. 32, issue 5</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace>n/a</pubplace>
+              <publish>Wiley</publish>
+            </pubinfo>
+            <othercit>Bias corrected by Livneh et al., 2013.</othercit>
+            <onlink>http://dx.doi.org/10.1002/joc.2312</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>NetCDF</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19500101</begdate>
+              <enddate>20991231</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>MACA-L</srccitea>
+        <srccontr>Temperature and precipitation input fields. </srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>John T. Abatzoglou</origin>
+            <origin>Timothy J. Brown</origin>
+            <pubdate>20110317</pubdate>
+            <title>A comparison of statistical downscaling methods suited for wildfire applications</title>
+            <geoform>NetCDF</geoform>
+            <serinfo>
+              <sername>International Journal of Climatology</sername>
+              <issue>vol. 32, issue 5</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace>n/a</pubplace>
+              <publish>Wiley</publish>
+            </pubinfo>
+            <othercit>Bias corrected by METDATA (Abatzoglou, 2013).</othercit>
+            <onlink>http://dx.doi.org/10.1002/joc.2312</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>NetCDF</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>19500101</begdate>
+              <enddate>20991231</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>MACA-M</srccitea>
+        <srccontr>Temperature and precipitation input fields. </srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>The monthly water-balance model (MWBM) was driven by temperature and precipitation time series from six commonly used statistically downscaled datasets. We use the r1i1p1 realization from each of the 14 GCMs. The BCCA, MACA and LOCA datasets were developed to downscale daily data, which we aggregated to monthly averages and use as input to the hydrology model. In datasets that include minimum and maximum but not mean temperature, we derived a mean value by averaging the minimum and maximum.
+
+A description of the MWBM and calibration used herein is found in: 
+
+Hostetler, S. W., &amp; Alder, J. R. (2016). Implementation and evaluation of a monthly water balance model over the US on an 800 m grid. Water Resources Research, 52(12), 9600–9620. https://doi.org/10.1002/2016WR018665
+</procdesc>
+        <procdate>20181101</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>To aid in file compression, the original floating-point output was converted to scaled integers. Data fields must be divided by 10 to obtain the correct value.</procdesc>
+        <procdate>20181101</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <overview>
+      <eaover>Simulated snow water equivalent (SWE) and runoff gridded time series for the six datasets are 14 GCMs are provided as a collection of NetCDF files. Both the “snow” and “runoff” variables have units of mm multiplied by 10. Data fields must be divided by 10 to obtain the correct value, which should be done automatically by most software that reads and visualizes NetCDF files. The grids have a missing_value of -999 to mask lakes, oceans, or grid cells without simulated snow and runoff fields. Longitude values range from 0 to 360 degrees.</eaover>
+      <eadetcit/>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey</cntorg>
+          <cntper>GS ScienceBase</cntper>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9O9EB1C</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20181119</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Jay Alder</cntper>
+          <cntorg>Geosciences and Environmental Change Science Center / U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntpos>Physical Scientist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>104 CEOAS Admin Building</address>
+          <city>Corvallis</city>
+          <state>OR</state>
+          <postal>97331</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>541-737-5629</cntvoice>
+        <cntemail>jalder@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>

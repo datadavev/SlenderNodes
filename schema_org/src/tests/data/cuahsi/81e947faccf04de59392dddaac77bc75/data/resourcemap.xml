@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:citoterms="http://purl.org/spar/cito/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:ore="http://www.openarchives.org/ore/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs1="http://www.w3.org/2001/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/iUtah Model Inventory.html">
+    <dc:format>text/html</dc:format>
+    <ore:isAggregatedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</ore:isAggregatedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation">
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+    <dc:title>RFA 3 Model Inventory</dc:title>
+    <ore:aggregates rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/iutahmodelinventory-responses-oct1.xlsx"/>
+    <ore:aggregates rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/isawconceptualmodel.jpg"/>
+    <ore:aggregates rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/iUtah Model Inventory.html"/>
+    <ore:aggregates rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/createisawdiagrams.m.txt"/>
+    <ore:aggregates rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/componentlinkagecounts.skp"/>
+    <ore:aggregates rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/rfa3-modelinventory-oct26-2015.pptx"/>
+    <dcterms:type rdf:resource="http://www.hydroshare.org/terms/GenericResource"/>
+    <ore:isDescribedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml</ore:isDescribedBy>
+        <ore:aggregates rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemetadata.xml"/>
+    <ore:aggregates rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/iUtah Model Inventory (Responses) - Google Sheets.html"/>
+    <citoterms:isDocumentedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemetadata.xml</citoterms:isDocumentedBy>
+    <ore:aggregates rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/isawmodelcompare.exe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/isawmodelcompare.exe">
+    <ore:isAggregatedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</ore:isAggregatedBy>
+    <dc:format>application/x-msdos-program</dc:format>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/terms/GenericResource">
+    <rdfs1:label>Generic</rdfs1:label>
+    <rdfs1:isDefinedBy>http://www.hydroshare.org/terms</rdfs1:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.openarchives.org/ore/terms/ResourceMap">
+    <rdfs1:isDefinedBy>http://www.openarchives.org/ore/terms/</rdfs1:isDefinedBy>
+    <rdfs1:label>ResourceMap</rdfs1:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml">
+    <dc:format>application/rdf+xml</dc:format>
+    <dcterms:modified>2018-11-11T07:39:57Z</dcterms:modified>
+    <dc:identifier>81e947faccf04de59392dddaac77bc75</dc:identifier>
+    <dc:creator rdf:resource="http://foresite-toolkit.googlecode.com/#pythonAgent"/>
+    <ore:describes rdf:resource="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation"/>
+    <dcterms:created>2018-11-11T07:39:57Z</dcterms:created>
+    <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemetadata.xml">
+    <dc:format>application/rdf+xml</dc:format>
+    <ore:isAggregatedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</ore:isAggregatedBy>
+    <citoterms:documents>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</citoterms:documents>
+    <dc:title>Dublin Core science metadata document describing the HydroShare resource</dc:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/isawconceptualmodel.jpg">
+    <dc:format>image/jpeg</dc:format>
+    <ore:isAggregatedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</ore:isAggregatedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foresite-toolkit.googlecode.com/#pythonAgent">
+    <foaf:name>Foresite Toolkit (Python)</foaf:name>
+    <foaf:mbox>foresite@googlegroups.com</foaf:mbox>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/rfa3-modelinventory-oct26-2015.pptx">
+    <ore:isAggregatedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</ore:isAggregatedBy>
+    <dc:format>application/vnd.openxmlformats-officedocument.presentationml.presentation</dc:format>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.openarchives.org/ore/terms/Aggregation">
+    <rdfs1:label>Aggregation</rdfs1:label>
+    <rdfs1:isDefinedBy>http://www.openarchives.org/ore/terms/</rdfs1:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/iUtah Model Inventory (Responses) - Google Sheets.html">
+    <dc:format>text/html</dc:format>
+    <ore:isAggregatedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</ore:isAggregatedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/componentlinkagecounts.skp">
+    <ore:isAggregatedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</ore:isAggregatedBy>
+    <dc:format>application/x-koan</dc:format>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/iutahmodelinventory-responses-oct1.xlsx">
+    <dc:format>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</dc:format>
+    <ore:isAggregatedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</ore:isAggregatedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/contents/createisawdiagrams.m.txt">
+    <dc:format>text/plain</dc:format>
+    <ore:isAggregatedBy>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75/data/resourcemap.xml#aggregation</ore:isAggregatedBy>
+  </rdf:Description>
+</rdf:RDF>

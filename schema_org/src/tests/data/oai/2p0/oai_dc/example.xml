@@ -1,0 +1,34 @@
+<ns0:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+          <dc:title>Cary Environmental Monitoring Program Daily Meteorological and Solar Radiation Data: 1988-2017</dc:title>
+          <dc:creator>Vicky Kelly (5346506)</dc:creator>
+          <dc:subject>Environmental Science</dc:subject>
+          <dc:subject>Climate Science</dc:subject>
+          <dc:subject>Atmospheric Radiation</dc:subject>
+          <dc:subject>Environmental Management</dc:subject>
+          <dc:subject>Environmental Monitoring</dc:subject>
+          <dc:subject>Cary Institute</dc:subject>
+          <dc:subject>Cary Institute of Ecosystem Studies</dc:subject>
+          <dc:subject>data</dc:subject>
+          <dc:subject>meteorology</dc:subject>
+          <dc:subject>climate</dc:subject>
+          <dc:subject>solar radiation</dc:subject>
+          <dc:subject>PAR</dc:subject>
+          <dc:subject>Photosynthetically Active Radiation</dc:subject>
+          <dc:subject>net radiation</dc:subject>
+          <dc:subject>shortwave radiation</dc:subject>
+          <dc:subject>air temperature</dc:subject>
+          <dc:subject>precipitation</dc:subject>
+          <dc:subject>barometric pressure</dc:subject>
+          <dc:subject>wind speed</dc:subject>
+          <dc:subject>wind direction</dc:subject>
+          <dc:subject>relative humidity</dc:subject>
+          <dc:subject>snow depth</dc:subject>
+          <dc:description>The Cary Institute of Ecosystem Studies Environmental Monitoring Program is a long-term data collection program designed to understand how the environment changes over time. The program includes monitoring of climate including temperature and precipitation, as well as variables related to air pollution, such as acid deposition and ozone, and water pollution and other streamwater chemistry. Our solar radiation monitoring includes diffuse and global photosynthetically active radiation (PAR), diffuse and global shortwave radiation, net radiation and UV. Long-term monitoring of solar radiation provides us with an understanding of atmospheric energy dynamics, which can affect natural and human systems. The Cary Institute of Ecosystem Studies, Environmental Monitoring Program furnishes data under the following conditions: The data have received quality assurance scrutiny by our program, and, although we are confident of the accuracy of these data, the Cary Institute will not be held liable for errors in these data. Data are subject to change resulting from updates in data screening or models used. Data citation: The following is a standard citation for referencing data from the Cary Institute of Ecosystem Studies, Environmental Monitoring Program:&lt;br&gt;Cary Institute of Ecosystem Studies, Environmental Monitoring Program. 2008 (or current year). Cary Institute of Ecosystem Studies, Box AB, Millbrook, NY 12545, www.caryinstitute.org. &lt;br&gt;Those wishing to publish data from the Cary Institute of Ecosystem Studies, Environmental Monitoring Program are encouraged to contact Data Manager Vicky Kelly, kellyv@caryinstitute.org.&lt;br&gt;&lt;br&gt;</dc:description>
+          <dc:date>2018-11-28T19:53:33Z</dc:date>
+          <dc:type>Dataset</dc:type>
+          <dc:type>Fileset</dc:type>
+          <dc:identifier>10.25390/caryinstitute.7395032.v1</dc:identifier>
+          <dc:relation>https://figshare.com/articles/Cary_Environmental_Monitoring_Program_Daily_Meteorological_and_Solar_Radiation_Data_1988-2017/7395032</dc:relation>
+          <dc:rights>CC BY 4.0</dc:rights>
+        </ns0:dc>
+      

@@ -1,7 +1,8 @@
-name: schemaorg
+name: dataone
 channels:
   - conda-forge
 dependencies:
+  - aiohttp < 4.0.0
   - asn1crypto
   - atomicwrites
   - attrs
@@ -34,6 +35,7 @@ dependencies:
   - nose
   - openssl
   - packaging
+  - pandas
   - pip
   - pluggy
   - py
@@ -44,6 +46,7 @@ dependencies:
   - pyjwt
   - pyopenssl
   - pyparsing
+  - pyshacl
   - pysocks
   - pytest
   - python>=3.6
@@ -53,6 +56,7 @@ dependencies:
   - rdflib
   - readline
   - requests
+  - requests-mock
   - setuptools
   - six
   - sqlite
@@ -64,9 +68,10 @@ dependencies:
   - zipp
   - zlib
   - pip:
+    - aioresponses
     - dataone-cli==3.4.1
+    - dataone.scimeta
     - dataone-common==3.4.1
     - dataone-libclient==3.4.1
     - requests-toolbelt==0.9.1
     - zipstream==1.1.4
-prefix: /Users/jevans/anaconda3/envs/schemaorg
