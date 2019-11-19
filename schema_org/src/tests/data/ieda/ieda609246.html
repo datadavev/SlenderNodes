@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:res="http://www.esri.com/metadata/res/" xmlns:gmd="http://www.isotc211.org/2005/gmd">
+  <head><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><style xmlns="" type="text/css" id="internalStyle">
+    body {
+      font-family: Verdana, Gill, Helvetica, Sans-serif ;
+      font-size: 0.8em;
+      font-weight: 500;
+      color: #000020;
+      background-color: #FFFFFF;
+    }
+    div.itemDescription {
+      margin-right: 2em;
+      margin-bottom: 2em;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    h1.idHeading {
+      color: #008FAF;
+      text-align: center;
+    }
+    h1.gpHeading {
+      color: black;
+    }
+    span.idHeading {
+      color: #007799;
+      font-weight: bold;
+    }
+    .center {
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    img {
+      width: 210px;
+      border-width: 1px;
+      border-style: outset;
+    }
+    img.center {
+      text-align: center;
+      display: block;
+      border-color: #666666;
+    }
+    img.enclosed {
+      width: 60%;
+    }
+    img.gp {
+      width: auto;
+      border-style: none;
+    }
+    .noThumbnail {
+      color: #888888;
+      font-size: 1.2em;
+      text-align: center;
+      width: 210px;
+      height: 140px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+      padding: 3em 3em;
+      position: relative;
+      direction: ltr;
+      left: 50%;
+      right: auto;
+      margin-left: -127px;
+    }
+    .noContent {
+      color: #888888;
+    }
+    div.box {
+      border: thin inset #EEEEEE;
+      margin-left: 1em;
+      padding: 1em;
+    }
+    .box.arcgis {
+      background-color: #F9FFFF;
+    }
+    .box.fgdc {
+      background-color: #F0F5FF;
+    }
+    div.hide {
+      display: none;
+    }
+    div.show {
+      display: block;
+    }
+    span.hide {
+      display: none;
+    }
+    span.show {
+      display: inline-block;
+    }
+    .backToTop a {
+      color: #DDDDDD;
+      font-style: italic;
+    }
+    h2 {
+      font-size: 1.2em;
+    }
+    h2.gp {
+      color: #00709C;
+    }
+    .gpsubtitle {
+      color: black;
+      font-size: 1.2em;
+	  font-weight: normal;
+    }
+    .gptags {
+      color: black;
+      font-size: 0.8em;
+	  font-weight: normal;
+    }
+    .head {
+      font-size: 1.3em;
+    }
+    a:link, a:visited {
+      color: #004457;
+      font-weight: normal;
+      text-decoration: none;
+    }
+    a:link:hover, a:visited:hover {
+      background-color: #FFFFD3;
+    }
+    h2.iso a {
+      color: #007799;
+      font-weight: bold;
+    }
+    h2.fgdc a {
+      color: #004080;
+      font-weight: bold;
+    }
+	h3 {
+		font-size: 1em; 
+		color: #00709C;
+	}
+    .backToTop {
+      color: #AAAAAA;
+      margin-left: 1em;
+    }
+    p.gp {
+      margin-top: .6em;
+      margin-bottom: .6em;
+    }
+    ul .gp {
+      margin-left: -1em;
+    }
+    ul li.iso19139heading {
+      margin-left: -3em;
+	  list-style: none;
+	  font-weight: bold;
+    }
+    dl {
+      margin: 0;
+      padding: 0;
+    }
+    dl.iso {
+      background-color: #F2F9FF;
+    }
+    dl.esri {
+      background-color: #F2FFF9;
+    }
+    dl.subtype {
+      width: 40em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      padding: 0;
+    }
+    dt {
+      margin-left: 0.6em;
+      padding-left: 0.6em;
+      clear: left;
+    }
+    .subtype dt {
+      width: 60%;
+      float: left;
+      margin: 0;
+      padding: 0.5em 0.5em 0 0.75em;
+      border-top: 1px solid #006400;
+      clear: none;
+    }
+    .subtype dt.header {
+      padding: 0.5em 0.5em 0.5em 0;
+      border-top: none;
+    }
+    dd {
+      margin-left: 0.6em;
+      padding-left: 0.6em;
+      clear: left;
+    }
+    .subtype dd {
+      float: left;
+      width: 25%;
+      margin: 0;
+      padding: 0.5em 0.5em 0 0.75em;
+      border-top: 1px solid #006400;
+      clear: none;
+    }
+    .subtype dd.header {
+      padding: 0.5em 0.5em 0.5em 0;
+      border-top: none;
+    }
+    .isoElement {
+      font-variant: small-caps;
+      font-size: 0.9em;
+      font-weight: normal;
+      color: #0000A0;
+    }
+    .esriElement {
+      font-variant: small-caps;
+      font-size: 0.9em;
+      font-weight: normal;
+      color: #006400;
+    }
+   
+    .element {
+      font-variant: small-caps;
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #006400;
+    }
+    unknownElement {
+      font-variant: small-caps;
+      font-size: 0.9em;
+      font-weight: normal;
+      color: #333333;
+    }
+    .sync {
+      color: #006400;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+    .code {
+      font-family: monospace;
+    }
+    pre.wrap {
+      width: 96%;
+      font-family: Verdana, Gill, Helvetica, Sans-serif ;
+      font-size: 1em;
+      margin: 0 0 1em 0.6em;
+      white-space: pre-wrap;       /* css-3 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+    pre.gp {
+      font-family: Courier, Courier New, monospace;
+      line-height: 1.2em;
+      white-space: nowrap;
+    }
+    .gpcode {
+      margin-left:15px;
+      border: 1px dashed #ACC6D8;
+      padding: 10px;
+      background-color:#EEEEEE;
+      height: auto;
+      overflow: scroll; 
+      width: 96%;
+    }
+    pre.gpOld {
+      font-family: Courier, Courier New, monospace;
+      line-height: 1.2em;
+    }
+    tr {
+      vertical-align: top;
+    }
+    th {
+      text-align: left;
+      background: #dddddd;
+      vertical-align: bottom;
+      font-size: 0.8em;
+    }
+    td {
+      background: #EEEEEE;
+      color: black;
+      vertical-align: top;
+      font-size: 0.8em;
+    }
+  </style><style xmlns="" type="text/css" id="datadoi.css">
+    /* 
+    Created on : Feb 18, 2015, 1:07:47 PM
+    Author     : vickiferrini
+    * 
+    smr 2018-05-03 minor updates for use with ISO metadata display
+    * fix comment problems (change // to / * * /)
+    */
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px;
+    text-align: left;
+    }
+    #mapc {
+    width: 320px;
+    height: 320px;
+    z-index: 1;
+    }
+    h1,h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    }
+    /* smr 2018-05-03 make bigger font size */
+    h1 {
+    font-size: 200%;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    background-color: #D5D5D5;
+    }
+    #right-side {
+    float: right;
+    margin-left: 10px;
+    }
+    /* smr 2018-05-03 add */
+    #left-side {
+    float: left;
+    margin-left: 10px;
+    }
+    img {
+    padding-top: 5px;
+    padding-bottom: 12px;
+    }
+    /*div.row:after {
+    content: '';
+    display: block;
+    clear:both;
+    }*/
+    div.row {
+    padding: 10px;
+    position: relative;
+    }
+    
+    div.description {
+    font-size: 90%;
+    margin-left: 150px;
+    }
+    
+    .btn {
+    margin-left: 150px;
+    margin-top: 10px;
+    /* max-width: 275px; */
+    max-width: 200px;
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 5px 15px 5px 15px;
+    text-decoration: none;
+    }
+    .btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+    }
+    
+    div.title {
+    position: absolute;
+    left:10px;
+    top:10px;
+    font-size: 95%;
+    margin-left: 5px;
+    /*     padding: 10px; */
+    font-weight: bold;
+    width: 150px;
+    }
+    
+    #container {
+    position: relative;
+    min-width: 800px;
+    }
+  </style><link xmlns="" rel="stylesheet" href="http://www.marine-geo.org/css/mapv3.css" /><link xmlns="" rel="stylesheet" type="text/css" href="http://www.marine-geo.org/inc/jquery-ui-1.10.2.custom/css/smoothness/jquery-ui-1.10.2.custom.min.css" media="all" /><script xmlns="" type="text/javascript">
+	/*  */
+		function hideShow(divID) {
+			var item = document.getElementById(divID);
+			var itemShow = document.getElementById(divID + 'Show');
+			var itemHide = document.getElementById(divID + 'Hide');
+			if (item) {
+				if (item.className == 'hide') {
+					item.className='show';
+					itemShow.className='hide';
+					itemHide.className='show';
+				}
+				else {
+					item.className='hide';
+					itemShow.className='show';
+					itemHide.className='hide';
+				}
+			}
+		}
+	/*  */
+	</script><script xmlns="" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBhwynlqvaW_25pfNO1P2ME_GZXyS7OQQ0&amp;libraries=drawing" type="text/javascript"></script>
+<script xmlns="" type="text/javascript" src="jquery-1.9.1.js"></script>
+<script xmlns="" type="text/javascript" src="jquery-ui-1.10.2.custom.min.js"></script>
+<script xmlns="" type="text/javascript" src="basemap_v3.js"></script>
+<script xmlns="" type="text/javascript" src="doimap.js"></script>
+<script type="application/ld+json">
+{
+  "@context": {
+ "@vocab": "http://schema.org/", 
+"datacite": "http://purl.org/spar/datacite/",
+
+                "earthcollab": "https://library.ucar.edu/earthcollab/schema#",
+
+                "geolink": "http://schema.geolink.org/1.0/base/main#",
+
+                "vivo": "http://vivoweb.org/ontology/core#",
+
+                "dcat":"http://www.w3.org/ns/dcat#"
+
+                  },
+ "@id": "urn:usap-dc:metadata:609246",
+  "@type": "Dataset",
+  "additionalType": [
+    "geolink:Dataset",
+    "vivo:Dataset"
+  ],
+  "name": "Taylor Dome Ice Core Chemistry, Ion, and Isotope Data",
+  "citation": "Smith, Jesse, Sowers, Todd A., Brook, Edward J, Mayewski, Paul A., Steig, Eric J., Indermuhle, A (2004-08-26), Taylor Dome Ice Core Chemistry, Ion, and Isotope Data, U.S. Antarctic Program (USAP) Data Center, urn:usap-dc:metadata:609246.",
+  "creator":
+[{
+    "@type":"Role",
+      "roleName": "author",
+"creator": {
+
+  "@type":"Person",
+      "name": "Smith, Jesse",
+     "affiliation": {
+
+  "@type":"Organization",
+      "name": "USA"}
+      }},
+{
+    "@type":"Role",
+      "roleName": "author",
+"creator": {
+
+  "@type":"Person",
+      "name": "Sowers, Todd A.",
+      "email": [ "tas11@psu.edu" ],
+     "affiliation": {
+
+  "@type":"Organization",
+      "name": "317b Earth and Engineering Science Building, University Park, PA, 16802, USA"}
+      }},
+{
+    "@type":"Role",
+      "roleName": "author",
+"creator": {
+
+  "@type":"Person",
+      "name": "Brook, Edward J",
+      "email": [ "brooke@geo.oregonstate.edu" ],
+     "affiliation": {
+
+  "@type":"Organization",
+      "name": "104 Wilkinson Hall, Corvallis, OR, 97331-5506, USA"}
+      }},
+{
+    "@type":"Role",
+      "roleName": "author",
+"creator": {
+
+  "@type":"Person",
+      "name": "Mayewski, Paul A.",
+      "email": [ "paul.mayewski@maine.edu" ],
+     "affiliation": {
+
+  "@type":"Organization",
+      "name": "University of Maine, Orono, ME, 04469, USA"}
+      }},
+{
+    "@type":"Role",
+      "roleName": "author",
+"creator": {
+
+  "@type":"Person",
+      "name": "Steig, Eric J.",
+      "email": [ "steig@uw.edu" ],
+     "affiliation": {
+
+  "@type":"Organization",
+      "name": "University of Washington, Department of Earth and Space Sciences, Box 35130, 70 Johnson Hall, Seattle, WA, 98195-1310, USA"}
+      }},
+{
+    "@type":"Role",
+      "roleName": "author",
+"creator": {
+
+  "@type":"Person",
+      "name": "Indermuhle, A",
+     "affiliation": {
+
+  "@type":"Organization",
+      "name": "Bern, Switzerland"}
+      }}],
+  "datePublished": "2004-08-26",
+  "description": "Abstract: This data set includes chemistry, ion, and istotope data from Taylor Dome, part of the East Antarctic ice sheet. Deep drilling at Taylor Dome successfully reached bedrock at a depth of 554 meters during the 1993-1994 austral summer. The Taylor Dome ice core is only the second core (after Vostok) to provide a stratigraphically undisturbed record through the entire last glacial cycle (the last 130,000 years or more).",
+  "distribution": [
+{
+           "@type": "DataDownload",
+           "additionalType": "http://www.w3.org/ns/dcat#DataCatalog",
+           "encodingFormat": "text/xml",
+           "name": "ISO Metadata Document",
+           "url": "http://get.iedadata.org/metadata/iso/usap/609246iso.xml"},
+  {
+      "@id": "http://www.usap-dc.org/view/dataset/609246",
+    "@type": "DataDownload",
+    "additionalType": "dcat:distribution",
+      "dcat:accessURL": "http://www.usap-dc.org/view/dataset/609246",
+      "url": "http://www.usap-dc.org/view/dataset/609246",
+      "name": "landing page",
+      "description": "Link to a web page related to the resource.. Service Protocol: Link to a web page related to the resource.. Link Function: information"}
+  ],
+  "identifier": 
+ [
+ {
+            "@type": "PropertyValue",
+            "propertyID": "dataset identifier",
+            "value": "urn:usap-dc:metadata:609246"
+}],
+  "includedInDataCatalog": {
+ 
+    "@type":"DataCatalog",
+  "name":"Name of catalog source for record being transformed",
+  "url": "not defined"
+},
+  "keywords": ["Isotope", "Antarctic Glaciology", "Taylor Dome Ice Core", "Chemistry:Ice", "Ice Core Records", "Paleoclimate", "Antarctica", "Glaciers/Ice Sheet", "Cryosphere", "Geochemistry", "Taylor Dome", "US Antarctic Program Data Center (USAP-DC)"],
+  "license": [{
+     "@type": "DigitalDocument","URL": "https://creativecommons.org/licenses/by-nc-sa/3.0/us/",
+       "name": "MD_Constraints",
+        "description": "useLimitation: Creative Commons Attribution-NonCommercial-Share Alike 3.0 United States [CC BY-NC-SA 3.0].   "},
+       {
+     "@type": "DigitalDocument","name": "MD_LegalConstraints",
+        "description": "accessConstraints: license.    otherConstraints: Creative Commons Attribution-NonCommercial-Share Alike 3.0 United States [CC BY-NC-SA 3.0].   "},
+       {
+     "@type": "DigitalDocument","name": "MD_SecurityConstraints",
+        "description": "classification: "}],
+  "publisher": [
+{
+    "@type":"Role",
+      "roleName": "publisher",
+"": {
+
+  "@type":"Organization",
+      "name": "U.S. Antarctic Program (USAP) Data Center"
+      }}]}
+</script></head>
+  <body oncontextmenu="return true">
+    <div xmlns="" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink"></div>
+    <h1 xmlns="" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink">Taylor Dome Ice Core Chemistry, Ion, and Isotope Data</h1>
+    <div xmlns="" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" id="container">
+      <div>
+        <div id="left-side">
+          <ul>
+            <li class="iso19139heading">ISO19139 metadata content</li>
+            <li>
+              <a href="#id2524284">Resource Identification
+						Information</a>
+            </li>
+            <li>
+              <a href="#id2545421">Distribution Information</a>
+            </li>
+            <li>
+              <a href="#Metadata_Information">Metadata Information</a>
+            </li>
+          </ul>
+        </div>
+        <div id="right-side"></div>
+      </div>
+      <a name="id2524284" id="id2524284">
+        <hr />
+      </a>
+      <dt>
+        <h2>Dataset Identification:</h2>
+      </dt>
+      <dl>
+        <dd>
+          <dt>
+            <span class="element">Resource Abstract: </span>
+          </dt>
+          <dl>
+            <dd>
+              <pre class="wrap">Abstract: This data set includes chemistry, ion, and istotope data from Taylor Dome, part of the East Antarctic ice sheet. Deep drilling at Taylor Dome successfully reached bedrock at a depth of 554 meters during the 1993-1994 austral summer. The Taylor Dome ice core is only the second core (after Vostok) to provide a stratigraphically undisturbed record through the entire last glacial cycle (the last 130,000 years or more).</pre>
+            </dd>
+          </dl>
+          <dd>
+            <dt>
+              <span class="element">Citation </span>
+            </dt>
+            <dl>
+              <dd>
+                <dt><span class="element"> Title </span> Taylor Dome Ice Core Chemistry, Ion, and Isotope Data</dt>
+                <dd>
+                  <dt><span class="element">publication date </span>2004-08-26</dt>
+                </dd>
+                <dd>
+                  <dt>
+                    <span class="element"> cited responsible party  - author</span>
+                  </dt>
+                  <dd>
+                    <dl>
+                      <dt><span class="element"> individual Name </span> Smith, Jesse</dt>
+                      <dt><span class="element"> organisation Name
+								</span> USA</dt>
+                      <dd>
+                        <dt>
+                          <span class="element"> No contact information provided. </span>
+                        </dt>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dd>
+                <dd>
+                  <dt>
+                    <span class="element"> cited responsible party  - author</span>
+                  </dt>
+                  <dd>
+                    <dl>
+                      <dt><span class="element"> individual Name </span> Sowers, Todd A.</dt>
+                      <dt><span class="element"> organisation Name
+								</span> 317b Earth and Engineering Science Building, University Park, PA, 16802, USA</dt>
+                      <dd>
+                        <dt>
+                          <span class="element">Contact information</span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <dd>
+                              <dd>
+                                <dl>
+                                  <dt>
+                                    <span class="element"> Postal Address: </span>
+                                  </dt>
+                                  <dt><span class="element"> electronic Mail Address: </span> <a href="mailto:tas11@psu.edu">tas11@psu.edu</a></dt>
+                                </dl>
+                              </dd>
+                            </dd>
+                          </dl>
+                        </dd>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dd>
+                <dd>
+                  <dt>
+                    <span class="element"> cited responsible party  - author</span>
+                  </dt>
+                  <dd>
+                    <dl>
+                      <dt><span class="element"> individual Name </span> Brook, Edward J</dt>
+                      <dt><span class="element"> organisation Name
+								</span> 104 Wilkinson Hall, Corvallis, OR, 97331-5506, USA</dt>
+                      <dd>
+                        <dt>
+                          <span class="element">Contact information</span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <dd>
+                              <dd>
+                                <dl>
+                                  <dt>
+                                    <span class="element"> Postal Address: </span>
+                                  </dt>
+                                  <dt><span class="element"> electronic Mail Address: </span> <a href="mailto:brooke@geo.oregonstate.edu">brooke@geo.oregonstate.edu</a></dt>
+                                </dl>
+                              </dd>
+                            </dd>
+                          </dl>
+                        </dd>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dd>
+                <dd>
+                  <dt>
+                    <span class="element"> cited responsible party  - author</span>
+                  </dt>
+                  <dd>
+                    <dl>
+                      <dt><span class="element"> individual Name </span> Mayewski, Paul A.</dt>
+                      <dt><span class="element"> organisation Name
+								</span> University of Maine, Orono, ME, 04469, USA</dt>
+                      <dd>
+                        <dt>
+                          <span class="element">Contact information</span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <dd>
+                              <dd>
+                                <dl>
+                                  <dt>
+                                    <span class="element"> Postal Address: </span>
+                                  </dt>
+                                  <dt><span class="element"> electronic Mail Address: </span> <a href="mailto:paul.mayewski@maine.edu">paul.mayewski@maine.edu</a></dt>
+                                </dl>
+                              </dd>
+                            </dd>
+                            <dd>
+                              <dt>
+                                <span class="element">Linkage for online resource</span>
+                              </dt>
+                              <dd>
+                                <dl>
+                                  <dt><span class="element">URL: </span> <a target="viewer" href="http://orcid.org/ORCID:0000-0002-3360-763X">http://orcid.org/ORCID:0000-0002-3360-763X</a></dt>
+                                  <dt><span class="element"> protocol </span> ORCID</dt>
+                                </dl>
+                              </dd>
+                            </dd>
+                          </dl>
+                        </dd>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dd>
+                <dd>
+                  <dt>
+                    <span class="element"> cited responsible party  - author</span>
+                  </dt>
+                  <dd>
+                    <dl>
+                      <dt><span class="element"> individual Name </span> Steig, Eric J.</dt>
+                      <dt><span class="element"> organisation Name
+								</span> University of Washington, Department of Earth and Space Sciences, Box 35130, 70 Johnson Hall, Seattle, WA, 98195-1310, USA</dt>
+                      <dd>
+                        <dt>
+                          <span class="element">Contact information</span>
+                        </dt>
+                        <dd>
+                          <dl>
+                            <dd>
+                              <dd>
+                                <dl>
+                                  <dt>
+                                    <span class="element"> Postal Address: </span>
+                                  </dt>
+                                  <dt><span class="element"> electronic Mail Address: </span> <a href="mailto:steig@uw.edu">steig@uw.edu</a></dt>
+                                </dl>
+                              </dd>
+                            </dd>
+                          </dl>
+                        </dd>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dd>
+                <dd>
+                  <dt>
+                    <span class="element"> cited responsible party  - author</span>
+                  </dt>
+                  <dd>
+                    <dl>
+                      <dt><span class="element"> individual Name </span> Indermuhle, A</dt>
+                      <dt><span class="element"> organisation Name
+								</span> Bern, Switzerland</dt>
+                      <dd>
+                        <dt>
+                          <span class="element"> No contact information provided. </span>
+                        </dt>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dd>
+                <dd>
+                  <dt>
+                    <span class="element"> cited responsible party  - publisher</span>
+                  </dt>
+                  <dd>
+                    <dl>
+                      <dt><span class="element"> organisation Name
+								</span> U.S. Antarctic Program (USAP) Data Center</dt>
+                      <dd>
+                        <dt>
+                          <span class="element"> No contact information provided. </span>
+                        </dt>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dd>
+              </dd>
+            </dl>
+          </dd>
+          <dt><span class="element">Topic Category: </span>  geoscientificInformation</dt>
+          <ul style="margin-top: 20px;"></ul>
+          <dt>
+            <span class="element">Keywords: </span>
+          </dt>
+          <ul style="margin-top: 0px; padding-left: 20px;">
+            <dd>
+              <dt>
+                <span class="element">Theme keywords (isotopes): </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">keyword term: </span> Isotope</dt>
+                </dl>
+              </dd>
+            </dd>
+            <dd>
+              <dt>
+                <span class="element">project
+							Keywords</span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">keyword term: </span> Antarctic Glaciology</dt>
+                </dl>
+              </dd>
+            </dd>
+            <dd>
+              <dt>
+                <span class="element">project
+							Keywords</span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">keyword term: </span> Taylor Dome Ice Core</dt>
+                </dl>
+              </dd>
+            </dd>
+            <dd>
+              <dt>
+                <span class="element">Theme keywords (IEDA data type categories): </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">keyword term: </span> Chemistry:Ice, Ice Core Records, Paleoclimate</dt>
+                  <dd>
+                    <dt>
+                      <span class="element"> thesaurus name &gt;</span>
+                    </dt>
+                    <dl>
+                      <dd>
+                        <dt><span class="element"> Title </span> IEDA integrated catalog keyword vocabulary</dt>
+                        <dd>
+                          <dt><span class="element">creation date </span>2017-10-11</dt>
+                        </dd>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dl>
+              </dd>
+            </dd>
+            <dd>
+              <dt>
+                <span class="element">Theme keywords (IEDA feature of interest): </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">keyword term: </span> Antarctica, Glaciers/Ice Sheet</dt>
+                  <dd>
+                    <dt>
+                      <span class="element"> thesaurus name &gt;</span>
+                    </dt>
+                    <dl>
+                      <dd>
+                        <dt><span class="element"> Title </span> IEDA integrated catalog keyword vocabulary</dt>
+                        <dd>
+                          <dt><span class="element">creation date </span>2017-10-11</dt>
+                        </dd>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dl>
+              </dd>
+            </dd>
+            <dd>
+              <dt>
+                <span class="element">Theme keywords (IEDA topic): </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">keyword term: </span> Cryosphere, Geochemistry</dt>
+                  <dd>
+                    <dt>
+                      <span class="element"> thesaurus name &gt;</span>
+                    </dt>
+                    <dl>
+                      <dd>
+                        <dt><span class="element"> Title </span> IEDA integrated catalog keyword vocabulary</dt>
+                        <dd>
+                          <dt><span class="element">creation date </span>2017-10-11</dt>
+                        </dd>
+                      </dd>
+                    </dl>
+                  </dd>
+                </dl>
+              </dd>
+            </dd>
+            <dd>
+              <dt>
+                <span class="element">Location keywords: </span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">keyword term: </span> Taylor Dome</dt>
+                </dl>
+              </dd>
+            </dd>
+            <dd>
+              <dt>
+                <span class="element">dataCentre
+							Keywords</span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">keyword term: </span> US Antarctic Program Data Center (USAP-DC)</dt>
+                </dl>
+              </dd>
+            </dd>
+          </ul>
+          <dt><span class="element">Resource language: </span>  eng</dt>
+          <dt><span class="element">Resource progress code: </span> 
+							Complete</dt>
+          <dt>
+            <span class="element">Constraints on resource usage: </span>
+          </dt>
+          <dl>
+            <dd>
+              <dt>
+                <span class="element">Constraints</span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt>
+                    <span class="element">Use limitation statement: </span>
+                  </dt>
+                  <dl>
+                    <dd>
+                      <pre class="wrap">Creative Commons Attribution-NonCommercial-Share Alike 3.0 United States [CC BY-NC-SA 3.0]</pre>
+                    </dd>
+                  </dl>
+                </dl>
+              </dd>
+            </dd>
+          </dl>
+          <dt>
+            <span class="element">Constraints on resource usage: </span>
+          </dt>
+          <dl>
+            <dd>
+              <dt>
+                <span class="element">Legal Constraints</span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">Access Constraints </span>  license</dt>
+                  <dt>
+                    <span class="element">Other constraints</span>
+                  </dt>
+                  <dl>
+                    <dd>
+                      <pre class="wrap">Creative Commons Attribution-NonCommercial-Share Alike 3.0 United States [CC BY-NC-SA 3.0]</pre>
+                    </dd>
+                  </dl>
+                </dl>
+              </dd>
+            </dd>
+          </dl>
+          <dt>
+            <span class="element">Constraints on resource usage: </span>
+          </dt>
+          <dl>
+            <dd>
+              <dt>
+                <span class="element">Security Constraints</span>
+              </dt>
+              <dd>
+                <dl>
+                  <dt><span class="element">Classification</span>  unclassified</dt>
+                </dl>
+              </dd>
+            </dd>
+          </dl>
+          <dd>
+            <dt>
+              <span class="element"> Format </span>
+            </dt>
+            <dd>
+              <dl>
+                <dt><span class="element"> Format name </span> </dt>
+                <dt><span class="element"> Format version </span> 1</dt>
+              </dl>
+            </dd>
+          </dd>
+          <dd>
+            <dt>
+              <span class="element">Resource extent</span>
+            </dt>
+            <dd>
+              <dl>
+                <dt>
+                  <span class="element"> Extent description</span>
+                </dt>
+                <dd>
+                  <pre class="wrap">Taylor Dome</pre>
+                </dd>
+              </dl>
+            </dd>
+          </dd>
+          <dd>
+            <dt>
+              <span class="element"> point of contact  - pointOfContact</span>
+            </dt>
+            <dd>
+              <dl>
+                <dt><span class="element"> individual Name </span> Smith, Jesse</dt>
+                <dt><span class="element"> organisation Name
+								</span> USA</dt>
+                <dd>
+                  <dt>
+                    <span class="element"> No contact information provided. </span>
+                  </dt>
+                </dd>
+              </dl>
+            </dd>
+          </dd>
+        </dd>
+      </dl>
+      <a class="top" href="#Top">Back to top: </a>
+      <a name="id2545421" id="id2545421">
+        <hr />
+      </a>
+      <dt>
+        <h2> Resource distribution information</h2>
+      </dt>
+      <dl>
+        <dd>
+          <dd>
+            <dt>
+              <span class="element"> Digital Transfer Options </span>
+            </dt>
+            <dd>
+              <dl>
+                <dd>
+                  <dt>
+                    <span class="element">Linkage for online resource</span>
+                  </dt>
+                  <dd>
+                    <dl>
+                      <dt><span class="element">name </span> landing page</dt>
+                      <dt><span class="element">URL: </span> <a target="viewer" href="http://www.usap-dc.org/view/dataset/609246">http://www.usap-dc.org/view/dataset/609246</a></dt>
+                      <dt><span class="element"> protocol </span> WWW:LINK-1.0-http--link</dt>
+                      <dt><span class="element"> link function </span> information</dt>
+                      <dt><span class="element"> Description </span> Link to a web page related to the resource.</dt>
+                    </dl>
+                  </dd>
+                </dd>
+              </dl>
+            </dd>
+          </dd>
+        </dd>
+      </dl>
+      <a class="top" href="#Top">Back to top</a>
+      <a name="Metadata_Information" id="Metadata_Information">
+        <hr />
+      </a>
+      <dt>
+        <h2>Metadata Information</h2>
+      </dt>
+      <dl>
+        <dd><dt><span class="element">Metadata data stamp:
+									</span> 2018-05-17</dt>
+    <dd><dt><span class="element">Resource Maintenance Information</span></dt><dd><dl><dt><span class="element">maintenance or update frequency: </span> 
+								</dt><dt><span class="element">notes: </span> This metadata record was generated by an xslt transformation from a DataCite metadata record; The transform was created by Damian Ulbricht and Stephen M. Richard. 2017-11-15 these records include new IEDA keywords for geoportal facets Run on 2018-06-21T19:05:27-07:00</dt></dl></dd></dd>
+  <dd><dt><span class="element"> Metadata contact  - pointOfContact</span></dt><dd><dl><dt><span class="element"> organisation Name
+								</span> Interdisciplinary Earth Data Alliance</dt><dd><dt><span class="element">Contact information</span></dt><dd><dl><dd><dd><dl><dt><span class="element"> Postal Address: </span></dt><dt><span class="element"> electronic Mail Address: </span> <a href="mailto:web@usap-dc.org">web@usap-dc.org</a></dt></dl></dd></dd><dd><dt><span class="element">Linkage for online resource</span></dt><dd><dl><dt><span class="element">URL: </span> <a target="viewer" href="http://www.usap-dc.org/static/imgs/header/usaplogo.png">http://www.usap-dc.org/static/imgs/header/usaplogo.png</a></dt><dt><span class="element"> link function </span> browseGraphic</dt></dl></dd></dd></dl></dd></dd></dl></dd></dd><dt><span class="element"> Metadata scope code</span> 
+									dataset</dt><dt><span class="element">Metadata hierarchy level name:
+									</span> Dataset</dt><dt><span class="element">Metadata language </span> 
+									eng</dt><dt><span class="element">Metadata character set encoding:
+								</span>  utf8</dt><dt><span class="element">Metadata standard for this record:
+									</span> ISO 19139 Geographic Information - Metadata - Implementation Specification</dt><dt><span class="element">standard version:
+									</span> 2007</dt><dt><span class="element">Metadata record identifier:
+									</span> urn:ieda:metadata:Taylor-Dome-Ice-Core-Chemistry--Ion--and-Isotope-Data</dt></dd>
+      </dl>
+      <a class="top" href="#Top">Back to top</a>
+    </div>
+    <div xmlns="" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <h3>Metadata record format is ISO19139 XML (MD_Metadata)</h3>
+    </div>
+  </body>
+</html>

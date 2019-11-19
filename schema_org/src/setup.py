@@ -5,7 +5,7 @@
 # jointly copyrighted by participating institutions in DataONE. For
 # more information on DataONE, see our web site at http://dataone.org.
 #
-#   Copyright 2013 DataONE
+#   Copyright 2013-2019 DataONE
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,40 +20,55 @@
 # limitations under the License.
 """DataONE Schema.org package
 """
+from setuptools import setup
 
-import setuptools
-
-
-def main():
-  setuptools.setup(
-    name='dataone.schema_org',
-    version='3.0.4',
-    description='Interact with a schema.org resource provider',
-    author='DataONE Project',
-    author_email='developers@dataone.org',
-    url='https://github.com/DataONEorg/d1_python',
-    license='Apache License, Version 2.0',
-    packages=setuptools.find_packages(),
-    include_package_data=True,
-    install_requires=[
-      'w3lib >= 1.19.0',
+kwargs = {
+    'name': 'schema_org',
+    'version': '4.0.0',
+    'description': 'Interact with a schema.org resource provider',
+    'author': 'DataONE Project',
+    'author_email': 'developers@dataone.org',
+    'url': 'https://github.com/DataONEorg/d1_python',
+    'license': 'Apache License, Version 2.0',
+    'packages': ['schema_org'],
+    'package_data': {
+        'schema_org': {
+            'data/schema/gco/*.xsd',
+            'data/schema/gfc/*.xsd',
+            'data/schema/gmd/*.xsd',
+            'data/schema/gmi/*.xsd',
+            'data/schema/gml/*.xsd',
+            'data/schema/gmx/*.xsd',
+            'data/schema/gsr/*.xsd',
+            'data/schema/gss/*.xsd',
+            'data/schema/gts/*.xsd',
+            'data/schema/mf/*.xsd',
+            'data/schema/resources/*.xsd',
+            'data/schema/srv/*.xsd',
+            'data/schema/xlink/*.xsd',
+        }
+    },
+    'install_requires': [
+        'python-dateutil', 'requests', 'lxml', 'importlib_resources'
     ],
-    setup_requires=[
-      'setuptools_git >= 1.1',
+    'classifiers': [
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
+        'Topic :: Scientific/Engineering',
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
-    classifiers=[
-      'Development Status :: 5 - Production/Stable',
-      'Intended Audience :: Developers',
-      'Topic :: Scientific/Engineering',
-      'License :: OSI Approved :: Apache Software License',
-      'Programming Language :: Python :: 3',
-      'Programming Language :: Python :: 3.6',
-    ],
-    keywords=(
-      'DataONE schema.org'
+    'keywords': (
+        'DataONE schema.org'
     ),
-  )
-
-
-if __name__ == '__main__':
-  main()
+    'entry_points': {
+        'console_scripts': [
+            'dataone-validate=schema_org.commandline:validate',
+            'harvest-arm=schema_org.commandline:arm',
+            'harvest-ieda=schema_org.commandline:ieda',
+        ],
+    }
+}
+setup(**kwargs)
