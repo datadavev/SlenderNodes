@@ -1,1 +1,2 @@
-from . import arm, ieda, d1_client_manager, commandline  # noqa:  F401
+from . import arm, ieda, commandline  # noqa:  F401
+from .check_sitemap import D1CheckSitemap  # noqa: F401

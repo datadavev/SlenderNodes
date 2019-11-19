@@ -1,0 +1,802 @@
+<?xml version="1.0"?>
+<rss version="2.0"
+	xmlns:ipt="http://ipt.gbif.org/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+  <channel>
+    <title>CAFF IPT</title>
+    <link>http://geo.abds.is/ipt</link>
+    <atom:link href="http://geo.abds.is/ipt/rss.do" rel="self" type="application/rss+xml" />
+    <description>Resource metadata of CAFF IPT</description>
+    <language>en-us</language>
+      <!-- RFC-822 date-time / Wed, 02 Oct 2010 13:00:00 GMT -->
+      <pubDate>Thu, 10 Dec 2015 13:15:53 +0000</pubDate>
+      <lastBuildDate>Wed, 04 Sep 2019 10:54:31 +0000</lastBuildDate>
+      <!-- UUID of the IPT making RSS feed available -->
+      <ipt:identifier>b494d108-871b-4dfa-bffe-c7949c7400e4</ipt:identifier>
+    <generator>GBIF IPT 2.4.0-r6f4f375</generator>
+      <webMaster>hoddi@caff.is (Hólmgrímur Helgason)</webMaster>
+    <docs>http://cyber.law.harvard.edu/rss/rss.html</docs>
+    <ttl>15</ttl>
+      <geo:Point>
+        <geo:lat>65.68485</geo:lat>
+        <geo:long>-18.120102</geo:long>
+      </geo:Point>
+      <item>
+        <title>Phytoplankton from the White Sea, Barents Sea, Norwegian Sea and Arctic Basin 1993-2003 - Version 1.3</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007p6</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Correct scientificNameID</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007p6</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007p6</ipt:dwca>
+        <pubDate>Wed, 04 Sep 2019 10:54:41 +0000</pubDate>
+        <guid isPermaLink="false">59876921-fda6-4fd5-af5d-cba2a7152527/v1.3</guid>
+      </item>
+      <item>
+        <title>Archives of the Arctic Seas Zooplankton - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=as_zoo</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Add scientificNameID</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=as_zoo</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=as_zoo</ipt:dwca>
+        <pubDate>Tue, 03 Sep 2019 14:14:08 +0000</pubDate>
+        <guid isPermaLink="false">451eb991-c1f4-479f-b1f8-7c1b4e8f9114/v1.2</guid>
+      </item>
+      <item>
+        <title>Database of the Distributions of Marine Fishes of Arctic Canada - Version 1.4</title>
+        <link>http://geo.abds.is/ipt/resource?r=dfo_amfd</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Fix location -</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=dfo_amfd</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=dfo_amfd</ipt:dwca>
+        <pubDate>Thu, 29 Aug 2019 12:55:15 +0000</pubDate>
+        <guid isPermaLink="false">40feadfa-94ea-4af3-90e1-5dffd0fb61df/v1.4</guid>
+      </item>
+      <item>
+        <title>Megabenthos-Epibenthos Greenland - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=me2008g</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Megabenthos-Epibenthos Greenland]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=me2008g</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=me2008g</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:17:03 +0000</pubDate>
+        <guid isPermaLink="false">47bfdc62-3b00-448d-989d-548c2ce848bd/v1.1</guid>
+      </item>
+      <item>
+        <title>Spider species diversity from wet and dry habitats - Version 1.6</title>
+        <link>http://geo.abds.is/ipt/resource?r=spider</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Logos</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=spider</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=spider</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:17:03 +0000</pubDate>
+        <guid isPermaLink="false">24814443-5120-4da1-8b49-f345383ed4b4/v1.6</guid>
+      </item>
+      <item>
+        <title>Arctic Species Trend Index (ASTI) : Terrestrial - Version 1.3</title>
+        <link>http://geo.abds.is/ipt/resource?r=asti_terrestrial</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>New logo</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=asti_terrestrial</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=asti_terrestrial</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:17:02 +0000</pubDate>
+        <guid isPermaLink="false">3e7837d0-4318-4dea-8800-f2b208b25148/v1.3</guid>
+      </item>
+      <item>
+        <title>Greenland macrobenthos 2006 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arc_2009b4</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset of macrobenthos of southwest Greenland coast.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arc_2009b4</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arc_2009b4</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:17:02 +0000</pubDate>
+        <guid isPermaLink="false">ddf006f2-5c76-47d5-9180-4a52d8d5d4e0/v1.1</guid>
+      </item>
+      <item>
+        <title>Greenland Macrobenthos Young Sound, 1996 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arc_2009b5</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset from a macrozoobenthic community study conducted in an East Greenlandic fjord (Young Sound 7418’N; 2015’W) during the ice-free period from July to August in 1996]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arc_2009b5</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arc_2009b5</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:17:01 +0000</pubDate>
+        <guid isPermaLink="false">78fb84f9-b5e1-4067-a1b1-730aca8c1bdc/v1.1</guid>
+      </item>
+      <item>
+        <title>CASES2003_2004 - Version 1.5</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007p1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Correction</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007p1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007p1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:17:00 +0000</pubDate>
+        <guid isPermaLink="false">6a31497b-234c-4d24-a3aa-e56d8655f57b/v1.5</guid>
+      </item>
+      <item>
+        <title>Diet, Tidal and Vertical Variations of Phytoplankton and Its Environment in Frobisher Bay, Canada, 1980 and 1981 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=phyto_fb09</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset of phytoplankton from Frobisher Bay collected during a tidal cycle in summer.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=phyto_fb09</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=phyto_fb09</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:17:00 +0000</pubDate>
+        <guid isPermaLink="false">6baf50f9-5cc6-4c81-be68-0405da8d1620/v1.1</guid>
+      </item>
+      <item>
+        <title>The Ecology of the Inshore Marine Zooplankton of the Chukchi Sea near Point Barrow, Alaska - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=chukchi_2009p2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Change  Basis of Record from LivingSpecimen to HumanObservation.
+Request fro IOBIS</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=chukchi_2009p2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=chukchi_2009p2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:59 +0000</pubDate>
+        <guid isPermaLink="false">868b5ca1-bb27-4d6f-b243-37ad77486a68/v1.2</guid>
+      </item>
+      <item>
+        <title>Ice Amphipods Svalbard, 2000 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2008i1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset about different parameters of Gammarus wilkitzkii.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2008i1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2008i1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:59 +0000</pubDate>
+        <guid isPermaLink="false">8a598f88-5cbb-4d90-8539-d68aa32340da/v1.1</guid>
+      </item>
+      <item>
+        <title>Ice Amphipods Canada Basin - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2008i2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Ice Amphipods Canada Basin, 2002]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2008i2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2008i2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:58 +0000</pubDate>
+        <guid isPermaLink="false">4e78f4b4-4844-4e7c-b010-8dfa81d8563c/v1.1</guid>
+      </item>
+      <item>
+        <title>SeaIceMeiofaunaCanadaBasin2002 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006i1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Meiofauna collected from sea-ice cores]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006i1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006i1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:58 +0000</pubDate>
+        <guid isPermaLink="false">fdfbc4d7-9acb-4fe1-b9ee-d4f8e72aa3a1/v1.1</guid>
+      </item>
+      <item>
+        <title>Sea Ice Nematodes - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2008i5</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Sea Ice Nematodes]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2008i5</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2008i5</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:57 +0000</pubDate>
+        <guid isPermaLink="false">0e12c2cc-0d0e-4300-bcc8-6492ac6eb117/v1.1</guid>
+      </item>
+      <item>
+        <title>Ice Zooplankton Beaufort Sea - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2008i3</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Ice Zooplankton Beaufort Sea]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2008i3</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2008i3</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:56 +0000</pubDate>
+        <guid isPermaLink="false">3c8a5d19-69a7-46e3-980b-59abc1dc29ab/v1.1</guid>
+      </item>
+      <item>
+        <title>Ice Algae Barents Sea - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2008i4</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Ice Algae Barents Sea 1986-1988]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2008i4</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2008i4</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:56 +0000</pubDate>
+        <guid isPermaLink="false">c9c0bc17-9def-4413-bcd0-2aaf7f6bfe2d/v1.1</guid>
+      </item>
+      <item>
+        <title>IPOE_Benthos_Steffens - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006b8</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Data of macrobenthic fauna of the eastern Laptev Sea.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006b8</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006b8</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:55 +0000</pubDate>
+        <guid isPermaLink="false">2a096847-3148-4a09-a47c-ee42f573ae75/v1.1</guid>
+      </item>
+      <item>
+        <title>IPOE_Schnack_Polychaeta - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006b7</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Describe the macrofaunal community patterns at the continental margin off East Greenland.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006b7</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006b7</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:55 +0000</pubDate>
+        <guid isPermaLink="false">771ca2ae-f336-495f-8a11-b700c0118454/v1.1</guid>
+      </item>
+      <item>
+        <title>Barents Sea Zooplankton – March and May 1998 and July 1999. Day/night stratified zooplankton sampling onboard the Norwegian R/V Jan Mayen. Program ALV - Version 1.3</title>
+        <link>http://geo.abds.is/ipt/resource?r=barents_2006p7</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Add scientificNameID</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=barents_2006p7</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=barents_2006p7</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:54 +0000</pubDate>
+        <guid isPermaLink="false">0a1b70f1-ea1e-405d-aa4e-4142888bd8d3/v1.3</guid>
+      </item>
+      <item>
+        <title>Barents Sea Zooplankton – March and May 1998 and July 1999. Zooplankton sampling on board the Norwegian R/V Jan Mayen, program ALV - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=barents_2006p6</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Change  Basis of Record from LivingSpecimen to HumanObservation.
+Request fro IOBIS</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=barents_2006p6</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=barents_2006p6</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:53 +0000</pubDate>
+        <guid isPermaLink="false">4b07e08f-3be0-4a5c-ae7d-e450e6a7a1fb/v1.2</guid>
+      </item>
+      <item>
+        <title>Arctic benthic invertebrate collection of the Zoological Institute of the Russian Academy of Science - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=rb_zoo</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset based on the Arctic marine invertebrate collection of the Zoological Institute of the Russian Academy of Science. Data contained were collected in the field from 1800 to 2004]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=rb_zoo</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=rb_zoo</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:53 +0000</pubDate>
+        <guid isPermaLink="false">5a0e9dc9-d2b0-489e-91b6-c1e2aca0d62c/v1.1</guid>
+      </item>
+      <item>
+        <title>Arctic Species Trend Index (ASTI) : Freshwater - Version 1.3</title>
+        <link>http://geo.abds.is/ipt/resource?r=asti_freshwater</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>new bbox</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=asti_freshwater</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=asti_freshwater</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:52 +0000</pubDate>
+        <guid isPermaLink="false">ebc62d60-afa9-4396-9e93-a0354d448b83/v1.3</guid>
+      </item>
+      <item>
+        <title>The pre-winter 2007 vertical distribution of zooplankton in the Cape Bathurst and North Water polynyas, and Lancaster Sound, Canadian Arctic - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2009p3</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset on zooplankton in the Canadian Arctic]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2009p3</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2009p3</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:52 +0000</pubDate>
+        <guid isPermaLink="false">82cf41bc-5aa5-4c9c-b86f-845bf591d002/v1.1</guid>
+      </item>
+      <item>
+        <title>WhiteSeaPlankton - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007p5</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[This dataset describes plankton for the White Sea, Russia. 1998 - 2003]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007p5</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007p5</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:51 +0000</pubDate>
+        <guid isPermaLink="false">0e1d85a0-b480-40c6-a4a1-65193806b424/v1.1</guid>
+      </item>
+      <item>
+        <title>Muskox Abundance - Version 1.6</title>
+        <link>http://geo.abds.is/ipt/resource?r=muskox</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Logos</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=muskox</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=muskox</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:50 +0000</pubDate>
+        <guid isPermaLink="false">8d0f3ad4-df7e-4e7c-9a48-6c275fea3d28/v1.6</guid>
+      </item>
+      <item>
+        <title>Zooplankton and Ichthyoplankton Data Collected from the Chukchi and Beaufort Seas during the R/V Mirai Cruise, September 2002 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2009p4</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Zooplankton from the Chukchi and Beaufort seas in the fall of 2002 during the R/V Mirai cruise.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2009p4</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2009p4</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:49 +0000</pubDate>
+        <guid isPermaLink="false">e7e82c33-d94f-4b20-a2f9-19bce518e571/v1.1</guid>
+      </item>
+      <item>
+        <title>Taxonomy and zoogeography boundaries of pelagic ostracods in Svalbard waters, 2001-2006 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2009p1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Taxonomy and distribution of Arctic planktonic ostracods  in Svalbard waters, 2001-2006]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2009p1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2009p1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:49 +0000</pubDate>
+        <guid isPermaLink="false">6efce688-77a7-4d7b-a35f-d777d4dd8023/v1.1</guid>
+      </item>
+      <item>
+        <title>Oceanexploration2002_vers4 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007p3</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Data collection of zooplankton of the Canadian Basin.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007p3</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007p3</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:48 +0000</pubDate>
+        <guid isPermaLink="false">efa4152c-0765-41a2-a2f4-823cf4d924a0/v1.1</guid>
+      </item>
+      <item>
+        <title>Laptev Sea and Nansen Basin Zooplankton, 1993 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007p4</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Laptev Sea and Nansen Basin Zooplankton, 1993]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007p4</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007p4</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:47 +0000</pubDate>
+        <guid isPermaLink="false">11e43d34-3a92-4ed0-b735-6cb56a3169ca/v1.1</guid>
+      </item>
+      <item>
+        <title>CASES: The pre-winter assemblages of southeastern Beaufort Sea - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2009p5</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Lon changed to -(minus/west)</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2009p5</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2009p5</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:46 +0000</pubDate>
+        <guid isPermaLink="false">40a08be7-0642-4129-b12a-51d547dc2a74/v1.2</guid>
+      </item>
+      <item>
+        <title>Seasonal dynamics of sub-ice fauna below pack ice in the Arctic (Fram Strait) - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007p7</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[To assess the sub-ice fauna abundance and diversity of Fram Strait off Greenland]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007p7</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007p7</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:46 +0000</pubDate>
+        <guid isPermaLink="false">177d1017-a295-481e-9b02-27391288c5e0/v1.1</guid>
+      </item>
+      <item>
+        <title>Abundance and diversity of the Amphipoda (Crustacea) from the Greenlandic shelf - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006b1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset result of the research on the species composition of Amphipoda of the Greenland shelf. In total 154 species were identified.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006b1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006b1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:45 +0000</pubDate>
+        <guid isPermaLink="false">0491f582-2bb3-4787-9324-05f1a77f20b7/v1.1</guid>
+      </item>
+      <item>
+        <title>BenthosChukchiFN762_1976_Falk5 - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006b4</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset of the benthos of Chukchi Sea.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006b4</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006b4</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:44 +0000</pubDate>
+        <guid isPermaLink="false">40ee219d-ab5f-4917-9c7a-6137dba77b05/v1.2</guid>
+      </item>
+      <item>
+        <title>Arctic Marine Fish Museum Specimens - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arc_2007f1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Add scientificNameID</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arc_2007f1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arc_2007f1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:44 +0000</pubDate>
+        <guid isPermaLink="false">d97d8a15-3b12-4519-92bf-e4cf9e764514/v1.2</guid>
+      </item>
+      <item>
+        <title>Macrozoobenthos composition, abundance and biomass in the Arctic Ocean along a transect between Svalbard and the Makarov Basin 1991 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006b2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset of macrofauna sampled  between Northern Svalbard and the Makarov Basin, as a basis for understanding aspects of the benthic ecology of the Arctic Ocean.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006b2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006b2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:43 +0000</pubDate>
+        <guid isPermaLink="false">9bfd4499-050e-41b7-93a8-72d9e2490e21/v1.1</guid>
+      </item>
+      <item>
+        <title>ZINRAS_Arctic_Benthos - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006b3</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Arctic Benthos]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006b3</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006b3</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:43 +0000</pubDate>
+        <guid isPermaLink="false">6fddae5d-1ecf-4818-8a80-c56cf2494b4f/v1.1</guid>
+      </item>
+      <item>
+        <title>Macrobenthos Chukchi Sea, 1986 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arc_2008b2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Macrobenthos in the southeastern Chukchi Sea collected in 1985 - 1987.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arc_2008b2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arc_2008b2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:42 +0000</pubDate>
+        <guid isPermaLink="false">bffa8458-36d3-4580-b446-7ac281a4785f/v1.1</guid>
+      </item>
+      <item>
+        <title>Macrobenthos and Meiobenthos Tuktoyaktuk Harbor and Mason Bay 1985-1988 NOGAP - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arc_2008b4</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset describing the abundance of macro and meio-benthos collected from Tuktoyaktuk Harbour and Mason Bay in March, 1985 to 1988.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arc_2008b4</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arc_2008b4</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:41 +0000</pubDate>
+        <guid isPermaLink="false">a9b4672d-3772-4428-a923-42e0b6e04a45/v1.1</guid>
+      </item>
+      <item>
+        <title>Benthic Microalgae Chukchi Sea, 1972 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arc_2008b8</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset comprising 1681 observations of Microbenthic algae species located near Point Barrow Alaska. Presence or absence of these species are noted.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arc_2008b8</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arc_2008b8</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:41 +0000</pubDate>
+        <guid isPermaLink="false">628e212b-2b41-421e-a4f6-db929356c743/v1.1</guid>
+      </item>
+      <item>
+        <title>Zooplankton Bering Strait Tiglax 1991 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006p2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Zooplankton of the Bering Strait. 1991]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006p2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006p2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:40 +0000</pubDate>
+        <guid isPermaLink="false">d888b684-3c55-44cd-b7d1-253d8cad1ca7/v1.1</guid>
+      </item>
+      <item>
+        <title>ZooplanktonBeaufortSeaNOGAP1 - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006p3</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Licence</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006p3</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006p3</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:40 +0000</pubDate>
+        <guid isPermaLink="false">52855660-ce87-4312-9538-fefde37134b6/v1.2</guid>
+      </item>
+      <item>
+        <title>Chucki_Seaooplankton1953/4 - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006p1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Licence</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006p1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006p1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:39 +0000</pubDate>
+        <guid isPermaLink="false">8ec254cc-7da8-4055-b3f0-ded781a43522/v1.2</guid>
+      </item>
+      <item>
+        <title>Composition and distribution of the biomass of zooplankton in the central Arctic Basin 1975, 1976, 1977 - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arctic_2008p7</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Change  Basis of Record from LivingSpecimen to HumanObservation.
+Request fro IOBIS</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arctic_2008p7</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arctic_2008p7</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:38 +0000</pubDate>
+        <guid isPermaLink="false">dad9eb2e-7749-4c99-b6cd-2b161d6419b0/v1.2</guid>
+      </item>
+      <item>
+        <title>Structure and function of contemporary food webs on Arctic shelves: A panarctic comparison. The pelagic system of the Kara Sea- communities and components of carbon flow - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=08_p6zoo</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Adding scientificNameID</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=08_p6zoo</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=08_p6zoo</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:38 +0000</pubDate>
+        <guid isPermaLink="false">fd61e581-4db6-4fa8-8c27-79e118459f42/v1.2</guid>
+      </item>
+      <item>
+        <title>The Sea Ice Fauna of Frobisher Bay, Arctic Canada 1981 and 1982 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007i2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[To assess sea-ice fauna In Frobisher Bay, Arctic Canada.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007i2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007i2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:37 +0000</pubDate>
+        <guid isPermaLink="false">45af7bce-7df9-446c-8ccc-0ae1c750a335/v1.1</guid>
+      </item>
+      <item>
+        <title>Sea ice meiofauna abundance in coastal fast ice off Barrow, Alaska, with a focus on Scolelepis squamata (Polychaeta), 2005-2006 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2009i1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset of sea ice meiofauna abundance in coastal fast ice off Barrow, Alaska, over a sea ice season.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2009i1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2009i1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:37 +0000</pubDate>
+        <guid isPermaLink="false">c43c9a53-df36-410d-93b6-8977bd7f4068/v1.1</guid>
+      </item>
+      <item>
+        <title>Under-ice Amphipods in the Greenland Sea and Fram Strait (Arctic): Environmental Controls and Seasonal Patterns Below the Pack Ice - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007i3</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[To assess the abundance and distribution of under-ice amphipods from Fram Strait in relation to under-ice morphology, hydrography and ice-algae biomass.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007i3</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007i3</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:36 +0000</pubDate>
+        <guid isPermaLink="false">9cdfd6cb-b1b0-4534-bdb0-a50a0e68076a/v1.1</guid>
+      </item>
+      <item>
+        <title>Biology and Ecology of Cryopelagic Amphipods from Arctic Sea Ice Collected near Franz Josef Land in the summer of 1994 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007i1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset of cryopelagi Amphipods from the Arctic Sea.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007i1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007i1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:35 +0000</pubDate>
+        <guid isPermaLink="false">c48b060b-5473-480a-9790-3cc0e0c10f55/v1.1</guid>
+      </item>
+      <item>
+        <title>Arctic Species Trend Index (ASTI) : Marine - Version 1.4</title>
+        <link>http://geo.abds.is/ipt/resource?r=asti_marine</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Add scientificNameID</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=asti_marine</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=asti_marine</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:35 +0000</pubDate>
+        <guid isPermaLink="false">403fabe5-b960-4dc3-9e13-32f479a0b798/v1.4</guid>
+      </item>
+      <item>
+        <title>Disko Fan Conservation Area in the Davis Strait (Eastern Arctic) - Epibenthic Megafauna Database - Version 1.4</title>
+        <link>http://geo.abds.is/ipt/resource?r=disko_fan</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>New Source data - Delete #NA values in scientificName etc</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=disko_fan</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=disko_fan</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:34 +0000</pubDate>
+        <guid isPermaLink="false">d7688dd5-9cd0-4de7-8873-e76b709ee082/v1.4</guid>
+      </item>
+      <item>
+        <title>Ice Diatoms Arctic Basin 1977, 1980 - Version 1.3</title>
+        <link>http://geo.abds.is/ipt/resource?r=arc_2007i4</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Add ScientificNameID</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arc_2007i4</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arc_2007i4</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:33 +0000</pubDate>
+        <guid isPermaLink="false">2ee9763f-58bd-447b-bc37-0ac42e5dccb6/v1.3</guid>
+      </item>
+      <item>
+        <title>Zoobenthos data from the Southern Beaufort Sea, 1971-1975 - Version 1.3</title>
+        <link>http://geo.abds.is/ipt/resource?r=09_b1zoo</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Add scientificNameID</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=09_b1zoo</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=09_b1zoo</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:33 +0000</pubDate>
+        <guid isPermaLink="false">f2fefe8b-58fa-4b2e-9ddd-756664b5ddd3/v1.3</guid>
+      </item>
+      <item>
+        <title>Distribution data of Arctic species of genus Microporella and Pseudoflustra gathered from museum collections - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2009b3</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[This dataset comprises 114 records of Bryozoans from museum collections. Distributional data were gathered from a number of museum collection including the Zoological Institute in St. Petersburg; The Natural History Museum in London, UK; The Natural History Museum in Paris; The Canadian Museum of Nature in Ottawa and The Manchester Museum, U.K. Additionally samples collected by the Institute of Oceanology were used.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2009b3</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2009b3</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:32 +0000</pubDate>
+        <guid isPermaLink="false">5dd0169f-3b69-41e6-bc1c-278d44c4f2fe/v1.1</guid>
+      </item>
+      <item>
+        <title>Variability of benthic Foraminifera north and south of the Denmark Strait - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007b5</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[To assess the ecological role of Denmark Strait, using foraminifera samples. 2002]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007b5</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007b5</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:32 +0000</pubDate>
+        <guid isPermaLink="false">8235c206-82a0-460f-aa10-503071b1785f/v1.1</guid>
+      </item>
+      <item>
+        <title>Kittlitzs_murrelet - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2005o2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[The Kittlitz&apos;s Murrelet &lt;i&gt;Brachyramphus brevirostris&lt;/i&gt; is a bird species of environmental concern, and only 21 confirmed nest locations are published for North America. Drastic population declines are reported in its southern distributional range. This bird is found in subarctic and warmer regions near glaciers, also occurring in Russia. A wider analysis of these nest sites is coming forward, and it appears that these nests are associated with glaciers and volcano slopes. However, this is only an impression based on the small sample of nests.
+
+Dataset credit = ArcOD/AOOS]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2005o2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2005o2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:31 +0000</pubDate>
+        <guid isPermaLink="false">ad94fb48-5118-40e0-99bc-fa1d94ead1c9/v1.1</guid>
+      </item>
+      <item>
+        <title>ZooplanktonBeaufortSeaNOGAP2 - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006p4</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Licence</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006p4</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006p4</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:30 +0000</pubDate>
+        <guid isPermaLink="false">1d1f4137-7653-4eac-ab67-7487dae51739/v1.2</guid>
+      </item>
+      <item>
+        <title>Shebaplankton_Falk3 - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006p5</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[To describe the patterns of distribution and biomass of zooplankton in the western Arctic Ocean.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006p5</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006p5</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:30 +0000</pubDate>
+        <guid isPermaLink="false">6965d9f1-b8ae-46c9-8859-3189fbc1dd14/v1.2</guid>
+      </item>
+      <item>
+        <title>SIO_FAMIZ - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006p8</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[To study composition and distribution of zooplankton in the Arctic Ocean.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006p8</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006p8</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:29 +0000</pubDate>
+        <guid isPermaLink="false">28b321a4-8ca4-4535-97e3-3f96562af979/v1.2</guid>
+      </item>
+      <item>
+        <title>ZooplanktonNOGAP32b1986 - Version 1.4</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2006p9</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[To assess species composition, abundance, distribution and biomass of zooplankton across the Canadian Beaufort]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2006p9</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2006p9</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:29 +0000</pubDate>
+        <guid isPermaLink="false">609f3aaf-8aaa-4cdc-9f44-369702e1bc01/v1.4</guid>
+      </item>
+      <item>
+        <title>Canada_BasinMegabenthos2002 - Version 1.4</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2005b1</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset of the infauna of the Arctic Canada Basin.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2005b1</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2005b1</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:28 +0000</pubDate>
+        <guid isPermaLink="false">5ff379c6-80b3-4c10-a154-b0e7fbf35a2f/v1.4</guid>
+      </item>
+      <item>
+        <title>Distribution and diversity of sipunculan fauna in high Arctic fjords (west Svalbard) - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=barents_2008b5</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Change  Basis of Record from LivingSpecimen to HumanObservation.
+Request fro IOBIS</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=barents_2008b5</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=barents_2008b5</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:28 +0000</pubDate>
+        <guid isPermaLink="false">c684e21e-eed5-4c0b-9d5e-028c08d9d893/v1.2</guid>
+      </item>
+      <item>
+        <title>Zooplankton Eastern Arctic Ocean Polarstern, 1995-1998 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arc_2009p6</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[This dataset comprises 14041 records of zooplankton abundances from the Eastern Arctic Ocean from Polarstern cruises during 1995--1998.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arc_2009p6</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arc_2009p6</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:27 +0000</pubDate>
+        <guid isPermaLink="false">6ee7cc49-13fc-4cc3-b6d1-ab3e50903ec4/v1.1</guid>
+      </item>
+      <item>
+        <title>Zooplankton Abundancies White Sea, 1972 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2008p10</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Zooplankton Abundancies White Sea, 1972]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2008p10</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2008p10</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:26 +0000</pubDate>
+        <guid isPermaLink="false">c988d44d-e992-4653-be46-124cefa0d314/v1.1</guid>
+      </item>
+      <item>
+        <title>BenthosBarentsSeaPolarstern1991 - Version 1.3</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007b3</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Describe distribution, standing stock, population dynamics and production of Strongylocentrotus pallidus in the northern Barents Sea.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007b3</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007b3</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:26 +0000</pubDate>
+        <guid isPermaLink="false">9af2981b-cc16-4c0c-86ae-ce04c279dbc6/v1.3</guid>
+      </item>
+      <item>
+        <title>Structures and Nutrition Requirements of Macrozoobenthic Communities in the area of the Lomonossov Ridge, 1995-1998 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2009b2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset of macrozoobenthos communities of  the Lomonossov Ridge, 1995-1998]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2009b2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2009b2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:25 +0000</pubDate>
+        <guid isPermaLink="false">4aeef7f2-a35b-405e-bcc6-7024a251ddab/v1.1</guid>
+      </item>
+      <item>
+        <title>On the composition of the benthic fauna of the western Fram Strait - Version 1.2</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007b4</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[To assess the species composition, abundance and distribution of the macrobenthos in Fram Strait]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007b4</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007b4</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:25 +0000</pubDate>
+        <guid isPermaLink="false">8e6636ad-0b6a-426a-9515-985288f558ba/v1.2</guid>
+      </item>
+      <item>
+        <title>Circumpolar Seabird Monitoring Plan - Version 1.14</title>
+        <link>http://geo.abds.is/ipt/resource?r=cbird_monitoringplan_a2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>Correction</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=cbird_monitoringplan_a2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=cbird_monitoringplan_a2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:24 +0000</pubDate>
+        <guid isPermaLink="false">5a12d9c3-9465-4107-bb39-2cb451e6cef6/v1.14</guid>
+      </item>
+      <item>
+        <title>Species Composition and Abundance of Zooplankton in the Nearshore Beaufort Sea in Winter-Spring 1978-1980 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=zoo_bs10</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Dataset of zooplankton collected from the Beaufort Sea in winter-spring 1978-79 and in spring 1980.]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=zoo_bs10</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=zoo_bs10</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:24 +0000</pubDate>
+        <guid isPermaLink="false">968dbe0f-a8a0-498f-816a-cb5b4b5c041b/v1.1</guid>
+      </item>
+      <item>
+        <title>Benthos Chirnov Basin 1986 and 2002 - Version 1.1</title>
+        <link>http://geo.abds.is/ipt/resource?r=arcod_2007b2</link>
+        <!-- shows what changed in this version, or shows the resource description if change summary was empty -->
+        <description>[Benthos Chirnov Basin 1986 and 2002]</description>
+        <author>hoddi@caff.is (Hólmgrímur Helgason)</author>
+        <ipt:eml>http://geo.abds.is/ipt/eml.do?r=arcod_2007b2</ipt:eml>
+        <ipt:dwca>http://geo.abds.is/ipt/archive.do?r=arcod_2007b2</ipt:dwca>
+        <pubDate>Mon, 26 Aug 2019 14:16:23 +0000</pubDate>
+        <guid isPermaLink="false">e2cde7e3-0b90-40ea-93ad-de06e6ed3a3c/v1.1</guid>
+      </item>
+  </channel>
+</rss>

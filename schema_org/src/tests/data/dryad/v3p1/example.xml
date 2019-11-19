@@ -1,0 +1,26 @@
+<DryadDataFile xmlns="http://purl.org/dryad/schema/terms/v3.1" xmlns:dwc="http://rs.tdwg.org/dwc/terms/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:bibo="http://purl.org/dryad/schema/dryad-bibo/v3.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://purl.org/dryad/schema/terms/v3.1 http://datadryad.org/profile/v3.1/dryad.xsd">
+  <dcterms:type>file</dcterms:type>
+  <dcterms:creator>Eitzinger, Bernhard</dcterms:creator>
+  <dcterms:creator>Abrego, Nerea</dcterms:creator>
+  <dcterms:creator>Gravel, Dominique</dcterms:creator>
+  <dcterms:creator>Huotari, Tea</dcterms:creator>
+  <dcterms:creator>Vesterinen, Eero</dcterms:creator>
+  <dcterms:creator>Roslin, Tomas</dcterms:creator>
+  <dcterms:title>Raw sequences of ARC and Zeale fragments</dcterms:title>
+  <dcterms:identifier>https://doi.org/10.5061/dryad.k6gf1tf/15</dcterms:identifier>
+  <dcterms:rights>http://creativecommons.org/publicdomain/zero/1.0/</dcterms:rights>
+  <dcterms:description>DNA extracted from individual Pardosa glacialis; two PCR replicates per ARC and Zeale primer respectively; sequenced using Illumina MiSeq.</dcterms:description>
+  <dwc:scientificName>Pardosa glacialis</dwc:scientificName>
+  <dcterms:spatial>Greenland</dcterms:spatial>
+  <dcterms:spatial>Zackenberg valley</dcterms:spatial>
+  <dcterms:spatial>74º28’ N</dcterms:spatial>
+  <dcterms:spatial>20º34’ W</dcterms:spatial>
+  <dcterms:temporal>Holocene</dcterms:temporal>
+  <dcterms:dateSubmitted>2018-09-18T03:53:56Z</dcterms:dateSubmitted>
+  <dcterms:available>2018-09-18T03:53:56Z</dcterms:available>
+  <dcterms:format>1528498209</dcterms:format>
+  <dcterms:provenance>File was uploaded at Wed Sep 12 11:26:08 UTC 2018</dcterms:provenance>
+  <dcterms:provenance>Made available in DSpace on 2018-09-18T03:53:56Z (GMT). No. of bitstreams: 1
+Eitzinger_ARC_Zeale_rawsequences.zip: 1528498209 bytes, checksum: d18ae26b4050ad384a84390b01673748 (MD5)</dcterms:provenance>
+  <dcterms:isPartOf>https://doi.org/10.5061/dryad.k6gf1tf</dcterms:isPartOf>
+</DryadDataFile>

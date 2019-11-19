@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>Find, Analyze and Share Water Data | CUAHSI HydroShare</title>
+<link rel="shortcut icon" href="/static/img/favicon.png">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feeds/rss/">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/feeds/atom/">
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/css/hydroshare_fonts.css" rel="stylesheet" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/fonts/font-mfizz/font-mfizz.css" />
+
+
+<link href="/static/css/bootstrap.3.0.2.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/css/animate.css"/>
+<link rel="stylesheet" type="text/css" href="/static/css/elements.css"/>
+<link rel='stylesheet' type='text/css' href='/static/css/jquery-ui/smoothness/jquery-ui.css'/>
+<link rel="stylesheet" type="text/css" href="/static/css/hydroshare_core.css"/>
+<link href="/static/css/identifiers.css" rel="stylesheet"/>
+<link href="/static/css/academicons.min.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="/static/css/hydroshare_extends.css"/>
+
+
+
+
+
+
+<script src="/static/mezzanine/js/jquery-1.8.3.min.js"></script>
+<script src="/static/js/custom.js"></script>
+<script src="/static/js/scrolltopcontrol.js"></script><!-- Scroll to top javascript -->
+<script src="/static/js/jqcsrf.js"></script>
+<script src='/static/js/jquery-ui.js'></script>
+<script src="/static/js/bootstrap.3.0.2.min.js"></script>
+<script src="/static/js/bootstrap-extras.js"></script>
+
+
+
+
+<script type="text/javascript">
+jQuery(function($) {
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+function sameOrigin(url) {
+    // test that a given url is a same-origin URL
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = '//' + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+        // or any other URL that isn't scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+            // Send the token to same-origin, relative URLs only.
+            // Send the token only if the method warrants CSRF protection
+            // Using the CSRFToken value acquired earlier
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        }
+    }
+});
+});
+</script>
+
+
+<script type="text/javascript" src="/static/autocomplete_light/django_admin.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/autocomplete.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/widget.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/addanother.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/text_widget.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/remote.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/autocomplete_light/style.css" />
+
+
+
+
+
+<!-- it needs jquery to work
+<script src="//code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
+-->
+<script src="/static/js/jquery.json.js" type="text/javascript"></script>
+<script src="/static/js/jquery.inplaceeditform.js" type="text/javascript"></script>
+<script src="/static/js/jquery.inplaceeditform.hooks.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        var isIE = function () {
+            if(typeof jQuery!== typeof undefined && jQuery.browser === undefined){
+                jQuery.browser = { msie : true};
+        }};
+    </script>
+    <!--[if IE]>
+        <script type="text/javascript">
+            isIE(); /* IE <= 9*/
+        </script>
+    <![endif]-->
+    <!--[if !IE]><!-->
+        <script type="text/javascript"> 
+            if (/*@cc_on!@*/false) { 
+                isIE(); /* IE 10*/
+            }
+        </script>
+    <!--<![endif]-->
+    <script type="text/javascript">
+        (function($){
+            $(document).ready(function () {
+                var options = {"getFieldUrl": "/inplaceeditform/get_field/",
+                               "saveURL": "/hsapi/save_inline/",
+                               "successText": "Successfully saved",
+                               "eventInplaceEdit": "dblclick",
+                               "disableClick": true,
+                               "autoSave": false,
+                               "unsavedChanges": "You have unsaved changes!",
+                               "enableClass": "enable",
+                               "fieldTypes": "input, select, textarea",
+                               "focusWhenEditing": true};
+                
+                var inplaceManager = $(".inplaceedit").inplaceeditform(options);
+                
+                    inplaceManager.enable();
+                
+
+        });
+    })(jQuery);
+    </script>
+    <script type="text/javascript">
+    var csrf_token = "VYQmk4wMylqi4gLOxlr3krS73vLuGletkfCW7SwUa2r9Jz0RrAw2RLTXsxJxAgvs";
+</script>
+    
+
+
+<link rel="stylesheet" type="text/css" href="/static/css/inplaceedit_structure.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/inplaceedit_style.css" />
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<!--[if IE]>
+<style>
+    .showcase {
+         zoom: 0.6;
+    }
+</style>
+<![endif]-->
+
+
+
+
+<script type="text/javascript">
+    window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("1320547260");
+</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+{
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(
+o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(
+a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js'
+,'ga');
+ga('create', 'UA-74322358-2', 'auto');
+ga('send', 'pageview');
+</script>
+</head>
+
+<body id="body">
+<!-- Navbar
+    ============= -->
+    <div id="hs-nav-bar" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/landingPage">
+                    <img id="img-brand-logo" src="/static/img/logo-lg.png" alt="CUAHSI HydroShare"/>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                    
+                    
+                    <!-- <li id="signup-menu"><a href="/accounts/signup/">Sign Up</a></li> -->
+                    <li id="signin-menu"><a href="/accounts/login/"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+                    
+                    
+                    
+                </ul>
+                
+<ul class="nav navbar-nav"><li  id="dropdown-menu-home"><a href="/home/">Home</a></li><li  id="dropdown-menu-my-resources"><a href="/my-resources/">My Resources</a></li><li  id="dropdown-menu-search"><a href="/search/">Discover</a></li><li  id="dropdown-menu-collaborate"><a href="/collaborate/">Collaborate</a></li><li class="" id="dropdown-menu-https:--www.hydroshare.org-apps-"><a href="https://www.hydroshare.org/apps/">Apps</a></li><li class="" id="dropdown-menu-https:--help.hydroshare.org"><a href="http://help.hydroshare.org">Help</a></li></ul><ul class="nav navbar-nav navbar-right"><!-- Profile links for extra small screens --><li class="visible-xs"><a href="/accounts/login/"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    <!-- Universal message box for AJAX requests -->
+    <div id="universalMessage">
+      <span>Hi, I'm an error.</span>
+      <a href="#" class="um_close" id="UMClose">x</a>
+    </div>
+
+    
+        <div class="main-container">
+            
+    
+    
+        
+    
+    
+    
+        <div>
+            <div class="container">
+                <div class="row home-page-block">
+                    <div class="col-xs-12">
+                        <center><strong><h3 class="home-page-block-title">
+                            HydroShare is CUAHSI's online collaboration environment for
+                            sharing data, models, and code.
+                        </h3></strong></center>
+                        <center><a class="btn btn-primary btn-signup slideInBlock" href="/sign-up/">Sign up now</a>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <div id="home-page-carousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#home-page-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#home-page-carousel" data-slide-to="1"></li>
+            <li data-target="#home-page-carousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active parallax-window" style="background-image: url(/static/img/home-page/carousel/bg3.jpg)">
+                <div class="caption-wrapper">
+                    <div class="item-caption">
+                        <h1><strong>Discover</strong></h1>
+                        <h4>Discover content shared by your colleagues and other researchers. Access a broad range of data
+                            types used in hydrology.</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item parallax-window" style="background-image: url(/static/img/home-page/carousel/bg2.JPG)">
+                <div class="caption-wrapper">
+                    <div class="item-caption">
+                        <h1><strong>Collaborate</strong></h1>
+                        <h4>Upload and share a broad set of hydrologic data types including time series, GIS,
+                        and models. You manage who can access the content you share.</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item parallax-window" style="background-image: url(/static/img/home-page/carousel/bg1.jpg)">
+                <div class="caption-wrapper">
+                    <div class="item-caption">
+                        <h1><strong>Fulfill your Data Management Plan and Formally Publish your Data</strong></h1>
+                        <h4>Give your funders confidence that your data will be available in perpetuity and obtain Digital
+                        Object Identifiers so your content can be cited.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#home-page-carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#home-page-carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <h2 class="home-page-block-title">How it works</h2>
+        <div class="row home-page-block">
+            <div class="steps-container">
+                <div class="col-xs-12 col-md-4 col-lg-2 col-lg-offset-1 step-wrapper slideInBlock">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>Create data</h4>
+                        <div class="description-container table-display">
+                            <span class="step-description table-cell-display">Collect your data using the same methods you use now. HydroShare supports a broad set of hydrologic data types.</span>
+                        </div>
+                        <div>
+                            <img class="img-responsive img-step" src="/static/img/home-page/step1.png"
+                                 alt="Create data">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4 col-lg-2 step-wrapper slideInBlock">
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>Upload to HydroShare</h4>
+                        <div class="description-container table-display">
+                            <span class="step-description table-cell-display">Upload your data files to HydroShare through the web user interface. HydroShare will automatically extract as much metadata as it can from the files you upload.</span>
+                        </div>
+                        <div>
+                            <img class="img-responsive img-step" src="/static/img/home-page/step2.png"
+                                 alt="Upload to HydroShare">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-md-4 col-lg-2 step-wrapper slideInBlock">
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>Describe with metadata</h4>
+                        <div class="description-container table-display">
+                            <span class="step-description table-cell-display">Use HydroShare's simple metadata entry forms to finish describing your data so that your colleagues can find, access, and interpret it.</span>
+                        </div>
+                        <div>
+                            <img class="img-responsive img-step" src="/static/img/home-page/step3.png"
+                                 alt="Describe with metadata">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6 col-lg-2 step-wrapper slideInBlock">
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h4>Share with colleagues</h4>
+                        <div class="description-container table-display">
+                            <span class="step-description table-cell-display">Choose who has access to the data and models you have uploaded to HydroShare. You can share with individual users or make your resources public for everyone to access.</span>
+                        </div>
+                        <div>
+                            <img class="img-responsive img-step" src="/static/img/home-page/step4.png"
+                                 alt="Share with colleagues">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6 col-lg-2 step-wrapper slideInBlock">
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <h4>Permanently Publish</h4>
+                        <div class="description-container table-display">
+                            <span class="step-description table-cell-display">Obtain a Digital Object Identifier (DOI) so your work can be
+                            easily cited. Reference related journal publications in your metadata.</span>
+                        </div>
+                        <div>
+                            <img class="img-responsive img-step" src="/static/img/home-page/step5.png"
+                                 alt="Formally Publish">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="container home-page-block">
+            <div class="row">
+                <div class="col-sm-12"><h2 class="home-page-block-title">What you can do with HydroShare</h2></div>
+                <div class="col-xs-12 col-sm-7 slideInBlock">
+                    <table id="table-features">
+                        <tbody>
+                            <tr><td><div class="glyphicon glyphicon-ok checkmark"></div></td><td>Share your data and models with colleagues</td></tr>
+                                <tr><td><div class="glyphicon glyphicon-ok checkmark"></div></td><td>Manage who has access to the content that you share</td></tr>
+                                <tr><td><div class="glyphicon glyphicon-ok checkmark"></div></td><td>Share, access, visualize and manipulate a broad set of hydrologic data types and models</td></tr>
+                                <tr><td><div class="glyphicon glyphicon-ok checkmark"></div></td><td>Use the web services API to program automated and client access</td></tr>
+                                <tr><td><div class="glyphicon glyphicon-ok checkmark"></div></td><td>Publish data and models to meet the requirements of your data management plan</td></tr>
+                                <tr><td><div class="glyphicon glyphicon-ok checkmark"></div></td><td>Discover and access data and models published by others</td></tr>
+                                <tr><td><div class="glyphicon glyphicon-ok checkmark"></div></td><td>Use web apps to visualize, analyze and run models on data in HydroShare</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12- col-sm-5 slideInBlock">
+                    <img class="img-responsive" src="/static/img/home-page/laptop.png"
+                         alt="Browsing HydroShare">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/static/js/home-page.js"></script>
+
+
+            
+            
+<div class="modal fade" id="submit-title-dialog" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Create a Resource</h4>
+            </div>
+            <div class="modal-body">
+                <div class="warnings-list">
+                    <div class="modal-input-title">Enter the title for the new resource.
+                    </div>
+                    <br>
+                    <input id="input-title" class="form-control textinput textInput" maxlength="300"
+                           name="value" type="text" placeholder="Resource Title" value="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
+                </button>
+                <button id="btn-resource-create" type="button" data-value="" class="btn btn-primary"
+                        data-dismiss="modal">Create
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    
+
+    <!-- Foooter
+    ================== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Contact Us
+                =================  -->
+                <div class="col-md-4 col-sm-4">
+                    
+                    <div class="headline">
+                        <h3>Contact us</h3>
+                    </div>
+                    <div class="content">
+                        <p class="p1"><a href="mailto:help@cuahsi.org">Email Support</a></p>
+<p class="p1">Visit <a href="https://www.cuahsi.org" target="_blank">cuahsi.org</a></p>
+                    </div>
+                    
+                </div>
+                <!-- Social icons
+                ===================== -->
+                <div class="col-md-4 col-sm-4">
+                    
+                    <div class="headline"><h3>Follow</h3></div>
+                    
+                    <div class="content social">
+                        
+                        
+                        <ul>
+                            <li>
+                                <a href="http://twitter.com/cuahsi" target="_blank"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a href="https://www.facebook.com/pages/CUAHSI-Consortium-of-Universities-for-the-Advancement-of-Hydrologic-Science-Inc/179921902590" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <a href="http://youtube.hydroshare.org/" target="_blank"><i class="fa fa-youtube"></i></a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a href="http://github.com/hydroshare" target="_blank"><i class="fa fa-github"></i></a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a href="https://www.linkedin.com/company/2632114" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            
+                            
+                            
+                        </ul>
+                        
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- Subscribe
+                =============== -->
+                <div class="col-md-4 col-sm-4">
+                    
+                    <div class="headline"><h3>Open Source</h3></div>
+                    <div class="content">
+                        <p class="p1">HydroShare is Open Source. Find us on <a href="https://github.com/hydroshare/" target="_blank"><strong>Github</strong></a>.</p>
+<p class="p1">Report a bug <strong><a href="https://github.com/hydroshare/hydroshare/issues?state=open" target="_blank">here</a></strong></p>
+<p class="p1">This is HydroShare Version<b>&nbsp;1.25.2</b></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Legal
+        ============= -->
+        <div class="legal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <p>&copy 2019 CUAHSI. This material is based upon work supported by the National Science Foundation (NSF) under awards 1148453, 1148090, 1664018, 1664061, 1338606, and 1664119.  Any opinions, findings, conclusions, or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the NSF. | <a href="/terms-of-use">Terms Of Use</a> | <a href="/privacy">Statement of Privacy</a> | <a href="/sitemap/">Site Map</a></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

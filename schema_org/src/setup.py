@@ -30,26 +30,11 @@ kwargs = {
     'author_email': 'developers@dataone.org',
     'url': 'https://github.com/DataONEorg/d1_python',
     'license': 'Apache License, Version 2.0',
-    'packages': ['schema_org'],
-    'package_data': {
-        'schema_org': {
-            'data/schema/gco/*.xsd',
-            'data/schema/gfc/*.xsd',
-            'data/schema/gmd/*.xsd',
-            'data/schema/gmi/*.xsd',
-            'data/schema/gml/*.xsd',
-            'data/schema/gmx/*.xsd',
-            'data/schema/gsr/*.xsd',
-            'data/schema/gss/*.xsd',
-            'data/schema/gts/*.xsd',
-            'data/schema/mf/*.xsd',
-            'data/schema/resources/*.xsd',
-            'data/schema/srv/*.xsd',
-            'data/schema/xlink/*.xsd',
-        }
-    },
+    'packages': ['schema_org', 'schema_org.data'],
+    'package_data': {'schema_org': ['data/*.ttl']},
     'install_requires': [
-        'python-dateutil', 'requests', 'lxml', 'importlib_resources'
+        'aiohttp', 'aioresponses', 'dataone.scimeta', 'importlib_resources',
+        'lxml', 'python-dateutil', 'requests', 'requests_mock',
     ],
     'classifiers': [
         'Development Status :: 5 - Production/Stable',
@@ -57,7 +42,6 @@ kwargs = {
         'Topic :: Scientific/Engineering',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
     'keywords': (
@@ -65,9 +49,13 @@ kwargs = {
     ),
     'entry_points': {
         'console_scripts': [
-            'dataone-validate=schema_org.commandline:validate',
+            'd1-validate=schema_org.commandline:validate',
+            'd1-check-site=schema_org.commandline:d1_check_site',
+            'harvest-abds-ipt=schema_org.commandline:abds_ipt',
             'harvest-arm=schema_org.commandline:arm',
+            'harvest-cuahsi=schema_org.commandline:cuahsi',
             'harvest-ieda=schema_org.commandline:ieda',
+            'harvest-nkn=schema_org.commandline:nkn',
         ],
     }
 }

@@ -1,0 +1,15 @@
+d9032485a2f8792099e36633745105e9    data/resourcemap.xml
+75906578a4c0f4d3b92110732535890f    data/resourcemetadata.xml
+9e45dc3d897bad548c4446abe3a37ba3    data/contents/componentlinkagecounts.skp
+804273144cbadcaf5fda2f07818cc587    data/contents/createisawdiagrams.m.txt
+804273144cbadcaf5fda2f07818cc587    data/contents/createisawdiagrams.m.txt
+35aed6b8ddca2efcfb699b95ee465779    data/contents/isawconceptualmodel.jpg
+35aed6b8ddca2efcfb699b95ee465779    data/contents/isawconceptualmodel.jpg
+e8ff7e1ec26aaabbef85c6736d1a5340    data/contents/isawmodelcompare.exe
+e8ff7e1ec26aaabbef85c6736d1a5340    data/contents/isawmodelcompare.exe
+193007ee5c42ad93c6779fb5a5b38e31    data/contents/iUtah Model Inventory.html
+193007ee5c42ad93c6779fb5a5b38e31    data/contents/iUtah Model Inventory.html
+ce60419e1fded68371b4f885aa3e0c57    data/contents/iUtah Model Inventory (Responses) - Google Sheets.html
+665af4e107c4629ef27b328b063de20e    data/contents/iutahmodelinventory-responses-oct1.xlsx
+ce0bc2db65ad672dd0e48c316d6dd1ea    data/contents/rfa3-modelinventory-oct26-2015.pptx
+ce0bc2db65ad672dd0e48c316d6dd1ea    data/contents/rfa3-modelinventory-oct26-2015.pptx
