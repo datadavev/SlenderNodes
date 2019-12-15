@@ -1,0 +1,1588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" packageId="doi:10.5063/F1W957H4" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 ~/development/eml/eml.xsd" scope="system" system="https://arcticdata.io">
+  <dataset>
+    <title>Lithology per SASAP region and Hydrologic Unit (HUC8) boundaries for Alaskan watersheds</title>
+    <creator>
+      <individualName>
+        <givenName>Jared</givenName>
+        <surName>Kibele</surName>
+      </individualName>
+      <organizationName>National Center for Ecological Analysis and Synthesis</organizationName>
+      <positionName>Scientific Programmer</positionName>
+      <address>
+        <deliveryPoint>735 State St #300</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93101</postalCode>
+      </address>
+      <electronicMailAddress>jkibele@nceas.ucsb.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0001-8874-7595</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Rachel</givenName>
+        <surName>Carlson</surName>
+      </individualName>
+      <organizationName>National Center for Ecological Analysis and Synthesis</organizationName>
+      <positionName>Data Science Fellow</positionName>
+      <address>
+        <deliveryPoint>735 State St #300</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93101</postalCode>
+      </address>
+      <electronicMailAddress>Rachel.R.Carl@gmail.com</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-2820-8714</userId>
+    </creator>
+    <pubDate>2018</pubDate>
+    <abstract>
+      <para>This dataset was created to identify the dominant rock type of each SASAP region and each HUC8 watershed of Alaska. The Global Lithology Map (GliM) from the University of Hamburg (Hartmann, Jörg; Moosdorf, Nils (2012): Global Lithological Map Database v1.0 (gridded to 0.5° spatial resolution). PANGAEA, https://doi.org/10.1594/PANGAEA.788537, License: Creative Commons Attribution 3.0 Unported) was combined with the "sasap_regions.zip" shapefile (located here: https://knb.ecoinformatics.org/#view/urn:uuid:2c1c26fc-bfb9-4b6a-8d4a-0be8e61c4deb) to create "Lithology_shp_regions.zip", a shapefile that contains measurements of the area covered by certain lithologies in each SASAP region. It was also combined with the "sasap_watersheds_gapfix.zip" shapefile (located here: https://knb.ecoinformatics.org/#view/urn:uuid:2b5ab57e-38ec-4bc9-8290-f080ec0befb4) to create "Lithology_shp_watersheds.zip", a shapefile that contains measurements of the area covered by certain lithologies in each Alaskan watershed. CSV versions of the resulting shapefiles are also archived. The included python script, which was used to merge the data, outlines the process in more detail.
+      </para>
+    </abstract>
+    <keywordSet>
+      <keyword>watershed characteristics</keyword>
+      <keyword>featured</keyword>
+      <keyword>biophysical</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <para>This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/</para>
+    </intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Alaska Peninsula and Aleutian Islands, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>179.8567</westBoundingCoordinate>
+          <eastBoundingCoordinate>-153.6282</eastBoundingCoordinate>
+          <northBoundingCoordinate>57.2997</northBoundingCoordinate>
+          <southBoundingCoordinate>51.1568</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Arctic, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-166.311</westBoundingCoordinate>
+          <eastBoundingCoordinate>-136.684</eastBoundingCoordinate>
+          <northBoundingCoordinate>71.4396</northBoundingCoordinate>
+          <southBoundingCoordinate>67.7408</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Bristol Bay, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-162.2713</westBoundingCoordinate>
+          <eastBoundingCoordinate>-152.7319</eastBoundingCoordinate>
+          <northBoundingCoordinate>60.9278</northBoundingCoordinate>
+          <southBoundingCoordinate>56.8716</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Chignik, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-159.6479</westBoundingCoordinate>
+          <eastBoundingCoordinate>-155.4645</eastBoundingCoordinate>
+          <northBoundingCoordinate>57.142</northBoundingCoordinate>
+          <southBoundingCoordinate>55.5261</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Copper River, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-147.8251</westBoundingCoordinate>
+          <eastBoundingCoordinate>-139.6942</eastBoundingCoordinate>
+          <northBoundingCoordinate>63.3227</northBoundingCoordinate>
+          <southBoundingCoordinate>59.7112</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Kodiak, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-156.7838</westBoundingCoordinate>
+          <eastBoundingCoordinate>-151.6884</eastBoundingCoordinate>
+          <northBoundingCoordinate>59.0261</northBoundingCoordinate>
+          <southBoundingCoordinate>56.3492</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Kotzebue, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-169.0513</westBoundingCoordinate>
+          <eastBoundingCoordinate>-153.8437</eastBoundingCoordinate>
+          <northBoundingCoordinate>68.9178</northBoundingCoordinate>
+          <southBoundingCoordinate>65.3082</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Kuskokwim, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-173.2164</westBoundingCoordinate>
+          <eastBoundingCoordinate>-151.5105</eastBoundingCoordinate>
+          <northBoundingCoordinate>64.4166</northBoundingCoordinate>
+          <southBoundingCoordinate>58.6262</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Cook Inlet, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-154.7415</westBoundingCoordinate>
+          <eastBoundingCoordinate>-146.1503</eastBoundingCoordinate>
+          <northBoundingCoordinate>63.638</northBoundingCoordinate>
+          <southBoundingCoordinate>58.6157</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Norton Sound, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-171.9762</westBoundingCoordinate>
+          <eastBoundingCoordinate>-159.1906</eastBoundingCoordinate>
+          <northBoundingCoordinate>65.8544</northBoundingCoordinate>
+          <southBoundingCoordinate>62.8268</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Prince William Sound, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-149.1761</westBoundingCoordinate>
+          <eastBoundingCoordinate>-145.1013</eastBoundingCoordinate>
+          <northBoundingCoordinate>61.5189</northBoundingCoordinate>
+          <southBoundingCoordinate>59.357</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Southeast, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-143.8874</westBoundingCoordinate>
+          <eastBoundingCoordinate>-126.7735</eastBoundingCoordinate>
+          <northBoundingCoordinate>61.6887</northBoundingCoordinate>
+          <southBoundingCoordinate>54.2508</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>Yukon, Alaska</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-166.281</westBoundingCoordinate>
+          <eastBoundingCoordinate>-129.1775</eastBoundingCoordinate>
+          <northBoundingCoordinate>69.0792</northBoundingCoordinate>
+          <southBoundingCoordinate>58.8686</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2017</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2017</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>Jared</givenName>
+        <surName>Kibele</surName>
+      </individualName>
+      <organizationName>National Center for Ecological Analysis and Synthesis (NCEAS)</organizationName>
+      <positionName>Scientific Programmer</positionName>
+      <address>
+        <deliveryPoint>735 State St #300</deliveryPoint>
+        <city>Santa Barbara</city>
+        <administrativeArea>CA</administrativeArea>
+        <postalCode>93101</postalCode>
+      </address>
+      <electronicMailAddress>jkibele@nceas.ucsb.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0001-8874-7595</userId>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <para>
+    The included python script was used to subset and merge the 
+  datasets into the two shapefile datasets and the csv files.
+</para>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>State of Alaska's Salmon and People</title>
+      <personnel>
+        <individualName>
+          <givenName>Matt</givenName>
+          <surName>Jones</surName>
+        </individualName>
+        <organizationName>NCEAS/UCSB</organizationName>
+        <role>principalInvestigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Ian</givenName>
+          <surName>Dutton</surName>
+        </individualName>
+        <organizationName>Nautilus Impact Investing</organizationName>
+        <role>principalInvestigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Frank</givenName>
+          <surName>Davis</surName>
+        </individualName>
+        <organizationName>NCEAS/UCSB</organizationName>
+        <role>principalInvestigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Jeanette</givenName>
+          <surName>Clark</surName>
+        </individualName>
+        <organizationName>NCEAS/UCSB</organizationName>
+        <role>dataCoordinator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Jared</givenName>
+          <surName>Kibele</surName>
+        </individualName>
+        <organizationName>NCEAS/UCSB</organizationName>
+        <role>programmer</role>
+      </personnel>
+      <abstract>
+        <para>State of Alaska's Salmon and People (SASAP) and SASAP Data Task Force are both funded by the Gordon and Betty Moore Foundation. SASAP is a synthesis science project aimed to create an equitable decision-making platform for all stakeholders by addressing data gaps in Alaska's salmon system through information synthesis, collaboration and stakeholder engagement. The SASAP Data Task Force assists the synthesis research effort through data collection, homogenization, management, and sustainability, under the direction of the synthesis project leads. The result of the efforts of these two projects is an Alaskan Salmon data catalog, containing all of the original and derived data products resulting from the synthesis research.</para>
+      </abstract>
+      <funding>
+        <para>State of Alaska's Salmon and People (Gordon and Betty Moore Foundation Award 5124)</para>
+        <para>Data Task Forces for Better Synthesis Studies (Gordon and Betty Moore Foundation Award 5451)</para>
+      </funding>
+    </project>
+    <dataTable>
+      <entityName>regions_lithology.csv</entityName>
+      <entityDescription>This is a csv version of the included "Lithology_shp_regions.zip" shapefile with the geometry field removed. Each row corresponds to a region and contains measurements of the area covered by the following lithologies: Siliciclastic Sedimentary Rocks, Mixed Sedimentary Rocks, Unconsolidated Sediment, Carbonate Sedimentary Rocks, Pyroclastics, Evaporites, Metamorphic Rock, Acid Plutonic Rocks, Intermediate Plutonic Rocks, Basic Plutonic Rocks, Acid Volcanic Rocks, Intermediate Volcanic Rocks, Basic Volcanic Rocks, Ice and Glaciers, and Water Bodies</entityDescription>
+      <physical scope="document">
+        <objectName>regions_lithology.csv</objectName>
+        <size unit="bytes">3163</size>
+        <authentication method="SHA1">69d37b2ee066dde6c2e962b9bbe13027743d1074</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>text/csv</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/urn:uuid:d977c050-324b-4dcc-ad54-90f77f83ae81</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>region_id</attributeName>
+          <attributeDefinition>The numeric identification number of the region</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The numeric identification number of the region</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>region</attributeName>
+          <attributeDefinition>The name of the region</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The name of the region</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ev</attributeName>
+          <attributeDefinition>The area covered by Evaporites</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ig</attributeName>
+          <attributeDefinition>The area covered by Ice and Glaciers</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>mt</attributeName>
+          <attributeDefinition>The area covered by Metamorphic Rock</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nd</attributeName>
+          <attributeDefinition>The area where there is No Data</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pa</attributeName>
+          <attributeDefinition>The area covered by Acid Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb</attributeName>
+          <attributeDefinition>The area covered by Basic Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pi</attributeName>
+          <attributeDefinition>The area covered by Intermediate Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>py</attributeName>
+          <attributeDefinition>The area covered by Pyroclastics</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sc</attributeName>
+          <attributeDefinition>The area covered by Carbonate Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sm</attributeName>
+          <attributeDefinition>The area covered by Mixed Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ss</attributeName>
+          <attributeDefinition>The area covered by Siliciclastic Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>su</attributeName>
+          <attributeDefinition>The area covered by Unconsolidated Sediment</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>va</attributeName>
+          <attributeDefinition>The area covered by Acid Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vb</attributeName>
+          <attributeDefinition>The area covered by Basic Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vi</attributeName>
+          <attributeDefinition>The area covered by Intermediate Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wb</attributeName>
+          <attributeDefinition>The area covered by Water Bodies</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_area</attributeName>
+          <attributeDefinition>The area covered by the lithology that covers the most area in the region</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_type</attributeName>
+          <attributeDefinition>The abbreviated name of the lithology that covers the most area in the region</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The abbreviated name of the lithology that covers the most area in the region</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_name</attributeName>
+          <attributeDefinition>The full name of the lithology that covers the most area in the region</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The full name of the lithology that covers the most area in the region</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <dataTable>
+      <entityName>watersheds_lithology.csv</entityName>
+      <entityDescription>This is a csv version of the included "Lithology_shp_watersheds.zip" shapefile with the geometry field removed. Each row corresponds to a watershed and contains measurements of the area covered by the following lithologies: Siliciclastic Sedimentary Rocks, Mixed Sedimentary Rocks, Unconsolidated Sediment, Carbonate Sedimentary Rocks, Pyroclastics, Evaporites, Metamorphic Rock, Acid Plutonic Rocks, Intermediate Plutonic Rocks, Basic Plutonic Rocks, Acid Volcanic Rocks, Intermediate Volcanic Rocks, Basic Volcanic Rocks, Ice and Glaciers, and Water Bodies</entityDescription>
+      <physical scope="document">
+        <objectName>watersheds_lithology.csv</objectName>
+        <size unit="bytes">38586</size>
+        <authentication method="SHA1">5eaa3cc51b6ec01255d0f7681aef5e3feaf02437</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>text/csv</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/urn:uuid:a8a813c7-b5eb-44c4-8d8f-e843ab4b28fc</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>id_numeric</attributeName>
+          <attributeDefinition>The numeric identification number of the watershed in this shape</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The numeric identification number of the watershed in this shape</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>name</attributeName>
+          <attributeDefinition>The name of the watershed</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The name of the watershed</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>id_original</attributeName>
+          <attributeDefinition>The numeric identification number of the watershed in the source file</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The numeric identification number of the watershed in the source file</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>source</attributeName>
+          <attributeDefinition>Source of the original data. This file was created by merging data from the International Joint Commission and the Canadian National Hydro Network</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>NHN</code>
+                    <definition>National Hydro Network</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>IJC</code>
+                    <definition>International Joint Commission</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ev</attributeName>
+          <attributeDefinition>The area covered by Evaporites</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ig</attributeName>
+          <attributeDefinition>The area covered by Ice and Glaciers</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>mt</attributeName>
+          <attributeDefinition>The area covered by Metamorphic Rock</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nd</attributeName>
+          <attributeDefinition>The area where there is No Data</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pa</attributeName>
+          <attributeDefinition>The area covered by Acid Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb</attributeName>
+          <attributeDefinition>The area covered by Basic Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pi</attributeName>
+          <attributeDefinition>The area covered by Intermediate Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>py</attributeName>
+          <attributeDefinition>The area covered by Pyroclastics</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sc</attributeName>
+          <attributeDefinition>The area covered by Carbonate Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sm</attributeName>
+          <attributeDefinition>The area covered by Mixed Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ss</attributeName>
+          <attributeDefinition>The area covered by Siliciclastic Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>su</attributeName>
+          <attributeDefinition>The area covered by Unconsolidated Sediment</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>va</attributeName>
+          <attributeDefinition>The area covered by Acid Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vb</attributeName>
+          <attributeDefinition>The area covered by Basic Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vi</attributeName>
+          <attributeDefinition>The area covered by Intermediate Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wb</attributeName>
+          <attributeDefinition>The area covered by Water Bodies</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_area</attributeName>
+          <attributeDefinition>The area covered by the lithology that covers the most area in the watershed</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_type</attributeName>
+          <attributeDefinition>The abbreviated name of the lithology that covers the most area in the watershed</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The abbreviated name of the lithology that covers the most area in the watershed</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_name</attributeName>
+          <attributeDefinition>The full name of the lithology that covers the most area in the watershed</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The full name of the lithology that covers the most area in the watershed</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <spatialVector>
+      <entityName>Lithology_shp_regions.zip</entityName>
+      <entityDescription>This shapefile contains measurements of the area covered by the following lithologies within various regions: Siliciclastic Sedimentary Rocks, Mixed Sedimentary Rocks, Unconsolidated Sediment, Carbonate Sedimentary Rocks, Pyroclastics, Evaporites, Metamorphic Rock, Acid Plutonic Rocks, Intermediate Plutonic Rocks, Basic Plutonic Rocks, Acid Volcanic Rocks, Intermediate Volcanic Rocks, Basic Volcanic Rocks, Ice and Glaciers, and Water Bodies. Zip contains .shp, .shx, .dbf, .cpg, and .prj files.</entityDescription>
+      <physical scope="document">
+        <objectName>Lithology_shp_regions.zip</objectName>
+        <size unit="bytes">2539499</size>
+        <authentication method="SHA1">1c4040a4d6b3f2953b8c5bd62e0754cffa4cbadc</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>application/zip</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/urn:uuid:5905bd3b-24a9-4766-ae0f-76d78a2ff70c</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>region_id</attributeName>
+          <attributeDefinition>The numeric identification number of the region</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The numeric identification number of the region</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>region</attributeName>
+          <attributeDefinition>The name of the region</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The name of the region</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ev</attributeName>
+          <attributeDefinition>The area covered by Evaporites</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ig</attributeName>
+          <attributeDefinition>The area covered by Ice and Glaciers</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>mt</attributeName>
+          <attributeDefinition>The area covered by Metamorphic Rock</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nd</attributeName>
+          <attributeDefinition>The area where there is No Data</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pa</attributeName>
+          <attributeDefinition>The area covered by Acid Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb</attributeName>
+          <attributeDefinition>The area covered by Basic Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pi</attributeName>
+          <attributeDefinition>The area covered by Intermediate Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>py</attributeName>
+          <attributeDefinition>The area covered by Pyroclastics</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sc</attributeName>
+          <attributeDefinition>The area covered by Carbonate Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sm</attributeName>
+          <attributeDefinition>The area covered by Mixed Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ss</attributeName>
+          <attributeDefinition>The area covered by Siliciclastic Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>su</attributeName>
+          <attributeDefinition>The area covered by Unconsolidated Sediment</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>va</attributeName>
+          <attributeDefinition>The area covered by Acid Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vb</attributeName>
+          <attributeDefinition>The area covered by Basic Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vi</attributeName>
+          <attributeDefinition>The area covered by Intermediate Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wb</attributeName>
+          <attributeDefinition>The area covered by Water Bodies</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_area</attributeName>
+          <attributeDefinition>The area covered by the lithology that covers the most area in the region</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_type</attributeName>
+          <attributeDefinition>The abbreviated name of the lithology that covers the most area in the region</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The abbreviated name of the lithology that covers the most area in the region</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_name</attributeName>
+          <attributeDefinition>The full name of the lithology that covers the most area in the region</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The full name of the lithology that covers the most area in the region</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <geometry>Polygon</geometry>
+    </spatialVector>
+    <spatialVector>
+      <entityName>Lithology_shp_watersheds.zip</entityName>
+      <entityDescription>This shapefile contains measurements of the area covered by the following lithologies within various watersheds: Siliciclastic Sedimentary Rocks, Mixed Sedimentary Rocks, Unconsolidated Sediment, Carbonate Sedimentary Rocks, Pyroclastics, Evaporites, Metamorphic Rock, Acid Plutonic Rocks, Intermediate Plutonic Rocks, Basic Plutonic Rocks, Acid Volcanic Rocks, Intermediate Volcanic Rocks, Basic Volcanic Rocks, Ice and Glaciers, and Water Bodies. Zip contains .shp, .shx, .dbf, .cpg, and .prj files.</entityDescription>
+      <physical scope="document">
+        <objectName>Lithology_shp_watersheds.zip</objectName>
+        <size unit="bytes">7511974</size>
+        <authentication method="SHA1">a60da18a4f4d77b34c746a05ccc757dc1dce3258</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>application/zip</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/urn:uuid:5a738019-9418-40c3-9701-5cf2b7dd5592</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>id_numeric</attributeName>
+          <attributeDefinition>The numeric identification number of the watershed in this shape</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The numeric identification number of the watershed in this shape</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>name</attributeName>
+          <attributeDefinition>The name of the watershed</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The name of the watershed</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>id_original</attributeName>
+          <attributeDefinition>The numeric identification number of the watershed in the source file</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The numeric identification number of the watershed in the source file</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>source</attributeName>
+          <attributeDefinition>Source of the original data. This file was created by merging data from the International Joint Commission and the Canadian National Hydro Network</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>NHN</code>
+                    <definition>National Hydro Network</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>IJC</code>
+                    <definition>International Joint Commission</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ev</attributeName>
+          <attributeDefinition>The area covered by Evaporites</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ig</attributeName>
+          <attributeDefinition>The area covered by Ice and Glaciers</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>mt</attributeName>
+          <attributeDefinition>The area covered by Metamorphic Rock</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nd</attributeName>
+          <attributeDefinition>The area where there is No Data</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pa</attributeName>
+          <attributeDefinition>The area covered by Acid Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pb</attributeName>
+          <attributeDefinition>The area covered by Basic Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>pi</attributeName>
+          <attributeDefinition>The area covered by Intermediate Plutonic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>py</attributeName>
+          <attributeDefinition>The area covered by Pyroclastics</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sc</attributeName>
+          <attributeDefinition>The area covered by Carbonate Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sm</attributeName>
+          <attributeDefinition>The area covered by Mixed Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ss</attributeName>
+          <attributeDefinition>The area covered by Siliciclastic Sedimentary Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>su</attributeName>
+          <attributeDefinition>The area covered by Unconsolidated Sediment</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>va</attributeName>
+          <attributeDefinition>The area covered by Acid Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vb</attributeName>
+          <attributeDefinition>The area covered by Basic Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vi</attributeName>
+          <attributeDefinition>The area covered by Intermediate Volcanic Rocks</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wb</attributeName>
+          <attributeDefinition>The area covered by Water Bodies</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_area</attributeName>
+          <attributeDefinition>The area covered by the lithology that covers the most area in the watershed</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>squareMeter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_type</attributeName>
+          <attributeDefinition>The abbreviated name of the lithology that covers the most area in the watershed</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The abbreviated name of the lithology that covers the most area in the watershed</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>max_litho_name</attributeName>
+          <attributeDefinition>The full name of the lithology that covers the most area in the watershed</attributeDefinition>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>The full name of the lithology that covers the most area in the watershed</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <geometry>Polygon</geometry>
+    </spatialVector>
+    <otherEntity>
+      <entityName>Lithology_vector.ipynb</entityName>
+      <entityDescription>This python script was used to subset and merge the source data with the region data and with the watershed data to create the region and watershed shapefiles and csv files.</entityDescription>
+      <physical scope="document">
+        <objectName>Lithology_vector.ipynb</objectName>
+        <size unit="bytes">386946</size>
+        <authentication method="SHA1">9fb1266b9ff3e040ca2a517d460598f3f706d36f</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>text/plain</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/urn:uuid:e80e3080-9403-47ab-a4e5-631596c4d023</url>
+          </online>
+        </distribution>
+      </physical>
+      <entityType>other</entityType>
+    </otherEntity>
+  </dataset>
+</eml:eml>

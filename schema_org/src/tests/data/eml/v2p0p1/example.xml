@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="SH70XX_070CTDX069R00_20150518.50.1" scope="system"
+  system="knb" xmlns:eml="eml://ecoinformatics.org/eml-2.0.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.0.1 eml.xsd">
+  <dataset scope="document">
+    <shortName>PISCO vessel-based CTD casts, SH70XX</shortName>
+    <title>PISCO: Physical Oceanography: vessel-based CTD cast data: Strawberry Hill 70m, Oregon, USA (SH70XX)</title>
+    <creator scope="document">
+      <organizationName>
+        Partnership for Interdisciplinary Studies of Coastal Oceans (PISCO)
+      </organizationName>
+      <onlineUrl>http://www.piscoweb.org</onlineUrl>
+    </creator>
+    <creator scope="document">
+      <individualName>
+        <salutation>Prof.</salutation>
+        <givenName>Jack</givenName>
+        <surName>Barth</surName>
+      </individualName>
+      <address scope="document">
+        <deliveryPoint>104 CEOAS Admin Bldg</deliveryPoint>
+        <deliveryPoint>College of Earth, Ocean,  and Atmospheric Sciences</deliveryPoint>
+        <deliveryPoint>Oregon State University</deliveryPoint>
+        <city>Corvallis</city>
+        <administrativeArea>Oregon</administrativeArea>
+        <postalCode>97331-5503</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">(541) 737-1607</phone>
+      <phone phonetype="fax">(541) 737-2064</phone>
+      <electronicMailAddress>barth@coas.oregonstate.edu</electronicMailAddress>
+      <onlineUrl>http://piscoweb.org/who/pi/barth.html</onlineUrl>
+    </creator>
+    <associatedParty scope="document">
+      <individualName>
+        <surName>PISCO OSU Lab Manager</surName>
+      </individualName>
+      <address scope="document">
+        <deliveryPoint>Oregon State University</deliveryPoint>
+        <deliveryPoint>3029 Cordley Hall</deliveryPoint>
+        <city>Corvallis</city>
+        <administrativeArea>Oregon</administrativeArea>
+        <postalCode>97331</postalCode>
+        <country>USA</country>
+      </address>
+      <phone phonetype="voice">(541) 737-4565</phone>
+      <electronicMailAddress>pisco@science.oregonstate.edu</electronicMailAddress>
+      <role>Lab Manager</role>
+    </associatedParty>
+    <language>English</language>
+    <series>SH70XX_070CTDX069R00_20150518</series>
+    <abstract>
+      <para>This metadata record describes vessel-based CTD cast data collected at Strawberry Hill 70m, Oregon, USA, by PISCO.  Measurements were collected using a Seabird Electronics SBE 25 SEACAT beginning 2015-05-18.  The instrument descended to an overall water depth of 69 meters. The instrument was programmed with a sampling interval of 0.125 seconds.</para>
+    </abstract>
+    <keywordSet>
+      <keyword>EARTH SCIENCE: Oceans: Ocean Temperature: Water Temperature</keyword>
+      <keyword>EARTH SCIENCE: Oceans: Salinity/Density: Conductivity</keyword>
+      <keyword>EARTH SCIENCE: Oceans: Salinity/Density: Salinity</keyword>
+      <keyword>EARTH SCIENCE: Oceans: Water Pressure: Pressure</keyword>
+      <keyword>EARTH SCIENCE: Oceans: Ocean Optics: Attenuation/Transmission</keyword>
+      <keyword>EARTH SCIENCE: Oceans: Ocean Optics: Fluorescence</keyword>
+      <keywordThesaurus>Global Change Master Directory</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Oceanographic Sensor Data</keyword>
+      <keyword>Vessel-based CTD Cast Data</keyword>
+      <keywordThesaurus>PISCO Categories</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>continental shelf</keyword>
+      <keyword>currents</keyword>
+      <keyword>CTD</keyword>
+      <keyword>PISCO</keyword>
+      <keyword>California</keyword>
+      <keyword>United States of America</keyword>
+    </keywordSet>
+    <intellectualRights>
+      <para>Please cite PISCO in all publications containing these data.  The citation should take the form: "This study utilized data collected by the Partnership for Interdisciplinary Studies of Coastal Oceans: a long-term ecological consortium funded by the David and Lucile Packard Foundation and the Gordon and Betty Moore Foundation."  Please send copies of any published manuscript based on these data to the PISCO Program Coordinator (http://piscoweb.org/who/coordinators).  Users of these data are encouraged to contact the Principal Investigators. Where appropriate, researchers whose projects are integrally dependent on PISCO data are encouraged to consider collaboration and/or co-authorship with original PISCO investigators.</para>
+      <para>Extensive efforts are made to ensure that online data are accurate and up to date, but the authors and PISCO will not take responsibility for any errors that may exist in data provided online. Furthermore, the user assumes all responsibility for errors in analysis or judgment resulting from use of the data.</para>
+    </intellectualRights>
+    <distribution scope="document">
+      <online>
+        <url function="information">http://www.piscoweb.org</url>
+      </online>
+    </distribution>
+    <coverage scope="document">
+      <geographicCoverage id="SH70XX" scope="document">
+        <geographicDescription>Strawberry Hill 70m: SH70XX: The CTD downcast takes place approximately 11km offshore of the PISCO-OSU Strawberry Hill intertidal research site.  This location is approximately 13.5km southwest-by-west of Yachats, Oregon, USA (heading ~241 degrees).  This is also the site of the PISCO-OSU SH70 lander mooring.  The downcast is conducted in approximately 70m of water below Mean Sea Level (MSL).</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-124.25457</westBoundingCoordinate>
+          <eastBoundingCoordinate>-124.25457</eastBoundingCoordinate>
+          <northBoundingCoordinate>44.25502</northBoundingCoordinate>
+          <southBoundingCoordinate>44.25502</southBoundingCoordinate>
+          <boundingAltitudes>
+            <altitudeMinimum>-069</altitudeMinimum>
+            <altitudeMaximum>000</altitudeMaximum>
+            <altitudeUnits>meter</altitudeUnits>
+          </boundingAltitudes>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage scope="document">
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2015-05-18</calendarDate>
+            <time>17:40:47.59Z</time>
+          </beginDate>
+          <endDate>
+            <calendarDate>2015-05-18</calendarDate>
+            <time>17:42:54.60Z</time>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <purpose>
+      <para>
+        These data were collected by PISCO to understand the
+        physical characteristics of the inner continental shelf and their
+        potential effects on marine ecology.
+      </para>
+    </purpose>
+    <contact scope="document">
+      <positionName>PISCO OSU Lab Manager</positionName>
+      <organizationName>PISCO</organizationName>
+      <electronicMailAddress>pisco@science.oregonstate.edu</electronicMailAddress>
+      <onlineUrl>http://www.piscoweb.org</onlineUrl>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <para>Methods for PISCO CTD data collection and quality-control are available online, see the protocol citation.</para>
+        </description>
+        <protocol scope="document">
+          <title>PISCO OSU Mooring Instrument Protocols</title>
+          <creator scope="document">
+            <organizationName>PISCO</organizationName>
+          </creator>
+          <distribution scope="document">
+            <online>
+              <url function="download">https://cn.dataone.org/cn/v2/resolve/doi:10.6085/AA/PISCO_OSU_Mooring_Instrument_Protocols.40.1</url>
+            </online>
+          </distribution>
+        </protocol>
+        <instrumentation>Seabird Electronics SBE 25 SEACAT</instrumentation>
+      </methodStep>
+      <sampling>
+        <studyExtent>
+          <coverage scope="document">
+            <geographicCoverage scope="document">
+              <geographicDescription>
+                In this sampling section the altitudeMaximum tag refers
+                to the altitude of Mean Sea Level (MSL), and
+                altitudeMinimum tag refers to the nominal altitude
+                of the sea floor.  In other words, the
+                altitudeMinimum represents the overall water depth,
+                expressed as a negative altitude.
+              </geographicDescription>
+              <boundingCoordinates>
+                <westBoundingCoordinate>-124.25457</westBoundingCoordinate>
+                <eastBoundingCoordinate>-124.25457</eastBoundingCoordinate>
+                <northBoundingCoordinate>44.25502</northBoundingCoordinate>
+                <southBoundingCoordinate>44.25502</southBoundingCoordinate>
+                <boundingAltitudes>
+                  <altitudeMinimum>-70</altitudeMinimum>
+                  <altitudeMaximum>000</altitudeMaximum>
+                  <altitudeUnits>meter</altitudeUnits>
+                </boundingAltitudes>
+              </boundingCoordinates>
+            </geographicCoverage>
+          </coverage>
+        </studyExtent>
+        <samplingDescription>
+          <para>Methods for PISCO vessel-based CTD cast data collection and quality-control are available online, see the protocol citation.  Data were collected using an Seabird Electronics SBE 25 SEACAT set to one scan per 0.125 second.</para>
+        </samplingDescription>
+      </sampling>
+    </methods>
+    <project scope="document">
+      <title>
+        Partnership for Interdisciplinary Studies of Coastal Oceans (PISCO)
+      </title>
+      <personnel scope="document">
+        <organizationName>PISCO</organizationName>
+        <role>Consortium</role>
+      </personnel>
+      <abstract>
+        <para>
+          PISCO is a large-scale marine research program that focuses
+          on understanding the near-shore ecosystems of the U.S.
+          West Coast. An interdisciplinary collaboration of scientists
+          from four universities, PISCO integrates long-term monitoring
+          of ecological and oceanographic processes at dozens of
+          coastal sites with experimental work in the lab and field.
+          We explore how individual organisms, populations, and
+          ecological communities vary over space and time.  Findings are
+          applied to issues of ocean conservation and management, and
+          are shared through our public outreach and student training
+          programs.
+        </para>
+      </abstract>
+      <funding>
+        <para>
+          PISCO is funded by the David and Lucile Packard Foundation
+          and the Gordon and Betty Moore Foundation.
+        </para>
+      </funding>
+    </project>
+    <access
+      authSystem="ldap://ldap.ecoinformatics.org:389/dc=ecoinformatics,dc=org"
+      order="denyFirst" scope="document">
+      <allow>
+        <principal>
+          cn=data-managers,o=PISCOGROUPS,dc=ecoinformatics,dc=org
+        </principal>
+        <permission>all</permission>
+      </allow>
+      <allow>
+        <principal>public</principal>
+        <permission>read</permission>
+      </allow>
+    </access>
+    <dataTable scope="document">
+      <entityName>SH70XX_070CTDX069R00_20150518.40.1.txt</entityName>
+      <physical scope="document">
+        <objectName>SH70XX_070CTDX069R00_20150518.40.1</objectName>
+        <size unit="bytes">278291</size>
+        <characterEncoding>ASCII</characterEncoding>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>#x0A</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>#x20</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution id="SH70XX_070CTDX069R00_20150518.40" scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/doi:10.6085/AA/SH70XX_070CTDX069R00_20150518.40.1</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute scope="document">
+          <attributeName>date</attributeName>
+          <attributeDefinition>
+            Greenwich Mean Time calendar date of each CTD measurement
+            record, using ISO 8601 standard format YYYY-MM-DD
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            date
+          </storageType>
+          <measurementScale>
+            <datetime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimePrecision>1 day</dateTimePrecision>
+            </datetime>
+          </measurementScale>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>time</attributeName>
+          <attributeDefinition>
+            Greenwich Mean Time of each CTD measurement record, to the
+            1/100th of a second, using ISO 8601 standard
+            format hh:mm:ss.ssZ.  The  'Z' indicates 'Zero Meridian'
+            (or Greenwich Mean Time) and must be included.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            time
+          </storageType>
+          <measurementScale>
+            <datetime>
+              <formatString>hh:mm:ss.ssZ</formatString>
+              <dateTimePrecision>1/100th of a second</dateTimePrecision>
+            </datetime>
+          </measurementScale>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>yearday</attributeName>
+          <attributeDefinition>
+            Greenwich Mean Time of each CTD measurement record,
+            expressed as fractional decimal days since Jan. 1 of the
+            year measurement was made.  For example, 12 noon GMT on
+            Jan. 2 is represented by yearday 1.5, NOT yearday 2.5.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>nominalDay</standardUnit>
+              </unit>
+              <precision>0.0000116</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>bottom_depth</attributeName>
+          <attributeDefinition>
+            The depth to the seafloor at this station, relative to the
+            sea surface at the time of the measurement.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <precision>1</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+              No measurement collected at this point, or it is not available.
+            </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>longitude</attributeName>
+          <attributeLabel>Longitude</attributeLabel>
+          <attributeDefinition>
+            The longitude for the cast at this station, east is positive.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <precision>0.000001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-180</minimum>
+                  <maximum exclusive="false">180</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>latitude</attributeName>
+          <attributeLabel>Latitude</attributeLabel>
+          <attributeDefinition>
+            The latitude for the cast at this station, north is positive.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <precision>0.000001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-90</minimum>
+                  <maximum exclusive="false">90</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>pressure</attributeName>
+          <attributeLabel>Pressure in decibars</attributeLabel>
+          <attributeDefinition>
+            The observed pressure at this location and depth.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>decibar</customUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">1000</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>temperature</attributeName>
+          <attributeLabel>Temperature</attributeLabel>
+          <attributeDefinition>
+            The water temperature from the primary sensor,
+            based on International Temperature Scale of 1990(ITS-90)
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <precision>0.0001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100</maximum>
+                </bounds>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.0000</code>
+            <codeExplanation>
+              No measurement was collected at this point, or it is not available
+            </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>conductivity</attributeName>
+          <attributeLabel>Conductivity</attributeLabel>
+          <attributeDefinition>
+            The conductivity of the water, measured from the primary sensor.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>siemensPerMeter</customUnit>
+              </unit>
+              <precision>0.00005</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.0000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>v0</attributeName>
+          <attributeLabel>Channel 0 Voltage</attributeLabel>
+          <attributeDefinition>
+	    The voltage measured on channel 0 (raw data for diagnostic purposes)
+	  </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>volt</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">5</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>v1</attributeName>
+          <attributeLabel>Channel 1 Voltage</attributeLabel>
+          <attributeDefinition>
+	    The voltage measured on channel 1 (raw data for diagnostic purposes)
+	  </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>volt</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">5</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>v2</attributeName>
+          <attributeLabel>Channel 2 Voltage</attributeLabel>
+          <attributeDefinition>
+	    The voltage measured on channel 2 (raw data for diagnostic purposes)
+	  </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>volt</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">5</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>v3</attributeName>
+          <attributeLabel>Channel 3 Voltage</attributeLabel>
+          <attributeDefinition>
+            The voltage measured on channel 3 (raw data for diagnostic purposes)
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>volt</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">5</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>calc_depth</attributeName>
+          <attributeLabel>Calculated Depth</attributeLabel>
+          <attributeDefinition>
+            Based on measured pressure and seawater density as determined
+            from temperature and conductivity.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+              No measurement collected at this point, or it is not available.
+            </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>light_transmission</attributeName>
+          <attributeLabel>Light Transmission</attributeLabel>
+          <attributeDefinition>
+            The percent of light emitted by a source reaching a sensor
+            across a path of known length (usually 0.25m)
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>percent</customUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">100</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>beam_attenuation</attributeName>
+          <attributeLabel>Beam Attenuation Coefficient</attributeLabel>
+          <attributeDefinition>
+            The value calculated from transmission accordiing to:
+            Beam attenuation coefficient c = - ( 1 / (path length[m]) * ln ( light transmission [decimal] )
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>reciprocalMeter</customUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>chl_fluorescense</attributeName>
+          <attributeLabel>Chlorophyll Fluorescence</attributeLabel>
+          <attributeDefinition>
+            The estimated chlorophyll concentration from the in-situ fluorometer.
+            Fluorescence values vary depending on a number of factors including
+            the physiological status of phytoplankton, the types of phytoplankton
+            present, their abundance, and other natural factors.
+            These factors are known to result in significant diurnal
+            variability as well as over- and under-estimation of actual
+            chlorophyll concentrations.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligramsPerCubicMeter</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>o2_saturation</attributeName>
+          <attributeLabel>Dissolved Oxygen - Factory Calibration</attributeLabel>
+          <attributeDefinition>
+            Dissolved oxygen concentration as a percent of theoretical 100%
+            saturation concentration, as output from the CTD using Seabird's factory calibration.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>percent</customUnit>
+              </unit>
+              <precision>0.01</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>o2_moles</attributeName>
+          <attributeLabel>Dissolved Oxygen in moles - Factory Calibration</attributeLabel>
+          <attributeDefinition>
+            Dissolved oxygen concentration as micromoles of oxygen per kilogram
+            of seawater, as output from the CTD using Seabird's factory calibration.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>mole</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>o2_ml</attributeName>
+          <attributeLabel>Dissolved Oxygen in milliliters/liter - Factory Calibration</attributeLabel>
+          <attributeDefinition>
+            Dissolved oxygen concentration as milliliters of oxygen per liter
+            of sea water, as output from the CTD using Seabird's factory calibration.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>millilitersPerLiter</customUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>o2_saturation_corrected</attributeName>
+          <attributeLabel>Dissolved Oxygen - Bottle Corrected</attributeLabel>
+          <attributeDefinition>
+            Dissolved oxygen concentration as a percent of theoretical 100% saturation concentration, as corrected for sensor drift and variation by PISCO.  This value is recalculated using the bottle corrected oxygen concentration and 100% saturation concentration using Seabird's formula for the Computation of Oxygen Solubility (Oxsol).
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>percent</customUnit>
+              </unit>
+              <precision>0.01</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>o2_moles_corrected</attributeName>
+          <attributeLabel>Dissolved Oxygen in moles - Bottle Corrected</attributeLabel>
+          <attributeDefinition>
+            Dissolved oxygen concentration as micromoles of oxygen per kilogram of seawater, as corrected for sensor drift and variation by PISCO. Oxygen samples are taken using the Winkler method and analyzed in the lab, and sensor data is adjusted using coefficients derived from regressing bottle data to sensor data.  Exact methods may vary based on Winkler data availability over time.  Bottle corrected data is considered more accurate than raw data.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>mole</standardUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>o2_ml</attributeName>
+          <attributeLabel>Dissolved Oxygen in milliliters/liter - Bottle Corrected</attributeLabel>
+          <attributeDefinition>
+            Dissolved oxygen concentration as milliliters of oxygen per liter of sea water, as corrected for sensor drift and variation by PISCO. Oxygen samples are taken using the Winkler method and analyzed in the lab, and sensor data is adjusted using coefficients derived from regressing bottle data to sensor data.  Exact methods may vary based on Winkler data availability over time.  Bottle corrected data is considered more accurate than raw data.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>millilitersPerLiter</customUnit>
+              </unit>
+              <precision>0.001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>potential_temp</attributeName>
+          <attributeLabel>Potential temperature</attributeLabel>
+          <attributeDefinition>
+            Temperature after the effects of compression have been removed.
+            Defined as the temperature of a parcel of water at the sea
+            surface after it has been raised adiabatically from some
+            depth in the ocean.
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <precision>0.0001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.0000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>salinity</attributeName>
+          <attributeLabel>Salinity</attributeLabel>
+          <attributeDefinition>
+            Salinity of the water, calculated according to the
+            "Practical Salinity Scale of 1978"
+            </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <precision>0.0001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.0000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>sigma-theta</attributeName>
+          <attributeLabel>Sigma-Theta</attributeLabel>
+          <attributeDefinition>
+            The density anomaly calculated with in situ salinity, potential
+            temperature and pressure=0.
+            sigmatheta = density[kg/m3]  - 1000kg/m3. (International Equation
+            of State, Joint Panel on Oceanographic Tables and Standards, 1981)
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>kilogramPerCubicMeter</standardUnit>
+              </unit>
+              <precision>0.0001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.0000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>sva</attributeName>
+          <attributeLabel>Specific Volume Anomaly</attributeLabel>
+          <attributeDefinition>
+            The difference between the in situ specific volume (m3/kg) of a
+            parcel and specific volume at the same pressure with S=35
+            and T=0[celsius].
+          </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">
+            float
+          </storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>cubicMeterPerKilogram</standardUnit>
+              </unit>
+              <precision>0.0001</precision>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>99999.0000</code>
+            <codeExplanation>
+	      No measurement was collected at this point, or it is not available
+	    </codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute scope="document">
+          <attributeName>flag</attributeName>
+          <attributeDefinition>data flag used to qualify data as bad, questionable, etc.
+	  </attributeDefinition>
+          <storageType typeSystem="http://www.w3.org/2001/XMLSchema-datatypes">string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>
+		     Data for each column of the data file are flagged with a single
+		     alpha-numeric code such that the first digit holds the
+		     first data column flag, the second digit holds the second data column
+		     flag, etc.  Possible flags are 0-9, A-Z, a-z; however flag definitions are
+		     currently as follows:
+		     0 - No known bad data;
+		     1 - Known bad data: instrument malfunction/failure, loss of memory,
+		     loss of power, bio-fouling, electronic malfunction;
+		     2 - Suspicious data (looks bad, but no known cause);
+		     9 - Missing data (data column has a missing value code as defined in the metadata)
+		   [0-9A-Za-z]</definition>
+                  <pattern>
+		     [0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]
+		     [0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]
+		     [0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]
+		     [0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]
+		   </pattern>
+                  <source>PISCO/NMS Physical Oceanography Team accepted flagging conventions</source>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    <otherEntity scope="document">
+      <entityName>SH70XX_070CTDX069R00_20150518.41.1.asc</entityName>
+      <entityDescription>
+        This file is the raw, uncalibrated data file downloaded from the instrument.
+      </entityDescription>
+      <physical scope="document">
+        <objectName>SH70XX_070CTDX069R00_20150518.41.1</objectName>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>
+              Seabird Electronics ascii data file
+            </formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution id="SH70XX_070CTDX069R00_20150518.41" scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/doi:10.6085/AA/SH70XX_070CTDX069R00_20150518.41.1</url>
+          </online>
+        </distribution>
+      </physical>
+      <entityType>
+        text/plain
+      </entityType>
+    </otherEntity>
+    <otherEntity scope="document">
+      <entityName>SH70XX_070CTDX069R00_20150518.42.1.hdr</entityName>
+      <entityDescription>
+        This file is a list of the Seabird software processing steps
+        used to convert the raw data file to the processed data file that this
+        metadata file describes.
+      </entityDescription>
+      <physical scope="document">
+        <objectName>SH70XX_070CTDX069R00_20150518.42.1</objectName>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>
+              Seabird Electronics header file format
+            </formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution id="SH70XX_070CTDX069R00_20150518.42" scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/doi:10.6085/AA/SH70XX_070CTDX069R00_20150518.42.1</url>
+          </online>
+        </distribution>
+      </physical>
+      <entityType>
+        text/plain
+      </entityType>
+    </otherEntity>
+    <otherEntity scope="document">
+      <entityName>SH70XX_070CTDX069R00_20150518.43.1.hex</entityName>
+      <entityDescription>
+        This file is the raw, uncalibrated data file downloaded from the instrument.
+      </entityDescription>
+      <physical scope="document">
+        <objectName>SH70XX_070CTDX069R00_20150518.43.1</objectName>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>
+              Seabird Electronics hexadecimal data
+            </formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution id="SH70XX_070CTDX069R00_20150518.43" scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/doi:10.6085/AA/SH70XX_070CTDX069R00_20150518.43.1</url>
+          </online>
+        </distribution>
+      </physical>
+      <entityType>
+        text/plain
+      </entityType>
+    </otherEntity>
+    <otherEntity scope="document">
+      <entityName>SH70XX_070CTDX069R00_20150518.44.1.xmlcon</entityName>
+      <entityDescription>
+        This file is a calibration file used by the Seabird software to convert
+        raw voltages and frequencies to meaningful values.
+      </entityDescription>
+      <physical scope="document">
+        <objectName>SH70XX_070CTDX069R00_20150518.44.1</objectName>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>
+              Seabird Electronics configuration file
+            </formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution id="SH70XX_070CTDX069R00_20150518.44" scope="document">
+          <online>
+            <url function="download">https://cn.dataone.org/cn/v2/resolve/doi:10.6085/AA/SH70XX_070CTDX069R00_20150518.44.1</url>
+          </online>
+        </distribution>
+      </physical>
+      <entityType>
+        text/plain
+      </entityType>
+    </otherEntity>
+  </dataset>
+  <additionalMetadata>
+    <describes>SH70XX_070CTDX069R00_20150518.40</describes>
+    <access
+      authSystem="ldap://ldap.ecoinformatics.org:389/dc=ecoinformatics,dc=org" order="denyFirst">
+      <allow>
+        <principal>public</principal>
+        <permission>read</permission>
+      </allow>
+      <allow>
+        <principal>
+          cn=data-managers,o=PISCOGROUPS,dc=ecoinformatics,dc=org
+        </principal>
+        <permission>all</permission>
+      </allow>
+    </access>
+  </additionalMetadata>
+  <additionalMetadata>
+    <describes>SH70XX_070CTDX069R00_20150518.41</describes>
+    <access
+      authSystem="ldap://ldap.ecoinformatics.org:389/dc=ecoinformatics,dc=org" order="denyFirst">
+      <allow>
+        <principal>public</principal>
+        <permission>read</permission>
+      </allow>
+      <allow>
+        <principal>
+          cn=data-managers,o=PISCOGROUPS,dc=ecoinformatics,dc=org
+        </principal>
+        <permission>all</permission>
+      </allow>
+    </access>
+  </additionalMetadata>
+  <additionalMetadata>
+    <describes>SH70XX_070CTDX069R00_20150518.42</describes>
+    <access
+      authSystem="ldap://ldap.ecoinformatics.org:389/dc=ecoinformatics,dc=org" order="denyFirst">
+      <allow>
+        <principal>public</principal>
+        <permission>read</permission>
+      </allow>
+      <allow>
+        <principal>
+          cn=data-managers,o=PISCOGROUPS,dc=ecoinformatics,dc=org
+        </principal>
+        <permission>all</permission>
+      </allow>
+    </access>
+  </additionalMetadata>
+  <additionalMetadata>
+    <describes>SH70XX_070CTDX069R00_20150518.43</describes>
+    <access
+      authSystem="ldap://ldap.ecoinformatics.org:389/dc=ecoinformatics,dc=org" order="denyFirst">
+      <allow>
+        <principal>public</principal>
+        <permission>read</permission>
+      </allow>
+      <allow>
+        <principal>
+          cn=data-managers,o=PISCOGROUPS,dc=ecoinformatics,dc=org
+        </principal>
+        <permission>all</permission>
+      </allow>
+    </access>
+  </additionalMetadata>
+  <additionalMetadata>
+    <describes>SH70XX_070CTDX069R00_20150518.44</describes>
+    <access
+      authSystem="ldap://ldap.ecoinformatics.org:389/dc=ecoinformatics,dc=org" order="denyFirst">
+      <allow>
+        <principal>public</principal>
+        <permission>read</permission>
+      </allow>
+      <allow>
+        <principal>
+          cn=data-managers,o=PISCOGROUPS,dc=ecoinformatics,dc=org
+        </principal>
+        <permission>all</permission>
+      </allow>
+    </access>
+  </additionalMetadata>
+  <additionalMetadata>
+    <unitList>
+      <unit abbreviation="dbar" id="decibar" multiplerToSI="10,000"
+        name="decibar" parentSI="pascal" unitType="pressure">
+        <description>pressure, oceanography</description>
+      </unit>
+      <unit abbreviation="ml/L" id="millilitersPerLiter"
+        multiplerToSI="1000" name="millilitersPerLiter" parentSI="liter" unitType="volumePerVolume">
+        <description>volumetric concentration</description>
+      </unit>
+      <unit abbreviation="%" id="percent" multiplerToSI=".01"
+        name="percent" parentSI="gramsPerGram" unitType="massPerMass">
+        <description>parts per hundred</description>
+      </unit>
+      <unit abbreviation="m-1" id="reciprocalMeter" multiplerToSI="1"
+        name="reciprocalMeter" parentSI="meter" unitType="lengthReciprocal">
+        <description>per meter, describes optical properties</description>
+      </unit>
+      <unit abbreviation="S*m-1" id="siemensPerMeter" multiplerToSI="1"
+        name="siemensPerMeter" parentSI="siemen" unitType="conductance">
+        <description>conductivity unit, seawater</description>
+      </unit>
+    </unitList>
+  </additionalMetadata>
+</eml:eml>

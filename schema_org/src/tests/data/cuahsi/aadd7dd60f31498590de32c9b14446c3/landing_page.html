@@ -1,0 +1,1690 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="keywords" content="">
+<meta name="description" content="R script to obtain continuous daily estimates of whole-stream metabolism">
+<title>R script to obtain continuous daily estimates of whole-stream metabolism | CUAHSI HydroShare</title>
+<link rel="shortcut icon" href="/static/img/favicon.png">
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feeds/rss/">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="/blog/feeds/atom/">
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/css/hydroshare_fonts.css" rel="stylesheet" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/fonts/font-mfizz/font-mfizz.css" />
+
+
+<link href="/static/css/bootstrap.3.0.2.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/css/animate.css"/>
+<link rel="stylesheet" type="text/css" href="/static/css/elements.css"/>
+<link rel='stylesheet' type='text/css' href='/static/css/jquery-ui/smoothness/jquery-ui.css'/>
+<link rel="stylesheet" type="text/css" href="/static/css/hydroshare_core.css"/>
+<link href="/static/css/identifiers.css" rel="stylesheet"/>
+<link href="/static/css/academicons.min.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="/static/css/hydroshare_extends.css"/>
+
+
+
+
+
+
+<script src="/static/mezzanine/js/jquery-1.8.3.min.js"></script>
+<script src="/static/js/custom.js"></script>
+<script src="/static/js/scrolltopcontrol.js"></script><!-- Scroll to top javascript -->
+<script src="/static/js/jqcsrf.js"></script>
+<script src='/static/js/jquery-ui.js'></script>
+<script src="/static/js/bootstrap.3.0.2.min.js"></script>
+<script src="/static/js/bootstrap-extras.js"></script>
+
+    
+    <script>
+      
+      const RES_KEYWORDS = ["Whole-stream metabolism", "Time series", "River ecohydrology"];
+      const SELF_ACCESS_LEVEL = "None";
+      const RES_TYPE = "Generic";
+      const FILE_COUNT = 77;
+      const SUPPORTE_FILE_TYPES = ".*";
+      const ALLLOW_MULTIPLE_FILE_UPLOAD = "True";
+      const RESOURCE_MODE = "View";
+      const CURRENT_USER_ID = null;
+      const SHORT_ID = "aadd7dd60f31498590de32c9b14446c3";
+      const STATIC_URL = "/static/";
+      const USERS_JSON = [{"best_name": "Sandra Villamizar", "joined": "31 May, 2016", "title": "", "contributions": 5, "subject_areas": "", "identifiers": {}, "user_type": "user", "email": "svillamizar.amaya@gmail.com", "access": "owner", "state": "", "pictureUrl": null, "country": "", "organization": "", "user_name": "sandra_villamizar", "id": 418, "can_undo": false}];
+      const TRACKING_APPLAUNCH_URL = "/tracking/applaunch/";
+
+      
+          const LAST_CHANGED_BY = {
+          "id": 418,
+          "pictureUrl": null,
+          "best_name": "Sandra Villamizar",
+          "email": "svillamizar.amaya@gmail.com",
+          "organization": "",
+          "title": "",
+          "contributions": "5",
+          "subject_areas": "",
+          "identifiers": {
+              
+          },
+          "state": "",
+          "country": "",
+          "joined": "May 31, 2016"
+      };
+      
+
+      
+      var spatial_coverage_type = "";
+    </script>
+
+    <script type="text/javascript" src="/static/js/coverageMap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=drawing&v=3&key=AIzaSyBv1tggGSW3-12h6vkbo8BL711KaUnG1w0"></script>
+    <script type="text/javascript" src="/static/js/dropzone.js"></script>
+    <script type="text/javascript" src="/static/js/vue-2.6.10-dev.js"></script>
+    <script type="text/javascript" src="/static/js/hs-file-icons.js"></script>
+    <script type="text/javascript" src="/static/js/hs_file_browser.js"></script>
+    <script type="text/javascript" src="/static/js/resourceLandingAjax.js"></script>
+    <script type="text/javascript" charset="utf8" src="/static/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="/static/js/copyToClipboard.js"></script>
+    <script type="text/javascript" src="/static/js/generic-resource.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+jQuery(function($) {
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+function sameOrigin(url) {
+    // test that a given url is a same-origin URL
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = '//' + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+        // or any other URL that isn't scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+            // Send the token to same-origin, relative URLs only.
+            // Send the token only if the method warrants CSRF protection
+            // Using the CSRFToken value acquired earlier
+            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+        }
+    }
+});
+});
+</script>
+
+
+<script type="text/javascript" src="/static/autocomplete_light/django_admin.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/autocomplete.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/widget.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/addanother.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/text_widget.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/remote.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/autocomplete_light/style.css" />
+
+
+
+
+
+<!-- it needs jquery to work
+<script src="//code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
+-->
+<script src="/static/js/jquery.json.js" type="text/javascript"></script>
+<script src="/static/js/jquery.inplaceeditform.js" type="text/javascript"></script>
+<script src="/static/js/jquery.inplaceeditform.hooks.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        var isIE = function () {
+            if(typeof jQuery!== typeof undefined && jQuery.browser === undefined){
+                jQuery.browser = { msie : true};
+        }};
+    </script>
+    <!--[if IE]>
+        <script type="text/javascript">
+            isIE(); /* IE <= 9*/
+        </script>
+    <![endif]-->
+    <!--[if !IE]><!-->
+        <script type="text/javascript"> 
+            if (/*@cc_on!@*/false) { 
+                isIE(); /* IE 10*/
+            }
+        </script>
+    <!--<![endif]-->
+    <script type="text/javascript">
+        (function($){
+            $(document).ready(function () {
+                var options = {"getFieldUrl": "/inplaceeditform/get_field/",
+                               "saveURL": "/hsapi/save_inline/",
+                               "successText": "Successfully saved",
+                               "eventInplaceEdit": "dblclick",
+                               "disableClick": true,
+                               "autoSave": false,
+                               "unsavedChanges": "You have unsaved changes!",
+                               "enableClass": "enable",
+                               "fieldTypes": "input, select, textarea",
+                               "focusWhenEditing": true};
+                
+                var inplaceManager = $(".inplaceedit").inplaceeditform(options);
+                
+                    inplaceManager.enable();
+                
+
+        });
+    })(jQuery);
+    </script>
+    <script type="text/javascript">
+    var csrf_token = "1KOPOOeEsKoITYe3YNzcUfx5RQ1zNO2mhXoLMzv9pjJsptknl8KSBlUO1uFZNdLc";
+</script>
+    
+
+
+<link rel="stylesheet" type="text/css" href="/static/css/inplaceedit_structure.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/inplaceedit_style.css" />
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<!--[if IE]>
+<style>
+    .showcase {
+         zoom: 0.6;
+    }
+</style>
+<![endif]-->
+
+
+    <link href="/static/css/site_base_irods.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.dataTables.min.css">
+    <link href="/static/css/toolresource.css" rel="stylesheet"/>
+    <link href="/static/css/hs-file-icons.css" rel="stylesheet"/>
+
+
+<script type="text/javascript">
+    window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("1320547260");
+</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+{
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(
+o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(
+a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js'
+,'ga');
+ga('create', 'UA-74322358-2', 'auto');
+ga('send', 'pageview');
+</script>
+</head>
+
+<body id="body">
+<!-- Navbar
+    ============= -->
+    <div id="hs-nav-bar" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/landingPage">
+                    <img id="img-brand-logo" src="/static/img/logo-lg.png" alt="CUAHSI HydroShare"/>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                    
+                    
+                    <!-- <li id="signup-menu"><a href="/accounts/signup/">Sign Up</a></li> -->
+                    <li id="signin-menu"><a href="/accounts/login/"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+                    
+                    
+                    
+                </ul>
+                
+<ul class="nav navbar-nav"><li  id="dropdown-menu-home"><a href="/home/">Home</a></li><li  id="dropdown-menu-my-resources"><a href="/my-resources/">My Resources</a></li><li  id="dropdown-menu-search"><a href="/search/">Discover</a></li><li  id="dropdown-menu-collaborate"><a href="/collaborate/">Collaborate</a></li><li class="" id="dropdown-menu-https:--www.hydroshare.org-apps-"><a href="https://www.hydroshare.org/apps/">Apps</a></li><li class="" id="dropdown-menu-https:--help.hydroshare.org"><a href="http://help.hydroshare.org">Help</a></li></ul><ul class="nav navbar-nav navbar-right"><!-- Profile links for extra small screens --><li class="visible-xs"><a href="/accounts/login/"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    <!-- Universal message box for AJAX requests -->
+    <div id="universalMessage">
+      <span>Hi, I'm an error.</span>
+      <a href="#" class="um_close" id="UMClose">x</a>
+    </div>
+
+    
+        <div class="main-container">
+            
+    
+    
+    
+
+    <div class="container" onload="loadScroll()" onunload="saveScroll()">
+        
+            
+            
+        
+
+        
+
+        
+        <script id="profile-card-template" type="text/x-template">
+    <ul class="dropdown-menu arrow_box profile-card" @click.stop=""
+        :style="{top: position.top + 'px', left: position.left + 'px'}">
+        <li>
+            <div class="flex">
+                <div>
+                    <div :class="{'dropdown-user-icon': !user.pictureUrl}"
+                         :style="{backgroundImage: user.pictureUrl ? 'url(' + user.pictureUrl + ')' : 'none'}"
+                        class="dropdown-profile-pic-thumbnail round-image">
+                    </div>
+
+                    <div>
+                        <small>Contributions</small>
+                        <div class="label label-default space-top">${user.contributions}</div>
+                    </div>
+
+                    <div class="space-top">
+                        <small>Joined</small>
+                        <div class="label label-default">${user.joined}</div>
+                    </div>
+                </div>
+                <div style="flex-grow: 1;">
+                    <h4 style="margin-top: 0;">
+                        <a :href="/user/ + user.id" title="View Profile">${user.best_name}</a>
+                    </h4>
+
+                    <table>
+                        <tr v-if="user.email">
+                            <td class="text-center"><i class="fa fa-envelope text-muted" aria-hidden="true"></i></td>
+                            <td><span>${user.email}</span></td>
+                        </tr>
+                        <tr v-if="(user.state && user.state !== 'Unspecified') || (user.country && user.country !== 'Unspecified')"
+                            >
+                            <td class="text-center">
+                                <i class="fa fa-map-marker text-muted" aria-hidden="true"></i>
+                            </td>
+                            <td>
+                                <span v-if="user.state && user.state !== 'Unspecified'">${user.state}</span>
+                                <span v-if="user.state && user.country">, </span>
+                                <span v-if="user.country && user.country !== 'Unspecified'">${user.country}</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div v-if="user.organization || user.title" class="space-top separate">
+                        <span v-if="user.organization">${user.organization}</span>
+                        <span v-if="user.title">${user.title}</span>
+                    </div>
+
+                    <div v-if="user.subject_areas" class="space-top">
+                        <small class="text-muted">Subject Areas:</small>
+                        <div>${user.subject_areas}</div>
+                    </div>
+
+                    <div v-if="hasIdentifiers" class="space-top">
+                        <small class="text-muted">External Profiles:</small>
+                        <div class="external-profiles">
+                            <template v-for="(identifier, key) of user.identifiers">
+                                <a v-if="identifierAttributes.hasOwnProperty(key)"
+                                   :href="identifier"
+                                   class="identifier-icon" target="_blank"
+                                   data-toggle="tooltip" data-placement="top"
+                                   :title="identifierAttributes[key].title">
+
+                                    <img v-if="key === 'ResearcherID'" class="hover-shadow"
+                                         src="/static/img/researcherID.png"
+                                         alt="ResearcherID icon"/>
+
+                                    <i v-else :class="identifierAttributes[key].classes"></i>
+                                </a>
+
+                                <a v-else :href="identifier" class="identifier-icon" target="_blank"
+                                   data-toggle="tooltip" data-placement="top"
+                                   :title="key">
+                                    <i class="fa fa-address-card hover-shadow"></i>
+                                </a>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</script>
+
+<script type="text/javascript" src="/static/js/hs-vue/profile-link-cmp.js"></script>
+
+<script id="profile-link-template" type="text/x-template">
+    <a v-on:click="$emit('load-card', {user: user, event: $event})"
+       data-toggle="dropdown" style="cursor: pointer;">${user.best_name}</a>
+</script>
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-xs-12">
+    
+        <div class="flex">
+            <h2 id="resource-title">R script to obtain continuous daily estimates of whole-stream metabolism</h2>
+
+            
+
+            <span id="apps-dropdown" v-if="openWithTools.length">
+                <div v-if="!isLoading" class="btn-group">
+                    <button class="btn btn-default dropdown-toggle"
+                            type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Open with... <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right">
+                        <li v-for="tool in openWithTools" :title="tool.title">
+                            <a :href="getResAppUrl(tool)"
+                               target="_blank">
+                                <img class="dropdown-user-webapp-icon" :src="tool.icon_url"/>
+                                <span>${tool.title}</span>
+                            </a>
+                        </li>
+                        <li v-if="isLoading" style="display: flex;justify-content: center;">
+                            <i class="fa fa-spinner fa-pulse fa-2x fa-fw icon-blue"></i>
+                        </li>
+                     </ul>
+                </div>
+            </span>
+            <script type="text/javascript" src="/static/js/hs-vue/relevant-tools.js"></script>
+        </div>
+        <hr>
+    
+</div>
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": {
+        "@vocab": "http://schema.org/",
+        "geolink": "http://schema.geolink.org/1.0/base/main#"
+    },
+    "@type": "Dataset",
+    "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
+    "name": "R script to obtain continuous daily estimates of whole-stream metabolism",
+    "description": "Generating daily estimates of WSM. We show the procedure to generate daily estimates of one station whole\u002Dstream metabolism using water, reach and weather data for the period of interest. Read the \u0022Supplemental_Text_S4.pdf\u0022 for detailed description of the Daily.Metabolism.R script.\u000D\u000A\u000D\u000ADOI: 10.6084/m9.figshare.3422272\u000D\u000A\u000D\u000ANote: the \u0022AAAA\u002DMM_inputs.csv\u0022 files are the monthly dates files used for the estimation of WSM for the period of August 2010 through December 2014. To run the Daily.Metabolism.R script only one of these files is required.\u000D\u000A",
+    "url": "https://www.hydroshare.org/resource/aadd7dd60f31498590de32c9b14446c3/",
+    "version": "2017-06-04",
+     "isAccessibleForFree": true, 
+    "keywords": "[\u0022Whole\u002Dstream metabolism\u0022, \u0022Time series\u0022, \u0022River ecohydrology\u0022]",
+    
+        "license": "http://creativecommons.org/licenses/by/4.0/",
+    
+    
+    "citation": "Villamizar, S., H. Pai (2016). R script to obtain continuous daily estimates of whole-stream metabolism, HydroShare, http://www.hydroshare.org/resource/aadd7dd60f31498590de32c9b14446c3",
+    "includedInDataCatalog": {
+        "@id": "https://www.hydroshare.org"
+    },
+    "distribution": {
+        "@type": "DataDownload",
+        "contentUrl": "https://www.hydroshare.org/hsapi/resource/aadd7dd60f31498590de32c9b14446c3/",
+        "encodingFormat": "application/zip"
+    },
+    
+    
+    "spatialCoverage": {
+        "@type": "Place",
+        "geo": {
+            
+            "@type": "GeoShape",
+            "box": ",  , "
+            
+        }
+    },
+    
+    "creator": [
+        
+        {
+            "@id": "/user/418/",
+            "@type": "Role",
+            "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
+            "roleName": "Author",
+            "url": "/user/418/",
+            "creator": {
+                "@id": "/user/418/",
+                "@type": "Person",
+                "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
+                "name": "Sandra Villamizar",
+                "url": "/user/418//"
+            }
+        }
+        ,
+        
+        {
+            "@id": "",
+            "@type": "Role",
+            "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
+            "roleName": "Author",
+            "url": "",
+            "creator": {
+                "@id": "",
+                "@type": "Person",
+                "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
+                "name": "Henry Pai",
+                "url": "/"
+            }
+        }
+        
+        
+    ],
+    "provider": {
+        "@id": "https://www.hydroshare.org",
+        "@type": "Organization",
+        "additionalType": "http://schema.geolink.org/1.0/base/main#Organization",
+        "legalName": "HydroShare",
+        "name": "HydroShare",
+        "url": "https://www.hydroshare.org"
+    },
+    "publisher": {
+        "@id": "https://www.hydroshare.org"
+    }
+}
+</script>
+
+        
+        
+
+<div class="col-sm-12">
+    <div class="custom-btn-toolbar">
+        
+        
+            
+                
+                    
+                
+            
+
+            
+            
+
+            
+                
+                
+            
+        
+    </div>
+</div>
+
+        
+        
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 res-header">
+            <table id="left-header-table"
+                   class="info-table">
+                <tr>
+                    <th>Authors:</th>
+                    
+                        <td class="authors-wrapper">
+                            
+                                
+
+<a data-toggle="modal" class="author-preview"
+   data-target="#view-author-modal" href="#"
+   data-name="Sandra Villamizar"
+   data-email="svillamizar.amaya@gmail.com"
+   data-order="1"
+   data-organization="Universidad Pontificia Bolivariana, Bucaramanga"
+        
+   data-address="Km 7 vía Piedecuesta"
+   data-phone=""
+   data-homepage="http://orcid.org/0000-0003-4961-0187"
+   data-profileurl="/user/418/">
+    
+        Sandra Villamizar
+    
+</a>
+                            
+                                
+
+<a data-toggle="modal" class="author-preview"
+   data-target="#view-author-modal" href="#"
+   data-name="Henry Pai"
+   data-email=""
+   data-order="2"
+   data-organization="University of Nevada, Reno"
+        
+   data-address=""
+   data-phone=""
+   data-homepage="http://orcid.org/0000-0003-0396-7033"
+   data-profileurl="">
+    
+        Henry Pai
+    
+</a>
+                            
+                        </td>
+                    
+                </tr>
+                <tr>
+                    <th>Owners:</th>
+                    <td class="owners-wrapper">
+                        <template v-for="owner in owners">
+                            <profile-link
+                                :user="owner"
+                                v-bind:key="owner.id"
+                                v-on:load-card="onLoadOwnerCard($event)">
+                            </profile-link>
+                        </template>
+
+                        <profile-card :user="userCardSelected" :position="cardPosition"></profile-card>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Resource type:</th>
+                    <td>Generic</td>
+                </tr>
+                <tr>
+                    <th>Storage:</th>
+                    <td>The size of this resource is 3.2 MB</td>
+                </tr>
+                <tr>
+                    <th>Created:</th>
+                    <td>Jun 07, 2016 at 1:41 p.m.</td>
+                </tr>
+                <tr>
+                    <th>Last updated:</th>
+                    <td> Jun 11, 2016 at 2:03 p.m.
+                        <profile-link v-on:load-card="onLoadOwnerCard($event)" :user="lastChanagedBy"></profile-link>
+                        <profile-card :user="lastChanagedBy" :position="cardPosition"></profile-card>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th>Citation:</th>
+                    <td><a href="#citation">See how to cite this resource</a></td>
+                </tr>
+                
+            </table>
+        </div>
+        <div class="col-sm-12 col-md-6 res-header">
+            <table id="table-stats" class="info-table">
+    <tr>
+        <th>Sharing Status:</th>
+        <td id="hl-sharing-status">
+            
+                Public
+            
+        </td>
+    </tr>
+    
+    <tr>
+        <th>Views: </th>
+        <td>205</td>
+    </tr>
+    <tr>
+        <th>Downloads: </th>
+        <td>284</td>
+    </tr>
+    <tr>
+        
+
+
+
+<th>+1 Votes:</th>
+<td>
+    <span id="rating-1115">
+    
+    
+        Be the first one to&nbsp;
+    
+    
+        +1 this.
+    
+
+    
+        &nbsp;(<a href="/accounts/login/">You need to be logged in to rate this.</a>)
+    
+</span>
+</td>
+
+
+    </tr>
+    <tr>
+        <th>Comments: </th>
+        <td>
+            <a href="#resource-comments">
+                
+                    No comments (yet)
+                
+            </a>
+        </td>
+    </tr>
+</table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/static/js/hs-vue/left-header-app.js"></script>
+
+
+        
+        
+    
+        <div class="col-xs-12 content-block">
+            <h3>Abstract</h3>
+            <span class="abstract"><p>Generating daily estimates of WSM. We show the procedure to generate daily estimates of one station whole-stream metabolism using water, reach and weather data for the period of interest. Read the &quot;Supplemental_Text_S4.pdf&quot; for detailed description of the Daily.Metabolism.R script.</p>
+
+<p>DOI: 10.6084/m9.figshare.3422272</p>
+
+<p>Note: the &quot;AAAA-MM_inputs.csv&quot; files are the monthly dates files used for the estimation of WSM for the period of August 2010 through December 2014. To run the Daily.Metabolism.R script only one of these files is required.<br /></p></span>
+        </div>
+    
+
+
+
+        
+        <div class="col-xs-12 content-block" id="app-keyword">
+    <h3>Subject Keywords</h3>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            
+            <div class="tags">
+                
+
+                <ul id="lst-tags" class="custom-well tag-list">
+                    <li class="small text-muted" v-if="!resKeywords.length">No subject keywords have been added.</li>
+                    <li v-else v-for="k in resKeywords">
+                        
+                            <a class='tag' target="_blank"
+                               :href="'/search/?q=&selected_facets=subject_exact:' + k">${ k }</a>
+                        
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-danger small" v-if="showIsDuplicate"> Duplicate. Keyword not added.</p>
+                <div v-if="error" class='alert alert-danger space-top small'>
+                    <strong>Error: </strong>${ error }
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <span class="alert alert-warning group-title" role="alert">
+                <div class="flex">
+                    <i class="glyphicon glyphicon-info-sign" style="margin-right: 20px;"></i>
+                    <em style="padding-right:20px;">
+                        Deleting all keywords will set the resource sharing status to <strong>private</strong>.
+                    </em>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/static/js/hs-vue/subject-keywords-app.js"></script>
+
+
+        
+        
+
+        
+        
+        
+            
+            <ul id="right-click-menu" class="dropdown-menu fb-dropdown selection-menu">
+                
+
+                
+
+                <li id="btn-download" data-menu-name="download" data-fb-action="download">
+                    <span class="glyphicon glyphicon-download icon-blue"></span>
+                    <span>Download</span>
+                </li>
+                <li data-menu-name="download" data-fb-action="downloadZipped" data-zipped="true">
+                    <span class="fa fa-download icon-blue"></span>
+                    <span>Download zipped</span>
+                </li>
+                <li id="btn-get-link" data-menu-name="get-link"
+                    data-fb-action="getLink" data-toggle="modal"
+                    data-target="#get-file-url-dialog">
+                    <span class="fa fa-link icon-blue"></span>
+                    <span>Get file URL</span>
+                </li>
+                <li data-fb-action="getRefUrl"
+                    data-toggle="modal" data-target="#redirect-referenced-url-dialog">
+                    <span class="fa fa-external-link icon-blue"></span>
+                    <span>Open referenced URL</span>
+                </li>
+                
+                <li id="content-type-separator" role="separator" class="divider"></li>
+                
+            </ul>
+
+            
+            <ul id="right-click-container-menu" class="dropdown-menu fb-dropdown selection-menu">
+                
+
+                <li data-menu-name="refresh">
+                    <span class="fa fa-refresh icon-blue"></span>
+                    <span>Refresh</span>
+                </li>
+
+                <li data-menu-name="select-all">
+                    <span class="fa fa-th-large icon-blue"></span>
+                    <span>Select all</span>
+                </li>
+            </ul>
+
+            <div class="col-xs-12 content-block">
+                <h3>Content</h3>
+                
+
+                <div id="ref_file_note" class="alert alert-warning space-top" role="alert"
+                         hidden >
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <div class="flex">
+                        <i class="glyphicon glyphicon-info-sign" style="margin-right: 20px;"></i>
+                        <em>
+                            This resource contains links to external content. Linked content is
+                            NOT stored in HydroShare, and we can't guarantee its availability, quality, or
+                            security.
+                        </em>
+                    </div>
+                </div>
+
+                
+
+                
+                
+                    
+                    <div class="modal fade" id="confirm-delete-dialog" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Confirm files deletion</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="warnings-list">
+                                        <div>Consider saving a copy of the files before you delete it if it is
+                                            important to you.
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
+                                    </button>
+                                    <button id="btn-confirm-delete" type="button" class="btn btn-danger"
+                                            data-dismiss="modal">Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div id="hs-file-browser" data-res-id="aadd7dd60f31498590de32c9b14446c3" data-current-path=""
+                         
+                         data-supported-files=".*"
+                         data-allow-multiple-files="True"
+                         
+                         data-initial-file-count="77"
+                         class="file-browser">
+
+                        <div class="file-browser-container">
+                            <div id="fb-inner-controls">
+                                <div id="fb-inner-buttons">
+                                    <div class="flex">
+                                        
+                                        
+
+                                        
+                                        <div>
+                                            <div id="btn-group-view" class="btn-group" role="group">
+                                                <button data-view="list" data-toggle="tooltip"
+                                                        data-placement="auto"
+                                                        title='List'
+                                                        type="button"
+                                                        class="btn btn-default"><i class='fa fa-list'
+                                                                                   aria-hidden='true'></i>
+                                                </button>
+
+                                                <button data-view="grid" data-toggle="tooltip"
+                                                        data-placement="auto" type="button"
+                                                        title='Grid'
+                                                        class="btn btn-default active"><i
+                                                        class='fa fa-th' aria-hidden='true'></i>
+                                                </button>
+                                            </div>
+
+                                            <div id="fb-sort" class="btn-group">
+                                                <button type="button"
+                                                        class="btn btn-default dropdown-toggle"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                    <span class="glyphicon glyphicon-sort"></span>&nbsp;<span>Sort by</span>&nbsp;<span
+                                                        class="caret"></span>
+                                                </button>
+
+                                                <ul class="dropdown-menu text-left">
+                                                    <li data-method="type" class="active"><a>Type</a></li>
+                                                    <li data-method="name"><a>Name</a></li>
+                                                    <li data-method="size"><a>Size</a></li>
+                                                    <li role="separator" class="divider"></li>
+                                                    <li data-order="asc" class="active"><a><i
+                                                            class="fa fa-sort-amount-asc"></i>&nbsp;&nbsp;Ascending</a>
+                                                    </li>
+                                                    <li data-order="desc"><a><i
+                                                            class="fa fa-sort-amount-desc"></i>&nbsp;&nbsp;Descending</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="text-center fb-search-directory">
+                                            <div class="input-group file-browser-search">
+                                                <span class="glyphicon glyphicon-search search-icon"></span>
+                                                <span id="btn-clear-search-input"
+                                                      class="glyphicon glyphicon-remove-sign btn-clear-search"
+                                                      data-toggle="tooltip"
+                                                      data-placement="auto"
+                                                      title="Clear search"></span>
+                                                <input type="text" id="txtDirSearch"
+                                                       class="form-control fb-input-search"
+                                                       placeholder="Search current directory">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="fb-file-operations-controls" class="col-xs-12 col-sm-12">
+                                            
+
+                                            
+
+                                            
+
+                                            <button id="fb-select-all"
+                                                    title="Select all">
+                                                <span class="fa fa-th-large icon-blue"></span>
+                                            </button>
+
+                                            <button id="fb-refresh" class="fb-space-right"
+                                                    title="Refresh">
+                                                <span class="fa fa-refresh icon-blue"></span>
+                                            </button>
+
+                                            <button id="fb-get-link" data-toggle="modal" data-fb-action="getLink"
+                                                    class="disabled" data-target="#get-file-url-dialog"
+                                                    title="Get file URL">
+                                                <span class="fa fa-link icon-blue"></span>
+                                            </button>
+
+                                            <button id="fb-download"
+                                                    class="disabled" data-fb-action="download"
+                                                    title="Download">
+
+                                                <span class="glyphicon glyphicon-download icon-blue"></span>
+                                            </button>
+
+                                            <button class="disabled" data-fb-action="downloadZipped"
+                                                    title="Download zipped">
+                                                <span class="fa fa-download icon-blue"></span>
+                                            </button>
+
+                                            
+
+                                            
+                                                <a id="btn-download-all" type="button"
+                                                   title="Download all content as Zipped BagIt Archive"
+                                                        href="/django_irods/download/bags/aadd7dd60f31498590de32c9b14446c3.zip?url_download=False&amp;zipped=False&amp;aggregation=False">
+                                                    <span class="fa fa-briefcase icon-blue"></span>
+                                                </a>
+                                                <a class="small" target="_blank"
+                                                   href="https://en.wikipedia.org/wiki/BagIt">Learn more</a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="file-browser-breadcrumb height-fix">
+                                    <ol id="fb-bread-crumbs" class="breadcrumb">
+
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="fb-content-wrapper">
+                                <div class="fb-dropzone-wrapper">
+                                    <form id="hsDropzone"
+                                          class="files-container h-100 ui-widget-content "
+                                          action="/hsapi/_internal/aadd7dd60f31498590de32c9b14446c3/add-files-to-resource/"
+                                          method="POST">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='1KOPOOeEsKoITYe3YNzcUfx5RQ1zNO2mhXoLMzv9pjJsptknl8KSBlUO1uFZNdLc' />
+
+                                        <div id="flag-uploading" class="hidden">
+                                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i>
+                                            <small class="uploading-message">
+                                                <strong>Uploading files to:</strong>&nbsp;
+                                                <span id="root-path">contents</span>
+                                                <strong>&nbsp;&nbsp;Progress:&nbsp;</strong>
+                                                <span id="upload-progress"></span>
+                                            </small>
+                                        </div>
+
+                                        <div class="fb-drag-flag">
+                                            <span class="fa fa-plus-square fa-5x"></span>
+                                        </div>
+
+                                        <ul id="fb-files-container" class="selectable fb-view-grid height-fix">
+                                            <li class="fb-loading-spinner">
+                                                <i class="fa fa-spinner fa-pulse fa-2x fa-fw icon-blue"></i>
+                                            </li>
+                                        </ul>
+                                    </form>
+
+                                    
+                                </div>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div id="fb-download-help" class="alert alert-warning hidden" role="alert">
+                        <div class="flex">
+                            <i class="glyphicon glyphicon-info-sign" style="margin-right: 20px;"></i>
+                            <em>
+                                <p><strong>Downloading LargeFiles</strong></p>
+                                <p>To learn how to download files larger than 1 GB see <a
+                                        href="https://help.hydroshare.org/creating-and-managing-resources/uploading-large-files-into-hydroshare/"
+                                        target="_blank">Uploading/Downloading large files to/from HydroShare</a>.</p>
+                            </em>
+                        </div>
+                    </div>
+
+                    <div class="files" id="previews"></div>
+                    
+                        
+                     
+
+                    
+                    
+                
+            </div>
+        
+         
+
+        
+
+        
+
+        
+        <!-- ========= EXTRA METADATA TAB ========= -->
+
+
+        
+        
+
+
+    
+        <div class="col-xs-12 content-block">
+            <h3>References</h3>
+        </div>
+    
+    
+    
+        <div class="col-xs-12 content-block">
+            <h4>Related Resources</h4>
+            <table class="info-table">
+                
+                    
+                        <tr>
+                            <td class="dataset-label">
+                                
+                                    The content of this resource serves as the data for:
+                                
+                            </td>
+                            <td class="dataset-details"><a href="https://www.hydroshare.org/resource/885906ef97e542a8a33048ea486ddfdf/" rel="nofollow">https://www.hydroshare.org/resource/885906ef97e542a8a33048ea486ddfdf/</a></td>
+                        </tr>
+                    
+                
+            </table>
+        </div>
+    
+
+
+
+
+        
+        
+    
+    
+    
+
+
+<script type="text/javascript" src="/static/js/credits.js"></script>
+
+        
+        
+            
+
+<div class="col-sm-12 content-block">
+    <span id="citation" class="page-anchor"></span>
+    <h3>How to Cite</h3>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="flex">
+                <div id="citation-text">Villamizar, S., H. Pai (2016). R script to obtain continuous daily estimates of whole-stream metabolism, HydroShare, <a href="http://www.hydroshare.org/resource/aadd7dd60f31498590de32c9b14446c3" rel="nofollow">http://www.hydroshare.org/resource/aadd7dd60f31498590de32c9b14446c3</a></div>
+
+                <button class="btn btn-default clipboard-copy" data-target="citation-text"
+                        type="button">
+                    <i class="fa fa-clipboard" aria-hidden="true"></i>&nbsp;Copy
+                </button>
+            </div>
+
+            
+
+            <br>
+
+            
+            
+                
+                    <div id="rights">
+                        
+                            
+                                <span><p>This resource is shared under the Creative Commons Attribution CC BY.</p></span>
+                            
+                        
+
+                        
+                            <span class="rights-url"><a href="http://creativecommons.org/licenses/by/4.0/">&nbsp;http://creativecommons.org/licenses/by/4.0/</a></span>
+                        
+                    </div>
+                        
+                            <img class="cc-image" src="/static/img/cc-badges/CC-BY.png" alt="CC-BY"/>
+                        
+                
+            
+        </div>
+
+        
+    </div>
+</div>
+
+        
+
+        
+        
+
+<div class="rating col-xs-12 content-block">
+    <span id="resource-comments" class="page-anchor"></span>
+    
+<div id="comments">
+<h3>Comments</h3>
+
+<script>
+$(function() {
+    $('.reply').click(function() {
+        $('.comment-reply-form').hide();
+        $(this).siblings('.comment-reply-form').toggle();
+    });
+});
+</script>
+
+
+
+
+    <p>There are currently no comments</p>
+
+
+
+<h3>New Comment</h3>
+<form method="post" id="comment" class="comment-form" action="/comment/#comment">
+    
+    
+
+
+
+<input type="hidden" name="referrer" value="">
+<input type='hidden' name='csrfmiddlewaretoken' value='1KOPOOeEsKoITYe3YNzcUfx5RQ1zNO2mhXoLMzv9pjJsptknl8KSBlUO1uFZNdLc' />
+
+
+
+
+<input type="hidden" name="content_type" value="hs_core.genericresource" id="content_type" />
+
+
+
+<input type="hidden" name="object_pk" value="1115" id="object_pk" />
+
+
+
+<input type="hidden" name="timestamp" value="1566840949" id="timestamp" />
+
+
+
+<input type="hidden" name="security_hash" value="0a61fa2aa6e901c359e7c796bffa0f39ae72f4f7" id="security_hash" />
+
+
+
+<div class="form-group input_comment 
+    ">
+    <label class="control-label" for="comment">Comment</label>
+    <textarea name="comment" id="comment" required rows="10" cols="40" maxlength="3000">
+</textarea>
+    
+    <p class="help-block">required</p>
+    
+</div>
+
+
+
+<div class="form-group input_honeypot 
+    ">
+    <label class="control-label" for="honeypot">If you enter anything in this field your comment will be treated as spam</label>
+    <input type="text" name="honeypot" id="honeypot" />
+    
+</div>
+
+
+
+    
+    <input class="hl-btn hl-btn-dark hl-btn-sm" type="submit" value="Comment">
+</form>
+
+</div>
+</div>
+
+        
+            
+
+<input id="resID" type="hidden" value="aadd7dd60f31498590de32c9b14446c3"/>
+
+
+
+<div class="modal fade" id="large-file-download-alert" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="large-file-download-close">Download Alert</h4>
+            </div>
+            <div class="modal-body alert alert-warning alert-dismissible" role="alert">
+                <p>
+                    File larger than 1GB cannot be downloaded directly via HTTP. Please
+                    create an iRODS account in your iRODS user zone from your profile page
+                    if you have not done so already, and replicate the resource to your iRODS
+                    user zone, then download the large file via iRODS clients such as
+                    <a href="https://docs.irods.org/master/icommands/user/" target="_blank">
+                    icommands</a> and
+                    <a href="https://help.hydroshare.org/accessing-hydroshare-irods-from-a-windows-pc-or-mac/"
+                       target="_blank">Cyberduck</a>.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+
+<div class="modal fade" id="license-agree-dialog-bag" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="license-agree-title">Resource License Agreement</h4>
+            </div>
+            <div class="modal-body">
+                
+                    <span><p>This resource is shared under the Creative Commons Attribution CC BY.</p></span>
+                
+                <span class="rights-url"><a href="http://creativecommons.org/licenses/by/4.0/">&nbsp;http://creativecommons.org/licenses/by/4.0/</a></span>
+                <p style="margin-top: 5px">
+                In downloading this resource contents you are ethically bound to respect the terms of this license.
+                Please confirm that you accept the terms of this license below before you can do any downloads for this resource.
+                </p>
+                <input type="checkbox" id="agree-chk-download-bag">
+                <label for="agree-chk-download-bag" class="checkbox-label">
+                    I accept the terms of this license.
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a type="button" class="btn btn-success" id="download-bag-btn"
+                   href="/django_irods/download/bags/aadd7dd60f31498590de32c9b14446c3.zip?url_download=False&amp;zipped=False&amp;aggregation=False" disabled>Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="license-agree-dialog-file" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="license-agree-title">Resource License Agreement</h4>
+            </div>
+            <div class="modal-body">
+                
+                    <span><p>This resource is shared under the Creative Commons Attribution CC BY.</p></span>
+                
+                <span class="rights-url"><a href="http://creativecommons.org/licenses/by/4.0/">&nbsp;http://creativecommons.org/licenses/by/4.0/</a></span>
+                <p style="margin-top: 5px">
+                In downloading this resource contents you are ethically bound to respect the terms of this license.
+                Please confirm that you accept the terms of this license below before you can do any downloads for this resource.
+                </p>
+                <input type="checkbox" id="agree-chk-download-file">
+                <label for="agree-chk-download-file" class="checkbox-label">
+                    I accept the terms of this license.
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="download-file-btn"
+                   disabled>Download</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="modal fade" id="rep-resource-to-irods-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="rep-res-to-irods-title">Copy resource bag to your iRODS user zone</h4>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to copy this resource bag to your iRODS user zone?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a id="btn-replicate" class="btn btn-danger">Copy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="wait-to-complete" title="Processing ..." style="display: none;">
+        <p><span style="float:left; margin:12px 12px 50px 0;"></span>
+            Please wait for the process to complete.
+        </p>
+    </div>
+
+
+
+
+<div class="modal fade" id="redirect-referenced-url-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="redirect-referenced-url-title">Redirecting to the referenced web URL</h4>
+            </div>
+            <div class="modal-body">
+                The content you have requested to access is not stored in HydroShare, and we can’t guarantee its availability,
+                quality, security, or size. If the externally linked content is large, access may take time.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a id="file_redirect_url" type="button" class="btn btn-primary" href="#" target="_blank">Redirect</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade in" id="get-file-url-dialog" tabindex="-1" role="dialog"
+     aria-labelledby="rename" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Get file URL</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <fieldset class="col-sm-12">
+                        <div class="input-group">
+                            <input readonly id="txtFileURL" type="text" class="form-control click-select-all">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default clipboard-copy" data-target="txtFileURL"
+                                        type="button">
+                                    <i class="fa fa-clipboard" aria-hidden="true"></i> Copy
+                                </button>
+                            </span>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script type="text/javascript" src="/static/js/modals.js"></script>
+    <script type="text/javascript" src="/static/js/identifiers-form.js"></script>
+
+
+            <!-- Profile Preview Modal -->
+<div class="modal fade" id="view-author-modal" tabindex="-1" role="dialog" aria-labelledby="profileName"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Author</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table border-gray">
+                    <tbody>
+                        <tr>
+                            <td class="text-center"><i class="fa fa-user" aria-hidden="true"></i></td>
+                            <th>Name: </th>
+                            <td data-name></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><i class="fa fa-user-circle" aria-hidden="true"></i></td>
+                            <th>HydroShare Profile: </th>
+                            <td><a data-profileurl href="#">View Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><i class="fa fa-building" aria-hidden="true"></i></td>
+                            <th>Organization:</th>
+                            <td data-organization></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i></td>
+                            <th>Email:</th>
+                            <td data-email></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><i class="fa fa-map-marker" aria-hidden="true"></i></td>
+                            <th>Address:</th>
+                            <td data-address></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><i class="fa fa-phone-square" aria-hidden="true"></i></td>
+                            <th>Phone:</th>
+                            <td data-phone></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><i class="fa fa-globe" aria-hidden="true"></i></td>
+                            <th>Homepage:</th>
+                            <td><a href="#" target="_blank" data-homepage></a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><i class="fa fa-external-link-square" aria-hidden="true"></i></td>
+                            <th>Author Identifiers:</th>
+                            <td>
+                                <div class="external-profiles">
+                                    <a href="" data-googlescholarid class="identifier-icon" target="_blank" data-toggle="tooltip" data-placement="bottom"
+                                       title="Google Scholar">
+                                        <i class="ai ai-google-scholar-square hover-shadow"></i>
+                                    </a>
+                                    <a href="" data-orcid class="identifier-icon" target="_blank" data-toggle="tooltip" data-placement="bottom"
+                                       title="ORCID">
+                                        <i class="ai ai-orcid hover-shadow"></i>
+                                    </a>
+                                    <a href="" data-researchgateid class="identifier-icon" target="_blank" data-toggle="tooltip" data-placement="bottom"
+                                       title="ResearchGate">
+                                        <i class="ai ai-researchgate-square hover-shadow"></i>
+                                    </a>
+                                    <a href="" data-researcerid class="identifier-icon" target="_blank" data-toggle="tooltip" data-placement="bottom"
+                                       title="ResearcherID">
+                                        <img class="hover-shadow"
+                                             src="/static/img/researcherID.png"
+                                             alt="ResearcherID icon"/>
+                                    </a>
+                                    <a href="" data-identifier-other class="identifier-icon" target="_blank" data-toggle="tooltip" data-placement="bottom"
+                                       title="">
+                                        <i class="fa fa-address-card hover-shadow"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="modal fade" id="coordinates-picker-modal" tabindex="-1" role="dialog" aria-labelledby="chooseCoordinates"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="chooseCoordinates">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
+                    Choose coordinates
+                </span>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                <div id="picker-map-container"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btn-confirm-coordinates" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/static/js/coordinates-picker.js"></script>
+        
+        </div>
+
+            
+            
+<div class="modal fade" id="submit-title-dialog" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Create a Resource</h4>
+            </div>
+            <div class="modal-body">
+                <div class="warnings-list">
+                    <div class="modal-input-title">Enter the title for the new resource.
+                    </div>
+                    <br>
+                    <input id="input-title" class="form-control textinput textInput" maxlength="300"
+                           name="value" type="text" placeholder="Resource Title" value="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel
+                </button>
+                <button id="btn-resource-create" type="button" data-value="" class="btn btn-primary"
+                        data-dismiss="modal">Create
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    
+
+    <!-- Foooter
+    ================== -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Contact Us
+                =================  -->
+                <div class="col-md-4 col-sm-4">
+                    
+                    <div class="headline">
+                        <h3>Contact us</h3>
+                    </div>
+                    <div class="content">
+                        <p class="p1"><a href="mailto:help@cuahsi.org">Email Support</a></p>
+<p class="p1">Visit <a href="https://www.cuahsi.org" target="_blank">cuahsi.org</a></p>
+                    </div>
+                    
+                </div>
+                <!-- Social icons
+                ===================== -->
+                <div class="col-md-4 col-sm-4">
+                    
+                    <div class="headline"><h3>Follow</h3></div>
+                    
+                    <div class="content social">
+                        
+                        
+                        <ul>
+                            <li>
+                                <a href="http://twitter.com/cuahsi" target="_blank"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a href="https://www.facebook.com/pages/CUAHSI-Consortium-of-Universities-for-the-Advancement-of-Hydrologic-Science-Inc/179921902590" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            
+                            
+                            
+                            <li>
+                                <a href="http://youtube.hydroshare.org/" target="_blank"><i class="fa fa-youtube"></i></a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a href="http://github.com/hydroshare" target="_blank"><i class="fa fa-github"></i></a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a href="https://www.linkedin.com/company/2632114" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            
+                            
+                            
+                        </ul>
+                        
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- Subscribe
+                =============== -->
+                <div class="col-md-4 col-sm-4">
+                    
+                    <div class="headline"><h3>Open Source</h3></div>
+                    <div class="content">
+                        <p class="p1">HydroShare is Open Source. Find us on <a href="https://github.com/hydroshare/" target="_blank"><strong>Github</strong></a>.</p>
+<p class="p1">Report a bug <strong><a href="https://github.com/hydroshare/hydroshare/issues?state=open" target="_blank">here</a></strong></p>
+<p class="p1">This is HydroShare Version<b>&nbsp;1.25</b></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Legal
+        ============= -->
+        <div class="legal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <p>&copy 2019 CUAHSI. This material is based upon work supported by the National Science Foundation (NSF) under awards 1148453, 1148090, 1664018, 1664061, 1338606, and 1664119.  Any opinions, findings, conclusions, or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the NSF. | <a href="/terms-of-use">Terms Of Use</a> | <a href="/privacy">Statement of Privacy</a> | <a href="/sitemap/">Site Map</a></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

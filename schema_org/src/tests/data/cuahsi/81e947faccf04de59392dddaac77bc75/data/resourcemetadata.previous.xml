@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF PUBLIC "-//DUBLIN CORE//DCMES DTD 2002/07/31//EN"
+"http://dublincore.org/documents/2002/07/31/dcmes-xml/dcmes-xml-dtd.dtd">
+<rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:hsterms="http://hydroshare.org/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs1="http://www.w3.org/2001/01/rdf-schema#">
+  <rdf:Description rdf:about="http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75">
+    <dc:title>RFA 3 Model Inventory</dc:title>
+    <dc:type rdf:resource="http://www.hydroshare.org/terms/GenericResource"/>
+    <dc:description>
+      <rdf:Description>
+        <dcterms:abstract>This dataset contains raw data, scripts, and plots used to analyze responses to the iUTAH Research Focus Area (RFA) 3 model inventory. The inventory was conducted via a Google Survey Form among RFA3 researchers on the RFA email list from August 2015 to October 2015. The purpose of the survey/inventory was to overview iUTAH RFA3 team's modeling efforts, map current efforts onto iSAW conceptual model (doi:10.1002/2014EF000295), and identify further opportunities to couple models as part of the RFA3 team's mission. Results herein are intended to help visualize results from the survey and productively encourage further discussion + coupling work. </dcterms:abstract>
+      </rdf:Description>
+    </dc:description>
+    <hsterms:awardInfo>
+      <rdf:Description rdf:about="http://www.nsf.gov">
+        <hsterms:fundingAgencyName>National Science Foundation</hsterms:fundingAgencyName>
+        <hsterms:awardTitle>iUTAH-innovative Urban Transitions and Aridregion Hydro-sustainability</hsterms:awardTitle>
+        <hsterms:awardNumber>1208732</hsterms:awardNumber>
+      </rdf:Description>
+    </hsterms:awardInfo>
+    <dc:creator>
+      <rdf:Description rdf:about="http://www.hydroshare.org/user/1157/">
+        <hsterms:name>David Rosenberg</hsterms:name>
+        <hsterms:creatorOrder>1</hsterms:creatorOrder>
+        <hsterms:email>david.rosenberg@usu.edu</hsterms:email>
+      </rdf:Description>
+    </dc:creator>
+    <dc:coverage>
+      <dcterms:box>
+        <rdf:value>northlimit=42.0058; eastlimit=-111.0553; southlimit=39.7635; westlimit=-114.0326; units=Decimal degrees; projection=WGS 84 EPSG:4326</rdf:value>
+      </dcterms:box>
+    </dc:coverage>
+    <dc:date>
+      <dcterms:created>
+        <rdf:value>2016-07-16T16:11:39.795839+00:00</rdf:value>
+      </dcterms:created>
+    </dc:date>
+    <dc:date>
+      <dcterms:modified>
+        <rdf:value>2017-05-16T18:37:11.503536+00:00</rdf:value>
+      </dcterms:modified>
+    </dc:date>
+    <dc:date>
+      <dcterms:published>
+        <rdf:value>2017-05-16T18:37:09.576191+00:00</rdf:value>
+      </dcterms:published>
+    </dc:date>
+    <dc:format>text/plain</dc:format>
+    <dc:format>application/x-koan</dc:format>
+    <dc:format>text/html</dc:format>
+    <dc:format>image/jpeg</dc:format>
+    <dc:format>application/vnd.openxmlformats-officedocument.presentationml.presentation</dc:format>
+    <dc:format>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</dc:format>
+    <dc:format>application/x-msdos-program</dc:format>
+    <dc:identifier>
+      <rdf:Description>
+        <hsterms:hydroShareIdentifier>http://www.hydroshare.org/resource/81e947faccf04de59392dddaac77bc75</hsterms:hydroShareIdentifier>
+      </rdf:Description>
+    </dc:identifier>
+    <dc:identifier>
+      <rdf:Description>
+        <hsterms:doi>https://doi.org/10.4211/hs.81e947faccf04de59392dddaac77bc75</hsterms:doi>
+      </rdf:Description>
+    </dc:identifier>
+    <dc:language>eng</dc:language>
+    <dc:publisher>
+      <rdf:Description>
+        <hsterms:publisherName>Consortium of Universities for the Advancement of Hydrologic Science, Inc. (CUAHSI)</hsterms:publisherName>
+        <hsterms:publisherURL rdf:resource="https://www.cuahsi.org"/>
+      </rdf:Description>
+    </dc:publisher>
+    <dc:rights>
+      <rdf:Description>
+        <hsterms:rightsStatement>This resource is shared under the Creative Commons Attribution CC BY.</hsterms:rightsStatement>
+        <hsterms:URL rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+      </rdf:Description>
+    </dc:rights>
+    <dc:subject>Participant</dc:subject>
+    <dc:subject>Coupling</dc:subject>
+    <dc:subject>Tooele</dc:subject>
+    <dc:subject>Morgan Counties</dc:subject>
+    <dc:subject>Wyoming</dc:subject>
+    <dc:subject>Utah</dc:subject>
+    <dc:subject>Bear</dc:subject>
+    <dc:subject>Davis</dc:subject>
+    <dc:subject>Survey</dc:subject>
+    <dc:subject>Box Elder</dc:subject>
+    <dc:subject>Salt Lake</dc:subject>
+    <dc:subject>Wasatch Metropolitan Area</dc:subject>
+    <dc:subject>Model</dc:subject>
+    <dc:subject>iUTAH</dc:subject>
+    <dc:subject>Logan River</dc:subject>
+    <dc:subject>Weber</dc:subject>
+    <dc:subject>Jordan-Provo</dc:subject>
+    <hsterms:extendedMetadata>
+      <rdf:Description>
+        <hsterms:key>Variable Description</hsterms:key>
+        <hsterms:value>Various metadata about models in use by the RFA 3 team</hsterms:value>
+      </rdf:Description>
+    </hsterms:extendedMetadata>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.hydroshare.org/terms/GenericResource">
+    <rdfs1:label>Generic</rdfs1:label>
+    <rdfs1:isDefinedBy>http://www.hydroshare.org/terms</rdfs1:isDefinedBy>
+  </rdf:Description>
+</rdf:RDF>

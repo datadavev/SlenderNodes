@@ -81,3 +81,7 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# VIM artifacts
+*.swp
+cover
