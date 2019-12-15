@@ -5,7 +5,7 @@
 # jointly copyrighted by participating institutions in DataONE. For
 # more information on DataONE, see our web site at http://dataone.org.
 #
-#   Copyright 2013 DataONE
+#   Copyright 2013-2019 DataONE
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,40 +20,43 @@
 # limitations under the License.
 """DataONE Schema.org package
 """
+from setuptools import setup
 
-import setuptools
-
-
-def main():
-  setuptools.setup(
-    name='dataone.schema_org',
-    version='3.0.4',
-    description='Interact with a schema.org resource provider',
-    author='DataONE Project',
-    author_email='developers@dataone.org',
-    url='https://github.com/DataONEorg/d1_python',
-    license='Apache License, Version 2.0',
-    packages=setuptools.find_packages(),
-    include_package_data=True,
-    install_requires=[
-      'w3lib >= 1.19.0',
+kwargs = {
+    'name': 'schema_org',
+    'version': '4.0.0',
+    'description': 'Interact with a schema.org resource provider',
+    'author': 'DataONE Project',
+    'author_email': 'developers@dataone.org',
+    'url': 'https://github.com/DataONEorg/d1_python',
+    'license': 'Apache License, Version 2.0',
+    'packages': ['schema_org', 'schema_org.data'],
+    'package_data': {'schema_org': ['data/*.ttl']},
+    'install_requires': [
+        'aiohttp', 'aioresponses', 'dataone.scimeta', 'importlib_resources',
+        'lxml', 'python-dateutil', 'requests', 'requests_mock',
     ],
-    setup_requires=[
-      'setuptools_git >= 1.1',
+    'classifiers': [
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
+        'Topic :: Scientific/Engineering',
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.7',
     ],
-    classifiers=[
-      'Development Status :: 5 - Production/Stable',
-      'Intended Audience :: Developers',
-      'Topic :: Scientific/Engineering',
-      'License :: OSI Approved :: Apache Software License',
-      'Programming Language :: Python :: 3',
-      'Programming Language :: Python :: 3.6',
-    ],
-    keywords=(
-      'DataONE schema.org'
+    'keywords': (
+        'DataONE schema.org'
     ),
-  )
-
-
-if __name__ == '__main__':
-  main()
+    'entry_points': {
+        'console_scripts': [
+            'd1-validate=schema_org.commandline:validate',
+            'd1-check-site=schema_org.commandline:d1_check_site',
+            'harvest-abds-ipt=schema_org.commandline:abds_ipt',
+            'harvest-arm=schema_org.commandline:arm',
+            'harvest-cuahsi=schema_org.commandline:cuahsi',
+            'harvest-ieda=schema_org.commandline:ieda',
+            'harvest-nkn=schema_org.commandline:nkn',
+        ],
+    }
+}
+setup(**kwargs)

@@ -1,0 +1,193 @@
+{
+    "@context": "https://schema.org",
+    "@id": "http://dx.doi.org/10.5439/1027372",
+    "temporalCoverage": "2004-11-17/2011-01-17",
+    "description": "",
+    "name": "Surface Radiation Measurement Quality Control testing, including climatologically configurable limits at Central Facility, Atqasuk AK - nsaqcrad1longC2.c2",
+    "sameAs": "https://www.archive.arm.gov/discovery/#v/results/s/fdsc::qcrad1long",
+    "url": "http://dx.doi.org/10.5439/1027372",
+    "sourceOrganization": {
+        "logo": "https://www.arm.gov/img/ARM_Logo.png",
+        "name": "Atmospheric Radiation Measurement Research Facility",
+        "url": "https://www.arm.gov",
+        "@type": "Organization"
+    },
+    "identifier": {
+        "@type": [
+            "PropertyValue",
+            "datacite:ResourceIdentifier"
+        ],
+        "datacite:usesIdentifierScheme": {
+            "@id": "datacite:doi"
+        },
+        "propertyId": "DOI",
+        "url": "http://dx.doi.org/10.5439/1027372",
+        "value": "10.5439/1027372"
+    },
+    "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://www.archive.arm.gov/metadata/adc/xml/nsaqcrad1longC2.c2.xml",
+        "encodingFormat": "http://www.isotc211.org/2005/gmd",
+        "description": "ISO TC211 XML rendering of metadata.",
+        "dateModified": "2019-06-24T09:04:28.886943"
+    },
+    "distribution": {
+        "url": "https://www.archive.arm.gov/discovery/#v/results/s/fdsc::qcrad1long",
+        "contentUrl": "https://www.archive.arm.gov/discovery/#v/results/s/fdsc::qcrad1long",
+        "name": "ARM Data Discovery",
+        "description": "This link allows direct data access via ARM login to Data Discovery",
+        "encodingFormat": "NetCDF",
+        "publisher": {
+            "logo": "https://www.arm.gov/img/ARM_Logo.png",
+            "name": "Atmospheric Radiation Measurement Data Center",
+            "url": "https://www.arm.gov",
+            "@type": "Organization"
+        },
+        "provider": {
+            "logo": "https://www.arm.gov/img/ARM_Logo.png",
+            "name": "Atmospheric Radiation Measurement Data Center",
+            "url": "https://www.arm.gov",
+            "@type": "Organization"
+        },
+        "@type": "DataDownload"
+    },
+    "variableMeasured": [
+        {
+            "name": "BestEstimate_down_short_hemisp",
+            "description": "Best Estimate Global Downwelling Shortwave Hemispheric Irradiance",
+            "@type": "PropertyValue"
+        },
+        {
+            "name": "down_long_hemisp",
+            "description": "Downwelling Longwave Hemisperic Irradiance",
+            "@type": "PropertyValue"
+        },
+        {
+            "name": "down_short_diffuse_hemisp",
+            "description": "Downwelling Shortwave Diffuse Hemispheric Irradiance",
+            "@type": "PropertyValue"
+        },
+        {
+            "name": "down_short_hemisp",
+            "description": "IR corrected Global Downwelling Shortwave Hemispheric Irradiance",
+            "@type": "PropertyValue"
+        },
+        {
+            "name": "short_direct_normal",
+            "description": "Shortwave Direct Normal Irradiance",
+            "@type": "PropertyValue"
+        },
+        {
+            "name": "up_long_hemisp",
+            "description": "Upwelling (10 meter) Longwave Hemispheric Irradiance",
+            "@type": "PropertyValue"
+        },
+        {
+            "name": "up_short_hemisp",
+            "description": "Upwelling Shortwave Hemispheric Irradiance",
+            "@type": "PropertyValue"
+        }
+    ],
+    "about": [
+        {
+            "image": "https://www.arm.gov/img/ARM_Logo.png",
+            "url": "https://www.arm.gov/capabilities/instruments/qcrad",
+            "name": "Instrument Information: Surface Radiation Measurement Quality Control testing, including climatologically configurable limits",
+            "@type": "Thing"
+        },
+        {
+            "image": "https://www.arm.gov/img/ARM_Logo.png",
+            "url": "https://www.arm.gov/capabilities/observatories/nsa",
+            "name": "Facility Information: North Slope Alaska",
+            "@type": "Thing"
+        }
+    ],
+    "citation": "Atmospheric Radiation Measurement (ARM) user facility. 2004, updated hourly. Data Quality Assessment for ARM Radiation Data (QCRAD1LONG). 2004-11-17 to 2011-01-17, North Slope Alaska (NSA) Central Facility, Atqasuk AK (C2). Compiled by Y. Shi and L. Riihimaki. ARM Data Center. Data set accessed  at http://dx.doi.org/10.5439/1227214.",
+    "creator": [
+        {
+            "name": "Yan Shi",
+            "description": "Instrument Mentor",
+            "affiliation": {
+                "name": "Pacific Northwest National Laboratory",
+                "@type": "Organization"
+            },
+            "url": "https://www.arm.gov/connect-with-arm/organization/instrument-mentors/list#qcrad",
+            "@type": "Person"
+        },
+        {
+            "name": "Laura Riihimaki",
+            "description": "Instrument Mentor",
+            "affiliation": {
+                "name": "Pacific Northwest National Laboratory",
+                "@type": "Organization"
+            },
+            "url": "https://www.arm.gov/connect-with-arm/organization/instrument-mentors/list#qcrad",
+            "@type": "Person"
+        }
+    ],
+    "dateCreated": "2004-11-17",
+    "dateModified": "2012-09-17",
+    "datePublished": "2004-11-17",
+    "includedInDataCatalog": {
+        "name": "ARM Data Discovery",
+        "url": "https://www.archive.arm.gov/discovery/",
+        "publisher": {
+            "logo": "https://www.arm.gov/img/ARM_Logo.png",
+            "name": "Atmospheric Radiation Measurement Data Center",
+            "url": "https://www.arm.gov",
+            "@type": "Organization"
+        },
+        "provider": {
+            "logo": "https://www.arm.gov/img/ARM_Logo.png",
+            "name": "Atmospheric Radiation Measurement Data Center",
+            "url": "https://www.arm.gov",
+            "@type": "Organization"
+        },
+        "@type": "DataCatalog"
+    },
+    "isAccessibleForFree": true,
+    "keywords": [
+        "ARM",
+        "ORNL",
+        "ADC",
+        "ARM Research Facility",
+        "Climate",
+        "Atmospheric Data",
+        "BestEstimate_down_short_hemisp",
+        "down_long_hemisp",
+        "down_short_diffuse_hemisp",
+        "down_short_hemisp",
+        "short_direct_normal",
+        "up_long_hemisp",
+        "up_short_hemisp",
+        "Shortwave broadband total downwelling irradiance",
+        "Longwave broadband downwelling irradiance",
+        "Shortwave broadband diffuse downwelling irradiance",
+        "Shortwave broadband direct downwelling irradiance",
+        "Longwave broadband upwelling irradiance",
+        "Shortwave broadband total upwelling irradiance",
+        "qcrad",
+        "Radiometric",
+        "Data Quality Assessment for ARM Radiation Data"
+    ],
+    "publisher": {
+        "logo": "https://www.arm.gov/img/ARM_Logo.png",
+        "name": "Atmospheric Radiation Measurement Data Center",
+        "url": "https://www.arm.gov",
+        "@type": "Organization"
+    },
+    "provider": {
+        "logo": "https://www.arm.gov/img/ARM_Logo.png",
+        "name": "Atmospheric Radiation Measurement Data Center",
+        "url": "https://www.arm.gov",
+        "@type": "Organization"
+    },
+    "spatialCoverage": {
+        "geo": {
+            "latitude": 70.4718,
+            "longitude": -157.407,
+            "@type": "GeoCoordinates"
+        },
+        "@type": "Place"
+    }
+}

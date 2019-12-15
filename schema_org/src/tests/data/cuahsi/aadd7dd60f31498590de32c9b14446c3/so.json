@@ -1,0 +1,75 @@
+{
+    "@context": {
+        "@vocab": "http://schema.org/",
+        "geolink": "http://schema.geolink.org/1.0/base/main#"
+    },
+    "@type": "Dataset",
+    "additionalType": [
+        "http://schema.geolink.org/1.0/base/main#Dataset",
+        "http://vivoweb.org/ontology/core#Dataset"
+    ],
+    "name": "R script to obtain continuous daily estimates of whole-stream metabolism",
+    "description": "Generating daily estimates of WSM. We show the procedure to generate daily estimates of one station whole-stream metabolism using water, reach and weather data for the period of interest. Read the \"Supplemental_Text_S4.pdf\" for detailed description of the Daily.Metabolism.R script.\r\n\r\nDOI: 10.6084/m9.figshare.3422272\r\n\r\nNote: the \"AAAA-MM_inputs.csv\" files are the monthly dates files used for the estimation of WSM for the period of August 2010 through December 2014. To run the Daily.Metabolism.R script only one of these files is required.\r\n",
+    "url": "https://www.hydroshare.org/resource/aadd7dd60f31498590de32c9b14446c3/",
+    "version": "2017-06-04",
+    "isAccessibleForFree": true,
+    "keywords": "[\"Whole-stream metabolism\", \"Time series\", \"River ecohydrology\"]",
+    "license": "http://creativecommons.org/licenses/by/4.0/",
+    "citation": "Villamizar, S., H. Pai (2016). R script to obtain continuous daily estimates of whole-stream metabolism, HydroShare, http://www.hydroshare.org/resource/aadd7dd60f31498590de32c9b14446c3",
+    "includedInDataCatalog": {
+        "@id": "https://www.hydroshare.org"
+    },
+    "distribution": {
+        "@type": "DataDownload",
+        "contentUrl": "https://www.hydroshare.org/hsapi/resource/aadd7dd60f31498590de32c9b14446c3/",
+        "encodingFormat": "application/zip"
+    },
+    "spatialCoverage": {
+        "@type": "Place",
+        "geo": {
+            "@type": "GeoShape",
+            "box": ",  , "
+        }
+    },
+    "creator": [
+        {
+            "@id": "/user/418/",
+            "@type": "Role",
+            "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
+            "roleName": "Author",
+            "url": "/user/418/",
+            "creator": {
+                "@id": "/user/418/",
+                "@type": "Person",
+                "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
+                "name": "Sandra Villamizar",
+                "url": "/user/418//"
+            }
+        },
+        {
+            "@id": "",
+            "@type": "Role",
+            "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
+            "roleName": "Author",
+            "url": "",
+            "creator": {
+                "@id": "",
+                "@type": "Person",
+                "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
+                "name": "Henry Pai",
+                "url": "/"
+            }
+        }
+    ],
+    "provider": {
+        "@id": "https://www.hydroshare.org",
+        "@type": "Organization",
+        "additionalType": "http://schema.geolink.org/1.0/base/main#Organization",
+        "legalName": "HydroShare",
+        "name": "HydroShare",
+        "url": "https://www.hydroshare.org"
+    },
+    "publisher": {
+        "@id": "https://www.hydroshare.org"
+    }
+}
