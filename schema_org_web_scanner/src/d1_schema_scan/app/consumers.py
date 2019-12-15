@@ -100,11 +100,10 @@ class ClientLogConsumer(channels.generic.websocket.AsyncWebsocketConsumer):
     def _get_scan_dict(self):
         """Get the URL to scan for a given scan_id."""
         try:
-            scan_model = d1_schema_scan.app.models.Scan.objects.get(scan_id=self.scan_id)
-            return {
-                'scan_url': scan_model.scan_url,
-                'format_id': scan_model.format_id,
-            }
+            scan_model = d1_schema_scan.app.models.Scan.objects.get(
+                scan_id=self.scan_id
+            )
+            return {'scan_url': scan_model.scan_url, 'format_id': scan_model.format_id}
         except d1_schema_scan.app.models.Scan.DoesNotExist:
             log.warning(f"Unknown scan_id: {self.scan_id}")
 
@@ -156,29 +155,23 @@ class ScannerConsumer(channels.generic.websocket.AsyncWebsocketConsumer):
         log.debug(f'Scan exit. scan_id="{self.scan_id}"')
 
     async def _run_scan(self):
-        arg_list = [
-            django.conf.settings.PY_BIN_PATH,
-            "-u",  # unbuffered
-        ]
+        arg_list = [django.conf.settings.PY_BIN_PATH, "-u"]  # unbuffered
         if self.format_id:
-            arg_list.extend([
-                django.conf.settings.D1_VALIDATE_SCHEMA_PATH,
-                self.scan_url,
-                "--format-id",
-                self.format_id,
-            ])
+            arg_list.extend(
+                [
+                    django.conf.settings.D1_VALIDATE_SCHEMA_PATH,
+                    # "--format-id",
+                    self.format_id,
+                    self.scan_url,
+                ]
+            )
         else:
-            arg_list.extend([
-                django.conf.settings.D1_CHECK_SITE_PATH,
-                self.scan_url,
-            ])
+            arg_list.extend([django.conf.settings.D1_CHECK_SITE_PATH, self.scan_url])
 
         log.info('Launching scanner subprocess: {}'.format(', '.join(arg_list)))
 
-        self.popen_obj = subprocess.Popen(arg_list,
-            bufsize=0,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
+        self.popen_obj = subprocess.Popen(
+            arg_list, bufsize=0, stdout=subprocess.PIPE, stderr=subprocess.STDOUT
         )
 
         for i in range(self.max_log_lines):

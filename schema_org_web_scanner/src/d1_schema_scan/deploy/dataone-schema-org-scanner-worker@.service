@@ -1,0 +1,20 @@
+[Unit]
+Description=DataONE Schema.org Scanner Worker
+After=dataone-schema-org-scanner.service
+StartLimitIntervalSec=3600
+StartLimitBurst=60
+
+[Service]
+Type=oneshot
+#Type=simple
+#Type=idle
+#Restart=always
+#RestartSec=60
+User=scan
+PIDFile=/var/run/d1_schema_org_scanner_worker_%i.pid
+ExecStart=/var/local/dataone/schema_org_scan/d1_schema_scan/service-start-workers.sh
+RemainAfterExit=1
+
+[Install]
+WantedBy=dataone-schema-org-scanner.service
+

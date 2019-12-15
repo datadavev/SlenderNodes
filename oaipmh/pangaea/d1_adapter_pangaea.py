@@ -7,24 +7,6 @@ while an accompanying script, d1_client_manager.py, is required for managing the
 using the Python library implementation of DataONE GMN. The script is designed to be reusable for any OAI-PMH server with
 very little modification. Server-specific configurations are defined at the top.
 
-NOTES ON RECORD BATCHES AND TERMINATION FOR PANGAEA:
-The complete set of all records which match the information retrieval criteria of an OAI-PMH query against Pangaea's
-OAI-PMH server is returned in batches of 50 items at a time. A batch of 50 is followed by a resumption token. Complete
-query result sets are terminated by a valid resumption token followed by a dummy placeholder deleted record identified
-as "oai:pangaea.de:deleted.dummy". This is slightly different than the OAI-PMH specification of terminating result sets
-with an empty resumption token. This termination mechanism is employed both if less than 50 are returned for the
-whole query, as well as if less than 50 items remain to be returned from a larger result set. So, for example, a query
-with 43 items meeting that criteria would return a batch of 43 items, followed by a valid resumption token, and then
-the dummy deleted record. A query with 217 results would return 4 batches of 50 records each, followed by a batch of
-17 records, terminated by a valid resumption token and then an instance of a deleted dummy record.
-
-In this implementation the mechanism of terminating resultsets has no impact on the outcome due to the condition that
-records with deleted status but which do not match an existing identifier in the GMN datastore are ignored.
-
-NOTES ON IDENTIFIERS:
-This adapter script assumes content mutability on behalf of the native repository. It treats the native repository's
-system identifier as the DataONE seriesId, while the document checksum is arbitrarily assigned to each
-version of a given record loaded into GMN.
 ___________________________________________________________
 """
 

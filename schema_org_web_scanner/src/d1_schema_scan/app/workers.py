@@ -64,7 +64,7 @@ class WorkerStatus:
                 self._completed_key(scan_id),
             )
         )
-        log.debug(f"Worker flags: {scan_id}: {flags_tup}")
+        # log.debug(f"Worker flags: {scan_id}: {flags_tup}")
         return flags_tup
 
 

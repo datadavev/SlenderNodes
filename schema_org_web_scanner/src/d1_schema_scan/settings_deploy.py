@@ -8,7 +8,15 @@ SECRET_KEY = "e^!1&&+7y(=y*$c+c7ofq=5(-z773tp1y$6+h)bvck&eknfa-0"
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["gmn.test.dataone.org", "127.0.0.1", "0.0.0.0", "192.168.1.121"]
+ALLOWED_HOSTS = [
+    "gmn.test.dataone.org",
+    "127.0.0.1",
+    "0.0.0.0",
+    "192.168.1.121",
+    "scanner-backend",
+    "gmn2.test.dataone.org",
+    "so.test.dataone.org",
+]
 
 INSTALLED_APPS = [
     "d1_schema_scan.app",
@@ -127,8 +135,15 @@ LOGGING = {
     },
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, "d1_schema_scan/app/static")
+STATIC_ROOT = os.path.join(BASE_DIR, "app/static")
+# Set to Base URL of the web app.
+FORCE_SCRIPT_NAME = "/schema_org/"
+PY_BIN_PATH = "/home/scan/.pyenv/versions/3.7.5/bin/python"
 
-PY_BIN_PATH = "/home/gmn/.pyenv/versions/schema_org/bin/python"
-D1_CHECK_SITE_PATH = "/home/gmn/.pyenv/versions/schema_org/bin/d1-check-site"
-D1_VALIDATE_SCHEMA_PATH = "/home/gmn/.pyenv/versions/schema_org/bin/dataone-validate"
+# D1_CHECK_SITE_PATH = "/home/scan/.pyenv/versions/3.7.5/bin/d1-check-site"
+D1_CHECK_SITE_PATH = "/var/local/dataone/schema_org_scan/d1_schema_scan/cmd-scan.py"
+
+# D1_VALIDATE_SCHEMA_PATH = "/home/scan/.pyenv/versions/3.7.5/bin/dataone-validate"
+D1_VALIDATE_SCHEMA_PATH = (
+    "/var/local/dataone/schema_org_scan/d1_schema_scan/cmd-validate.py"
+)

@@ -2,7 +2,7 @@
 
 ## pyenv
 
-    $ pyver=3.7.4
+    $ pyver=3.7.5
     $ pkg=/var/local/dataone/schema_org_scan
     
     $ sudo apt install libsqlite3-dev sqlite3
@@ -17,6 +17,11 @@
 
     $ pip install --upgrade pip
     $ pip install channels channels_redis redis pyopenssl service_identity
+
+# Configuration
+
+    settings_deploy.py
+    
 
 # Django Admin
 

@@ -1,0 +1,16 @@
+[Unit]
+Description=DataONE Schema.org Scanner
+After=network.target
+StartLimitIntervalSec=3600
+StartLimitBurst=60
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=60
+User=scan
+ExecStart=/var/local/dataone/schema_org_scan/d1_schema_scan/service-start.sh
+
+[Install]
+WantedBy=multi-user.target
+

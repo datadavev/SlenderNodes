@@ -1,7 +1,7 @@
 import logging
 import urllib.parse
 
-import django.contrib.staticfiles.templatetags.staticfiles
+# import django.contrib.staticfiles.templatetags.staticfiles
 import django.http
 import django.shortcuts
 import django.utils.safestring
@@ -10,12 +10,25 @@ import d1_schema_scan.app.consumers
 import d1_schema_scan.app.models
 import d1_schema_scan.app.util
 import d1_schema_scan.app.workers
+import pathlib
 
 log = logging.getLogger(__name__)
 
 
-def get_static_path(rel_path):
-    return django.contrib.staticfiles.templatetags.staticfiles.static(rel_path)
+def dbg(request):
+    import pprint
+
+    log.info(pprint.pformat(request.META))
+
+
+def get_static_path(*path_segment_list):
+    # return django.contrib.staticfiles.templatetags.staticfiles.static(rel_path)
+    path_segment_list = [
+        pathlib.Path(s).as_posix().lstrip('/') for s in path_segment_list
+    ]
+    # if url_path.is_absolute():
+    #     url_path = url_path.relative_to('/')
+    return pathlib.Path(django.conf.settings.STATIC_ROOT, *path_segment_list)
 
 
 def get_abs_static_url(request, rel_path):

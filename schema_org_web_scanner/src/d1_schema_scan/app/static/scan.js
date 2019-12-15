@@ -1,15 +1,18 @@
 let scanSocket;
 let doScroll = true;
-let scanId_;
+// let scanId_;
+
+let errorRx = /critical|error|err\b|fatal|exception|fail/i;
+let warningRx = /warning|warn|unable/i;
+let successRx = /success|\binfo\b/i;
 
 function connectSocket(scanId) {
-  scanId_ = scanId;
+  // scanId_ = scanId;
 
   let protocol = window.location.host.startsWith("127.0.0.1") ? "ws" : "wss";
-
-  scanSocket = new WebSocket(
-      protocol + '://' + window.location.host +
-      '/ws/' + scanId + '/');
+  let socketUrl = protocol + '://' + window.location.host +'/schema_org/ws/' + scanId + '/';
+  console.log('socketUrl: ' + socketUrl);
+  scanSocket = new WebSocket(socketUrl);
 
   scanSocket.onmessage = function (e) {
     const msg_dict = JSON.parse(e.data);
@@ -37,11 +40,14 @@ function connectSocket(scanId) {
 function add_log_line_list(log_line_list) {
   log_line_list.forEach(function (item, index) {
     let el = document.createElement("div");
-    if (item.includes('ERROR')) {
+    if (errorRx.test(item)) {
       el.className = 'log-err';
     }
-    else if (item.includes('WARN')) {
+    else if (warningRx.test(item)) {
       el.className = 'log-warn';
+    }
+    else if (successRx.test(item)) {
+      el.className = 'log-success';
     }
     let node = document.createTextNode(item);
     el.appendChild(node);

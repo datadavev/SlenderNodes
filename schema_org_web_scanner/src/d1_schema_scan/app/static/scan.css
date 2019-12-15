@@ -89,6 +89,10 @@ textarea {
     color: #e08e11;
 }
 
+.log-success {
+    color: #006c1c;
+}
+
 /* Grid */
 
 .grid-outer {
@@ -138,18 +142,49 @@ p {
 .select {
 }
 
-/* Dark theme */
+/*!* Dark theme *!*/
 
-* {
-    background-color: #181a1b;
-    color: #e8e6e3;
+/** {*/
+/*    background-color: #181a1b;*/
+/*    color: #e8e6e3;*/
+/*}*/
+
+/*a {*/
+/*    color: #3391ff;*/
+/*}*/
+
+/*.round-button, .nav-button {*/
+/*    color: #c0c0c0;*/
+/*    border: solid 0.15em #606060;*/
+/*}*/
+
+/* Dark theme media preference */
+
+@media (prefers-color-scheme: dark) {
+    * {
+        color: rgb(202, 193, 173);
+        background-color: rgb(16, 20, 23);
+    }
+
+    .round-button, .nav-button {
+        border-color: rgb(80, 115, 134);
+    }
+
+    .round-button-disabled {
+        color: rgb(39, 98, 131);
+        background-color: rgb(30, 54, 78);
+    }
+
+    a:not(.round-button-disabled), .nav-button:hover {
+        color: rgb(128, 182, 204);
+    }
+
+    a:hover:not(.round-button-disabled), .round-button:hover:not(.round-button-disabled), .nav-button:hover {
+        background-color: rgb(32, 62, 88);
+    }
 }
 
-a {
-    color: #3391ff;
-}
+/* Light theme media preference */
 
-.round-button, .nav-button {
-    color: #c0c0c0;
-    border: solid 0.15em #606060;
+@media (prefers-color-scheme: light) {
 }
