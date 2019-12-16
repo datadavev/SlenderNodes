@@ -67,14 +67,9 @@ Enable the service with 10 workers and start it:
     $ systemctl enable dataone-schema-org-scanner-worker@{1..9}.service
     $ systemctl start dataone-schema-org-scanner.service
 
-* The same number of workers will be started on reboot. The number of workers can be adjusted
-  by enabling more workers using the same syntax or disabling existing ones with `systemctl disable`.
+* The same number of workers will be started on reboot. The number of workers can be adjusted by enabling more workers using the same syntax or disabling existing ones with `systemctl disable`.
 
-* `{1..9}` within the service string above causes the shell to expand the given string
-  into a list of 10 strings where the number after `@` varies from 0 to 9. systemd then
-  finds and reuses the worker `.service` template file, creating a service for each of
-  the workers.
+* `{1..9}` within the service string above causes the shell to expand the given string into a list of 10 strings where the number after `@` varies from 0 to 9. systemd then finds and reuses the worker `.service` template file, creating a service for each of the workers.
   
-* All of the workers are started when the main service starts, as the main service
-  has declared a dependency on all services matching the worker template.
+* All of the workers are started when the main service starts, as the main service has declared a dependency on all services matching the worker template.
 ```
