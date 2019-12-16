@@ -53,37 +53,28 @@ For development, this spins up Redis in a Docker container if one doesn't want t
 
 # Creating a systemd service under Ubuntu
 
-This will start the daphne WebSocket service and message handler worker processes automatically at boot.  
+This will start the daphne WebSocket service and message handler worker processes automatically at boot. The service can be controlled from the shell via `systemctl`.
 
-Create file
+Set up the systemd unit files:
 
-    $ sudo editor /etc/systemd/system/dataone_schema_org_scanner.service
+    $ cp ./deploy/*.service /etc/systemd/system
+    
+Modify the absolute paths in the unit files as required.
 
-with contents:
+Enable the service with 10 workers and start it:
 
-```ini
-[Unit]
-Description=DataONE Schema.org Scanner
-After=network.target
-StartLimitIntervalSec=0
+    $ systemctl enable dataone-schema-org-scanner.service
+    $ systemctl enable dataone-schema-org-scanner-worker@{1..9}.service
+    $ systemctl start dataone-schema-org-scanner.service
 
-[Service]
-Type=simple
-Restart=always
-RestartSec=1
-User=gmn
-ExecStart=/var/local/dataone/schema_org_scan/d1_schema_scan/start.sh
+* The same number of workers will be started on reboot. The number of workers can be adjusted
+  by enabling more workers using the same syntax or disabling existing ones with `systemctl disable`.
 
-[Install]
-WantedBy=multi-user.target
+* `{1..9}` within the service string above causes the shell to expand the given string
+  into a list of 10 strings where the number after `@` varies from 0 to 9. systemd then
+  finds and reuses the worker `.service` template file, creating a service for each of
+  the workers.
+  
+* All of the workers are started when the main service starts, as the main service
+  has declared a dependency on all services matching the worker template.
 ```
-
-Adjust the ExecStart path.
-
-Automatically start at boot:
-
-    $ systemctl enable dataone_schema_org_scanner
-
-Start:
-
-    $ systemctl start dataone_schema_org_scanner
