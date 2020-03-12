@@ -33,6 +33,19 @@ class TestSuite(TestCommon):
         self.assertEqual(mock_sys_exit.call_count, 1)
 
     @patch.object(sys, 'argv', [''])
+    @patch('schema_org.commandline.BCODMOHarvester.run')
+    @patch('schema_org.commandline.asyncio')
+    def test_bcodmo(self, mock_asyncio, mock_bcodmo):
+        """
+        SCENARIO:  Run with no command line arguments.
+
+        EXPECTED RESULT:  The run method was called.
+        """
+        commandline.bcodmo()
+
+        self.assertEqual(mock_bcodmo.call_count, 1)
+
+    @patch.object(sys, 'argv', [''])
     @patch('schema_org.commandline.IEDAHarvester.run')
     @patch('schema_org.commandline.asyncio')
     def test_ieda(self, mock_asyncio, mock_ieda):

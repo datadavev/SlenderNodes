@@ -1,5 +1,6 @@
 # Standard library imports
 import datetime as dt
+import importlib.resources as ir
 import unittest
 
 # 3rd party library imports
@@ -134,3 +135,77 @@ class TestSuite(unittest.TestCase):
         g = sotools.common.loadSOGraph(data=data)
         actual = sotools.common.getDateModified(g)
         self.assertIsNone(actual)
+
+    def test__arm__getDatasetMetadataLinksFromSubjectOf(self):
+        """
+        SCENARIO:  We have JSON-LD with ARM metadata.
+
+        EXPECTED RESULT: the contentUrl, subjectOf (ID), encodingFormat, and
+        dateModified are extracted as expected.
+        """
+        html = ir.read_text('tests.data.arm', 'wsacrcrcal.html')
+        landing_page_url = 'https://www.archive.arm.gov/metadata/adc/html/wsacrcrcal.html'
+        g = sotools.common.loadSOGraphFromHtml(html, landing_page_url)
+        mlinks = sotools.common.getDatasetMetadataLinks(g)
+
+        expected = 'https://www.archive.arm.gov/metadata/adc/xml/wsacrcrcal.xml'
+        self.assertEqual(mlinks[0]['contentUrl'], expected)
+
+        expected = "http://dx.doi.org/10.5439/1150280"
+        self.assertEqual(mlinks[0]['subjectOf'], expected)
+
+        expected = "2019-11-25T16:00:21.746316"
+        self.assertEqual(str(mlinks[0]['dateModified']), expected)
+
+        expected = "http://www.isotc211.org/2005/gmd"
+        self.assertEqual(str(mlinks[0]['encodingFormat']), expected)
+
+    def test__bcodmo__getDatasetMetadataLinksFromSubjectOf(self):
+        """
+        SCENARIO:  We have JSON-LD with BCO-DMO metadata.
+
+        EXPECTED RESULT: the contentUrl, subjectOf (ID), encodingFormat, and
+        dateModified are extracted as expected.
+        """
+        html = ir.read_text('tests.data.bcodmo.559701', 'landing_page.html')
+        landing_page_url = 'https://www.bco-dmo.org/dataset/559701'
+        g = sotools.common.loadSOGraphFromHtml(html, landing_page_url)
+        mlinks = sotools.common.getDatasetMetadataLinks(g)
+
+        expected = 'https://www.bco-dmo.org/dataset/559701/iso'
+        self.assertEqual(mlinks[0]['contentUrl'], expected)
+
+        expected = "https://www.bco-dmo.org/dataset/559701"
+        self.assertEqual(mlinks[0]['subjectOf'], expected)
+
+        self.assertIsNone(mlinks[0]['dateModified'])
+
+        actual = mlinks[0]['encodingFormat']
+        expected = 'http://www.isotc211.org/2005/gmd-noaa'
+        self.assertEqual(actual, expected)
+
+    def test__generic__getDatasetMetadataLinksFromSubjectOf(self):
+        """
+        SCENARIO:  We have JSON-LD with generic metadata.
+
+        EXPECTED RESULT: the contentUrl, subjectOf (ID), encodingFormat, and
+        dateModified are extracted as expected.
+        """
+        html = ir.read_text('tests.data.generic', 'landing_page.html')
+        landing_page_url = 'https://my.server.net/data/'
+        g = sotools.common.loadSOGraphFromHtml(html, landing_page_url)
+        mlinks = sotools.common.getDatasetMetadataLinks(g)
+
+        expected = 'https://my.server.org/data/ds-02/metadata.xml'
+        self.assertEqual(mlinks[0]['contentUrl'], expected)
+
+        expected = 'https://my.server.net/data/ds-02'
+        self.assertEqual(mlinks[0]['subjectOf'], expected)
+
+        self.assertIsNone(mlinks[0]['dateModified'])
+
+        actual = set([mlinks[0]['encodingFormat'],
+                      mlinks[1]['encodingFormat']])
+        expected = set(['None',
+                        'http://ns.dataone.org/metadata/schema/onedcx/v1.0'])
+        self.assertEqual(actual, expected)

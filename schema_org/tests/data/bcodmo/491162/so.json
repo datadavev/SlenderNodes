@@ -1,0 +1,90 @@
+{
+    "@context": {
+        "@vocab": "http://schema.org/"
+    },
+    "@id": "https://www.bco-dmo.org/dataset/491162",
+    "identifier": "http://lod.bco-dmo.org/id/dataset/491162",
+    "url": "https://www.bco-dmo.org/dataset/491162",
+    "@type": "Dataset",
+    "name": "Nitrogen fixation rates derived from acetylene reduction assays from R/V Knorr, R/V Melville, R/V Atlantis KN197-08, MV1110, AT21-04 in the Amazon River plume, 2010-2012 (ANACONDAS project)",
+    "alternateName": "N2 - Nitrogen Fixation Rates",
+    "description": "<p>Nitrogen fixation rates derived from acetylene reduction assays</p>\r\n",
+    "isAccessibleForFree": true,
+    "datePublished": "2014-02-12",
+    "keywords": "oceans",
+    "creator": [
+        {
+            "@type": "Person",
+            "@id": "https://www.bco-dmo.org/person/50669",
+            "name": "Douglas G. Capone",
+            "url": "https://www.bco-dmo.org/person/50669",
+            "identifier": {
+                "@id": "https://orcid.org/0000-0002-3968-736X",
+                "@type": "PropertyValue",
+                "additionalType": "http://www.wikidata.org/entity/Q51044",
+                "propertyID": "ORCID",
+                "value": "0000-0002-3968-736X",
+                "url": "https://orcid.org/0000-0002-3968-736X"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://www.bco-dmo.org/person/50600",
+            "name": "William M. Berelson",
+            "url": "https://www.bco-dmo.org/person/50600"
+        },
+        {
+            "@type": "Person",
+            "@id": "https://www.bco-dmo.org/person/491115",
+            "name": "Matt Tiahlo",
+            "url": "https://www.bco-dmo.org/person/491115"
+        }
+    ],
+    "citation": "Capone, D. G., Berelson, W. M. (2014) Nitrogen fixation rates derived from acetylene reduction assays from R/V Knorr, R/V Melville, R/V Atlantis KN197-08, MV1110, AT21-04 in the Amazon River plume, 2010-2012 (ANACONDAS project). Biological and Chemical Oceanography Data Management Office (BCO-DMO). Dataset version 2014-02-12 [if applicable, indicate subset used]. http://lod.bco-dmo.org/id/dataset/491162 [access date]",
+    "version": "2014-02-12",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "publishingPrinciples": {
+        "@type": "DigitalDocument",
+        "@id": "https://creativecommons.org/licenses/by/4.0/",
+        "name": "Dataset Usage License",
+        "identifier": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "publisher": {
+        "@id": "https://www.bco-dmo.org",
+        "@type": "Organization",
+        "name": "Biological and Chemical Data Management Office",
+        "alternateName": "BCO-DMO",
+        "identifier": "http://lod.bco-dmo.org/id/affiliation/191",
+        "url": "https://www.bco-dmo.org",
+        "sameAs": "http://www.re3data.org/repository/r3d100000012"
+    },
+    "provider": {
+        "@id": "https://www.bco-dmo.org"
+    },
+    "producer": [
+        {
+            "@type": "ResearchProject",
+            "@id": "https://www.bco-dmo.org/project/2097",
+            "name": "Amazon iNfluence on the Atlantic: CarbOn export from Nitrogen fixation by DiAtom Symbioses",
+            "alternateName": "ANACONDAS",
+            "description": "ANACONDAS is an IMBER endorsed project.View list of all IMBER endorsed projects\nView the ANACONDAS project GCMD DIF record\nThe ANACONDAS project was funded as part of the US National Science Foundation (NSF) Emerging Topics in Biogeochemical Cycles (ETBC) program (Directorate for Geosciences, NSF 07 -049, September 19, 2007) explicitly intended to support emerging areas of interdisciplinary research. The ETBC program aimed to foster transformational advances in the quantitative or mechanistic understanding of biogeochemical cycles that integrated physical-chemical-biological processes over the range of temporal and/or spatial scales in Earth's environments. The program especially sought proposals that addressed emerging topics in biogeochemical cycles, the water cycle or their coupling, across the interfaces of atmosphere, land, and oceans.\nThe ANACONDAS investigators hypothesize that large tropical river plumes with low N: P ratios provide an ideal niche for diatom-diazotroph assemblages (DDAs). They suggest that the ability of these organisms to fix N2 within the surface ocean is responsible for significant C export in the Amazon River plume. Their previous observations in the Amazon River plume helped reveal that blooms comprised of the endosymbiotic N2-fixing cyanobacterium Richelia and its diatom hosts (e.g. Hemiaulus) were a significant source of new production and carbon export. The previous work focused largely on the sensitivity of DDAs to external forcing from dust and riverine inputs, so the ecology of these organisms and the fate of their new production were largely unstudied. It is now known that DDAs are responsible for a significant amount of CO2 drawdown in the Amazon River plume, and floating sediment traps at 200 m measured 4x higher mass fluxes beneath the plume than outside the plume. This led the researchers to hypothesize that this greater export is due either to aggregation and sinking of DDAs themselves or to grazing of DDAs by zooplankton.\nIn this study the researchers will undertake a suite of field, satellite and modeling studies aimed at understanding the ecology and tracing the fate of C and N fixed by DDAs and other phytoplankton living in the plume. By examining C and silicate (Si) export from offshore surface waters, through the upper oceanic food web, the mesopelagic, and down to the deep sea floor, they will quantify the impact of the Amazon River on biological processes that control C sequestration and the implications of these regional processes on C, N and Si budgets. The study will go beyond previous research because they will quantify 1) the distribution, nutrient demands, and activity of DDAs in the context of phytoplankton species succession, 2) the sensitivity of the CO2 drawdown to the mix of phytoplankton, 3) the grazing and aggregation processes contributing to the sinking flux, 4) the composition of this flux, and 5) the proportion of this material that reaches the seafloor. This effort truly represents a measure of C sequestration and pump efficiency. Ecological modeling will be used to place observational results from field studies and satellites into the context of the larger Atlantic basin with tropical climate variability on interannual and longer time scales.\nThree cruises were carried out during the ANACONDAS project:\nAN10/KN197-08 - R/V KNORR - May/June 2010 - Cruise Track over Salinity Climatology (Image: Yager, et al, 2007)\nAN11/MV1110 - R/V MELVILLE - September/October 2011 - Cruise Track over Salinity Climatology (Image: Yager, et al, 2007)\nAN12/AT21-04 - R/V ATLANTIS - July/2012 - Cruise Track over Salinity Climatology (Image: Yager, et al, 2007)\nThe ANACONDAS project builds on observations made by MANTRA/PIRANA in 2001 and 2003 (RV Knorr and Seward Johnson I cruises to the same region) to address specifically 1) how carbon cycling and sequestration in the western tropical North Atlantic (WTNA) is influenced by the Amazon River through its impact on pelagic ecosystem dynamics and 2) the sensitivity of this ecosystem to anthropogenic climate change. PIRANA revealed the importance of both riverine and atmospheric inputs for driving the high productivity of the WTNA through N2-fixation, and demonstrated the significance of the region to basin-wide biogeochemistry and C cycling. ANACONDAS will now focus on what drives phytoplankton community succession through the plume, light and nutrient requirements, factors limiting productivity, and the fate of production. These components are critical to understand the role of the plume in the regional C cycle, and to predict its response to climate variability and change.\nThe NSF-funded ANACONDAS project will also serve as a platform for additional measurements supported by the Gordon and Betty Moore Foundation's Marine Microbiology Initiative. ROCA (River-Ocean Continuum of the Amazon) brings additional focus on marine microbial community structure and activities, along with high-resolution measurements of organic matter along the river-ocean continuum.\nANACONDAS: Amazon iNfluence on the Atlantic: CarbOn export from Nitrogen fixation by DiAtom SymbiosesROCA: River Ocean Continuum of the Amazon\nThe project is funded by NSF-OCE-0934095 and NSF-OCE-0934036: Collaborative Research: ETBC: Amazon iNfluence on the Atlantic: CarbOn export from Nitrogen fixation by DiAtom Symbioses and by the Gordon and Betty Moore Foundation through GBMF-MMI-2293: River Ocean Continuum of the Amazon.\nPlanned Cruise Sampling\nWater Column Characterization (hydrographic sampling with CTD/Rosette):\nNutrient (NO2, NO2+NO3, PO4, SiO4) concentrations\nChlorophyll a and pigments concentrations\nInorganic carbon (discrete DIC, ALK, underway pCO2)\nOrganic carbon, nitrogen, phosphorus\nPhytoplankton and Diazotroph Abundance (using rosette and also small nets to collect)\nCarbon and Nitrogen Fixation by plankton\nKinetic and Physiological Measurements of phytoplankton\nStable Isotopic Measurements of particulate material\nMicrobial heterotrophy\nMicrobial community structure and gene expression\nOrganic carbon and biomarker characterization\nMOCNESS tows for zooplankton\nZooplankton collection for abundance and biomass\nZooplankton grazing and POC flux measurements\nMulticorer for deep sea sediment analyses\nSolid phase analysis\nPore water chemistry\nIsotopic composition (Pb, Th, C)\nOther instrumentation over the side:\nThe in-water light field will be characterized with a free-falling 14 channel spectroradiometer\nTwo \"Carbon Explorers\" - autonomous Sounding Oceanographic Lagrangian Observer profilers\nSediment Trap Studies (using 48h deployments of floating Particle Interceptor Traps; PITs)\nSurface water pumps - directly bring large volumes of surface water to the deck of the ship for processing.\nShipboard Instrumentation:\nADCP 75 kHz\nBathymetry System 12 kHz\nBathymetry System 3.5 kHz\nDeionized Water System\nFume Hood\nHiSeasNet\nMultibeam\nUncontaminated Seawater System\nCTD/Water Sampling: 911+ Rosette 24-position, 10-liter bottle Rosette with dual T/C sensors\nBiospherical underwater PAR (1000m depth limit)\nSBE43 oxygen sensor\nWet Labs C*Star transmissometer (660nm wavelength)\nWet Labs ECO-AFL fluorometer\nDissolved Oxygen Titration System (Portable modified Winkler titration system)\n",
+            "url": "https://www.bco-dmo.org/project/2097"
+        }
+    ],
+    "subjectOf": [
+        {
+            "@type": "DataDownload",
+            "name": "ISO 19115-2 (NOAA Profile)",
+            "additionalType": "http://www.isotc211.org/2005/gmd-noaa",
+            "contentUrl": "https://www.bco-dmo.org/dataset/491162/iso",
+            "encodingFormat": "application/xml",
+            "encodesCreativeWork": "https://www.bco-dmo.org/dataset/491162",
+            "creativeWorkStatus": "In Review"
+        }
+    ],
+    "measurementTechnique": [
+        "Niskin bottle",
+        "CTD Sea-Bird SBE 911plus"
+    ]
+}

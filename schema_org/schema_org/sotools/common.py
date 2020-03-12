@@ -6,6 +6,7 @@ import datetime as dt
 import io
 import json
 import logging
+import mimetypes
 import re
 
 import dateutil.parser
@@ -16,6 +17,10 @@ from rdflib.tools import rdf2dot
 import graphviz
 import requests
 from extruct.jsonld import JsonLdExtractor
+
+# Add one mimetype to the global map.
+mimetypes.init()
+mimetypes.add_type('application/rdf+xml', '.rdf')
 
 SCHEMA_ORG = "https://schema.org/"
 SO_PREFIX = "SO"
@@ -415,6 +420,88 @@ def getDatasetMetadataLinksFromEncoding(g):
     return res
 
 
+def _getDatasetMetadataLinksFromSubjectOf_creative_work(g):
+    q = (
+        SPARQL_PREFIXES
+        + """
+        SELECT ?dateModified ?encodingFormat ?contentUrl ?description ?additionalDatatype ?about
+        WHERE {
+            ?about rdf:type SO:Dataset .
+            ?about SO:subjectOf ?y .
+            ?y SO:url ?contentUrl .
+            ?y SO:encodingFormat ?encodingFormat .
+            OPTIONAL {
+              ?y SO:dateModified ?dateModified .
+            } .    
+            OPTIONAL {
+              ?y SO:description ?description .
+            } .    
+            OPTIONAL {
+                ?y SO:additionalType ?additionalType .
+            } .
+        }
+        """
+    )
+
+    qres = g.query(q)
+    res = _extract_DatasetMetadataLinksFromSubjectOf(qres)
+    return res
+
+
+def _getDatasetMetadataLinksFromSubjectOf_datadownload(g):
+    q = (
+        SPARQL_PREFIXES
+        + """
+        SELECT ?dateModified ?encodingFormat ?contentUrl ?description ?additionalType ?about
+        WHERE {
+            ?about rdf:type SO:Dataset .
+            ?about SO:subjectOf ?y .
+            ?y rdf:type SO:DataDownload .
+            ?y SO:encodingFormat ?encodingFormat .
+            ?y SO:contentUrl ?contentUrl .
+            OPTIONAL {
+                ?y SO:description ?description .
+            } .
+            OPTIONAL {
+                ?y SO:dateModified ?dateModified .
+            } .
+            OPTIONAL {
+                ?y SO:additionalType ?additionalType .
+            } .
+        }
+        """
+    )
+
+    qres = g.query(q)
+    res = _extract_DatasetMetadataLinksFromSubjectOf(qres)
+    return res
+
+def _extract_DatasetMetadataLinksFromSubjectOf(qres):
+    """
+    We have a result set from the getDatasetMetadataLinksFromSubject query.  We
+    need to post process it to extract the proper information out of it.  In
+    particular, the encodingFormat value that we want might be either in the
+    encodingFormat field or in the additionalDatatype field.
+    """
+    res = []
+    for item in qres:
+        encodingFormat = str(item[1])
+
+        # If the encodingFormat is a mime type, then that's a hint that the
+        # value we really want was in the "additionalType"
+        if encodingFormat in mimetypes.types_map.values():
+            encodingFormat = str(item[4])
+
+        entry = {
+            "dateModified": item[0],
+            "encodingFormat": encodingFormat,
+            "contentUrl": str(item[2]),
+            "description": str(item[3]),
+            "subjectOf": str(item[5]),
+        }
+        res.append(entry)
+    return res
+
 def getDatasetMetadataLinksFromSubjectOf(g):
     """
     Extract list of metadata links from SO.Dataset.subjectOf
@@ -429,34 +516,34 @@ def getDatasetMetadataLinksFromSubjectOf(g):
 
     .. jupyter-execute:: examples/code/eg_metadatalinks_subjectof.py
     """
-    q = (
-        SPARQL_PREFIXES
-        + """
-    SELECT ?dateModified ?encodingFormat ?url ?description ?about
-    WHERE {
-        ?about rdf:type SO:Dataset .
-        ?about SO:subjectOf ?y .
-        ?y SO:url ?url .
-        ?y SO:encodingFormat ?encodingFormat .
-        OPTIONAL {
-          ?y SO:dateModified ?dateModified .
-          ?y SO:description ?description .
-        }    
-    }
-    """
-    )
-    res = []
-    qres = g.query(q)
-    for item in qres:
-        entry = {
-            "dateModified": item[0],
-            "encodingFormat": str(item[1]),
-            "contentUrl": str(item[2]),
-            "description": str(item[3]),
-            "subjectOf": str(item[4]),
-        }
-        res.append(entry)
+    # In a perfect world populated by people genetically and intellectually
+    # superior to this guy, this could be done with a single SPARQL query.
+    # I am not smart enough to do that.
+    res = _getDatasetMetadataLinksFromSubjectOf_creative_work(g)
+    if len(res) > 0:
+        return res
+
+    res = _getDatasetMetadataLinksFromSubjectOf_datadownload(g)
     return res
+
+
+def getFlavorSO(g, SOFlavor):
+    """
+    Determine the "flavor" of the SO content.
+
+    Args:
+        g(Graph): Graph containing an ``SO:Dataset``
+
+    Returns:
+        Enumerated constant corresponding to the flavor.
+    """
+    # This gets info from BCO-DMO style content.
+    res = _getDatasetMetadataLinksFromSubjectOf_datadownload(g)
+    if len(res) > 0:
+        return SOFlavor.BCO_DMO
+    else:
+        #  So the default will be ARM.
+        return SOFlavor.ARM
 
 
 def getDatasetMetadataLinksFromAbout(g):

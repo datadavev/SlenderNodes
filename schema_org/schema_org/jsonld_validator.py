@@ -1,4 +1,5 @@
 # Standard library imports
+from enum import Enum
 import importlib.resources as ir
 import json
 import urllib.parse
@@ -9,6 +10,17 @@ import pyshacl.rdfutil
 import pyshacl.monkey
 
 # Local imports
+from . import sotools
+
+
+class SOFlavor(Enum):
+    """
+    There are two recognized "flavors" of Schema.org content.  ARM style has
+    the necessary details in either the top level or the "encoding" element,
+    while BCO-DMO style has details in the subjectOf element.
+    """
+    ARM = 1
+    BCO_DMO = 2
 
 
 class JsonLdError(RuntimeError):
@@ -38,7 +50,30 @@ class JSONLD_Validator(object):
         self.id = id
         self.logger = logger
 
-        self.shacl_graph_src = ir.read_text('schema_org.data', 'shacl.ttl')
+        # There are two flavors of SO content and we have different SHACL
+        # constraints for them.
+        self.encoding_shacl_graph_src = ir.read_text(
+            'schema_org.data', 'shacl.ttl'
+        )
+        self.subjectOf_shacl_graph_src = ir.read_text(
+            'schema_org.data', 'shacl_dataset_subjectof.ttl'
+        )
+
+    def get_so_flavor(self, j):
+        """
+        Determine the "flavor" of the SO content.
+
+        Parameters
+        ----------
+        j : obj
+            JSON extracted from a landing page <SCRIPT> element.
+
+        Returns
+        -------
+        Either SOFlavor.ARM or SOFlavor.BCO_DMO
+        """
+        g = sotools.loadSOGraph(data=json.dumps(j))
+        return sotools.getFlavorSO(g, SOFlavor)
 
     def pre_shacl_checks(self, j):
         """
@@ -46,7 +81,7 @@ class JSONLD_Validator(object):
 
         Parameters
         ----------
-        j : dict
+        j : obj
             JSON extracted from a landing page <SCRIPT> element.
         """
         self.logger.debug(f'{__name__}:pre_shacl_checks')
@@ -131,15 +166,22 @@ class JSONLD_Validator(object):
                                                       rdf_format='json-ld',
                                                       do_owl_imports=False)
 
-        shacl_graph = pyshacl.rdfutil.load_from_source(self.shacl_graph_src,
+        options = {
+            'inference': 'rdfs',
+            'abort_on_error': False
+        }
+
+        if self.get_so_flavor(j) == SOFlavor.ARM:
+            source = self.encoding_shacl_graph_src
+        else:
+            source = self.subjectOf_shacl_graph_src
+            options['advanced'] = True
+
+        shacl_graph = pyshacl.rdfutil.load_from_source(source,
                                                        rdf_format='turtle',
                                                        do_owl_imports=False)
 
         try:
-            options = {
-                'inference': 'rdfs',
-                'abort_on_error': False
-            }
             validator = Validator(data_graph,
                                   shacl_graph=shacl_graph,
                                   options=options)

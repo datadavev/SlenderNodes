@@ -12,7 +12,7 @@ from unittest.mock import patch
 
 # Local imports
 from schema_org.jsonld_validator import (
-    JSONLD_Validator, JsonLdError
+    JSONLD_Validator, JsonLdError, SOFlavor
 )
 from .test_common import TestCommon
 
@@ -33,6 +33,60 @@ class TestSuite(TestCommon):
         logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
                             level=logging.DEBUG)
         self.logger = logging.getLogger(__name__)
+
+    def test_flavor_is_bco_dmo(self):
+        """
+        SCENARIO:  we have BCO-DMO-style SO content.
+
+        EXPECTED RESULT:  The flavor is identifies as so_core.SOFlavor.BCO_DMO
+        """
+        v = JSONLD_Validator(logger=self.logger)
+
+        text = ir.read_text('tests.data.bcodmo.559701', 'so.json')
+        j = json.loads(text)
+
+        flavor = v.get_so_flavor(j)
+        self.assertEqual(flavor, SOFlavor.BCO_DMO)
+
+    def test_bcodmo(self):
+        """
+        SCENARIO:  we have BCO-DMO-style SO content.
+
+        EXPECTED RESULT:  It validates.
+        """
+        v = JSONLD_Validator(logger=self.logger)
+
+        text = ir.read_text('tests.data.bcodmo.559701', 'so.json')
+        j = json.loads(text)
+        v.check(j)
+        self.assertTrue(True)
+
+    def test_flavor_is_arm(self):
+        """
+        SCENARIO:  we have ARM-style SO content.
+
+        EXPECTED RESULT:  so_core.SOFlavor.ARM
+        """
+        v = JSONLD_Validator(logger=self.logger)
+
+        s = """
+        {
+            "@context": { "@vocab": "http://schema.org/" },
+            "@type": "Dataset",
+            "@id": "http://dx.doi.org/10.5439/1027372",
+            "identifier": "thing",
+            "encoding": {
+                "@type": "MediaObject",
+                "contentUrl": "https://somewhere.out.there.com/",
+                "description": "",
+                "encodingFormat": "http://www.isotc211.org/2005/gmd",
+                "dateModified": "2019-08-02"
+            }
+        }
+        """
+        j = json.loads(s)
+        flavor = v.get_so_flavor(j)
+        self.assertEqual(flavor, SOFlavor.ARM)
 
     def test_missing_top_level_type_key(self):
         """

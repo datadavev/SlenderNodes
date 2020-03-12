@@ -8,6 +8,7 @@ except ImportError:  # pragma:  nocover
     import importlib_resources as ir
 import io
 import pathlib
+import unittest
 
 # 3rd party library imports
 import lxml.etree
@@ -57,6 +58,25 @@ class TestSuite(TestCommon):
             validator.validate(doc)
 
             self.assertLogMessage(cm.output, gmd, level='INFO')
+            self.assertLogMessage(cm.output, gmd_noaa, level='INFO')
+
+    # @unittest.skip('cannot validate just yet')
+    def test_bcodmo(self):
+        """
+        SCENARIO:   A valid BCODMO file is given.
+
+        SCENARIO:  Validates to noaa gmd.
+        """
+        validator = XMLValidator()
+
+        path = pathlib.Path('tests/data/bcodmo/67937/isometadata.xml')
+
+        gmd_noaa = 'http://www.isotc211.org/2005/gmd-noaa'
+
+        with self.assertLogs(logger=validator.logger, level='INFO') as cm:
+            validator.validate(path, format_id=gmd_noaa)
+
+            self.assertErrorLogCallCount(cm.output, n=0)
             self.assertLogMessage(cm.output, gmd_noaa, level='INFO')
 
     def test_file(self):

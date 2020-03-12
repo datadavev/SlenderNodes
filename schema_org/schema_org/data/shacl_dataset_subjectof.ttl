@@ -1,0 +1,69 @@
+#
+# Test for url or contentUrl pointing to metadata using Dataset/subjectOf
+# Note: requires "advanced=True" option when using pyshacl validate
+#
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix SO: <https://schema.org/> .
+@prefix d1: <http://ns.dataone.org/schema/2019/08/SO/Dataset#> .
+
+d1:rdfPrefix
+  sh:declare [
+    sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+    sh:prefix "rdf" ;
+  ] .
+
+d1:schemaPrefix
+  sh:declare [
+    sh:namespace "https://schema.org/"^^xsd:anyURI ;
+    sh:prefix "SO" ;
+  ] .
+
+d1:subjectofCreativeWorkShape
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:prefixes d1:rdfPrefix, d1:schemaPrefix ;
+        sh:select """
+            SELECT ?this
+            WHERE {
+                ?DS rdf:type SO:Dataset .
+                ?DS SO:subjectOf ?this .
+                ?this rdf:type SO:CreativeWork .
+            }
+        """ ;
+    ] ;
+    sh:property [
+        sh:message "url is required for subjectOf as a CreativeWork" ;
+        sh:path SO:url;
+        sh:minCount 1;
+    ] .
+
+d1:subjectofMediaObjectShape
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:prefixes d1:rdfPrefix, d1:schemaPrefix ;
+        sh:select """
+            SELECT ?this
+            WHERE {
+                ?DS rdf:type SO:Dataset .
+                ?DS SO:subjectOf ?this .
+                ?this rdf:type SO:MediaObject .
+            }
+        """ ;
+    ] ;
+    sh:message "url or contentUrl is required for subjectOf as a MediaObject" ;
+    sh:xone (
+        [
+            sh:path SO:contentUrl;
+            sh:minCount 1;
+        ]
+        [
+            sh:path SO:url;
+            sh:minCount 1;
+        ]
+    ) .
+

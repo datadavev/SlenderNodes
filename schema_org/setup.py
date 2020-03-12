@@ -24,7 +24,7 @@ from setuptools import setup
 
 kwargs = {
     'name': 'schema_org',
-    'version': '4.1.4',
+    'version': '4.1.5',
     'description': 'Interact with a schema.org resource provider',
     'author': 'DataONE Project',
     'author_email': 'developers@dataone.org',
@@ -49,6 +49,7 @@ kwargs = {
             'd1-check-site=schema_org.commandline:d1_check_site',
             'harvest-abds-ipt=schema_org.commandline:abds_ipt',
             'harvest-arm=schema_org.commandline:arm',
+            'harvest-bcodmo=schema_org.commandline:bcodmo',
             'harvest-cuahsi=schema_org.commandline:cuahsi',
             'harvest-ieda=schema_org.commandline:ieda',
             'harvest-nkn=schema_org.commandline:nkn',

@@ -1,0 +1,233 @@
+{
+    "@context": {
+        "@vocab": "http://schema.org/"
+    },
+    "@id": "https://www.bco-dmo.org/dataset/471609",
+    "identifier": "http://lod.bco-dmo.org/id/dataset/471609",
+    "url": "https://www.bco-dmo.org/dataset/471609",
+    "@type": "Dataset",
+    "name": "Protist numbers at and below 100 m from R/V Pelagia 64PE280, 64PE325 in the tropical and subtropical N. Atlantic from 2007-2010 (Basin-scale Protists project)",
+    "alternateName": "protist cell counts",
+    "description": "Protist numbers in subtropical North Atlantic at and below 100 m",
+    "isAccessibleForFree": true,
+    "datePublished": "2013-11-13",
+    "keywords": "oceans",
+    "creator": [
+        {
+            "@type": "Person",
+            "@id": "https://www.bco-dmo.org/person/51741",
+            "name": "Alexander Bochdansky",
+            "url": "https://www.bco-dmo.org/person/51741"
+        }
+    ],
+    "citation": "Bochdansky, A. (2013) Protist numbers at and below 100 m from R/V Pelagia 64PE280, 64PE325 in the tropical and subtropical N. Atlantic from 2007-2010 (Basin-scale Protists project). Biological and Chemical Oceanography Data Management Office (BCO-DMO). Dataset version 2013-11-13 [if applicable, indicate subset used]. http://lod.bco-dmo.org/id/dataset/471609 [access date]",
+    "version": "2013-11-13",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "publishingPrinciples": {
+        "@type": "DigitalDocument",
+        "@id": "https://creativecommons.org/licenses/by/4.0/",
+        "name": "Dataset Usage License",
+        "identifier": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "publisher": {
+        "@id": "https://www.bco-dmo.org",
+        "@type": "Organization",
+        "name": "Biological and Chemical Data Management Office",
+        "alternateName": "BCO-DMO",
+        "identifier": "http://lod.bco-dmo.org/id/affiliation/191",
+        "url": "https://www.bco-dmo.org",
+        "sameAs": "http://www.re3data.org/repository/r3d100000012"
+    },
+    "provider": {
+        "@id": "https://www.bco-dmo.org"
+    },
+    "producer": [
+        {
+            "@type": "ResearchProject",
+            "@id": "https://www.bco-dmo.org/project/2290",
+            "name": "Basin-scale distribution and activity of deep-sea protists in the North Atlantic Ocean",
+            "alternateName": "Basin-scale Protists",
+            "description": "ABSTRACT\nLittle is known about the distribution and ecology of eukaryotic microbes of the deep sea water column. Most of these microbes are small heterotrophic flagellates that feed on bacteria, where biomass in turn is fueled by the input of dissolved and particulate organic material from the surface. This study seeks to understand the distribution of eukaryotic microbes (i.e., protists) in the context of large, basin scale variations in hydrographic and chemical properties. The main hypothesis is that the abundance and taxonomic composition of protists serve as sensitive indicators of the strength and type (particulate or dissolved) of input of organic carbon into the deep ocean system. Samples in vertical profiles targeting major water masses across the North Atlantic will be collected. In addition, deep sea samples will be retrieved under pressure and incubated at in situ pressure and temperature in four newly designed chemostat systems. These cultures will be sub-sampled under pressure and examined for nutrient concentration, as well as for the purpose of monitoring the abundance of both prokaryotes and protists in the chambers. Using the same pressure samplers in short-term incubations, the investigators will explore the activity of deep sea protists by investigating the proportion of actively feeding organisms on fluorescently labeled bacteria. They will enumerate deep sea protists using a combination of fluorescence in situ hybridization and traditional staining methods, and will support taxonomic classifications using electron microscopy. Semi-automated epifluorescence microscopy with image analysis capabilities will be used to scan major filter areas and probe for rare microbes that normally fall below detection limits of other methods. In laboratory experiments, the investigators will use the newly built culture system to study pressure effects of eukaryotic protists while simulating temperature and pressure changes that sinking particles are exposed to when they sink to the abyss.\n\u00a0\n",
+            "url": "https://www.bco-dmo.org/project/2290"
+        }
+    ],
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "contentUrl": "https://www.bco-dmo.org/dataset/471609/data/download",
+            "encodingFormat": "text/tab-separated-values",
+            "datePublished": "2013-11-13",
+            "creativeWorkStatus": "In Review"
+        }
+    ],
+    "subjectOf": [
+        {
+            "@type": "DataDownload",
+            "name": "ISO 19115-2 (NOAA Profile)",
+            "additionalType": "http://www.isotc211.org/2005/gmd-noaa",
+            "contentUrl": "https://www.bco-dmo.org/dataset/471609/iso",
+            "encodingFormat": "application/xml",
+            "encodesCreativeWork": "https://www.bco-dmo.org/dataset/471609",
+            "creativeWorkStatus": "In Review"
+        }
+    ],
+    "measurementTechnique": [
+        "Niskin bottle",
+        "Fluorescence Microscope Image Analysis System"
+    ],
+    "variableMeasured": [
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471620",
+            "name": "cruise identification",
+            "unitText": "unitless"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471621",
+            "name": "alternate cruise name",
+            "unitText": "unitless"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471622",
+            "name": "station number",
+            "unitText": "unitless"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471623",
+            "name": "UTC date",
+            "unitText": "unitless"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471624",
+            "name": "latitude",
+            "unitText": "decimal degrees"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471625",
+            "name": "longitude",
+            "unitText": "decimal degrees"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471626",
+            "name": "depth of sample",
+            "unitText": "meters"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471627",
+            "name": "volume of water filtered onto 0.2 mm polycarbonate filters (25 mm diam.)",
+            "unitText": "milliliters"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471628",
+            "name": "Epifluorescence counts of a specific nuclear morphotype as detectable with DAPI and described in Morgan-Smith et al. (2011) and Morgan-Smith et al. (2013). See references above",
+            "unitText": "cells"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471629",
+            "name": "temperature",
+            "unitText": "degrees Celsius"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471630",
+            "name": "salinity",
+            "unitText": "practical salinity units"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471631",
+            "name": "oxygen",
+            "unitText": "micromoles per kilogram"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471632",
+            "name": "Abundance for eukaryotic microbes retained by a 0.2 mm polycarbonate filter",
+            "unitText": "cells per milliliter"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471633",
+            "name": "Abundance (cells ml-1) for eukaryotic microbes retained by a 0.8 mm polycarbonate filter",
+            "unitText": "cells per milliliter"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471634",
+            "name": "Relative abundance of cells hybridizing with the universal eukaryote probe EUK516",
+            "unitText": "cells"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471635",
+            "name": "Relative abundance of cells hybridizing with probe KIN 516 for Kinetoplastida",
+            "unitText": "cells"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471636",
+            "name": "Relative abundance of cells hybridizing with the LabY probe for Labyrinthulomycetes",
+            "unitText": "cells"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471637",
+            "name": "Relative abundance of cells hybridizing with the PF2 probe for fungi",
+            "unitText": "cells"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471638",
+            "name": "Relative abundance of cells hybridizing with the Alv01 probe for group II Alveolata",
+            "unitText": "cells"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471639",
+            "name": "Relative abundance of cells hybridizing with the DiploR1792 probe for Diplonemids",
+            "unitText": "cells"
+        },
+        {
+            "@type": "PropertyValue",
+            "@id": "https://www.bco-dmo.org/dataset-parameter/471640",
+            "name": "Relative abundance of cells hybridizing with the NS4 probe for type 4 Marine Stramenopiles (MAST 4)",
+            "unitText": "cells"
+        }
+    ],
+    "funder": [
+        {
+            "@id": "https://www.bco-dmo.org/node/355",
+            "@type": "FundingAgency",
+            "name": "NSF Division of Ocean Sciences",
+            "alternateName": "NSF OCE"
+        }
+    ],
+    "about": [
+        {
+            "@id": "http://lod.bco-dmo.org/id/award/55225",
+            "@type": "MonetaryGrant",
+            "name": "OCE-0826659",
+            "url": "https://www.bco-dmo.org/award/55225",
+            "funder": {
+                "@id": "https://www.bco-dmo.org/node/355"
+            },
+            "sameAs": "http://www.nsf.gov/awardsearch/showAward?AWD_ID=0826659",
+            "sponsor": {
+                "@type": "Person",
+                "@id": "http://lod.bco-dmo.org/id/person/50534",
+                "name": "David L. Garrison",
+                "url": "https://www.bco-dmo.org/person/50534"
+            }
+        }
+    ]
+}

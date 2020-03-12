@@ -27,7 +27,7 @@ Create the anaconda environment::
 *  accept the license
 *  install into ``/var/local/dataone/miniconda_arm_adapter``
 *  **DO NOT** accept the option to initialize the miniconda environment; doing so will trip up all GMN environments
-*  Read the above warning one more time.
+*  Read the above warning one more time.  Do not even try to activate the environment.  Just rely upon the **PATH**.
 
 Alter the **PATH** environment variable::
 
@@ -37,11 +37,11 @@ Alter the **PATH** environment variable::
 
 Create the **slendernode** anaconda environment.::
 
-    conda env create -n slendernode --file SlenderNodes/schema_org/src/environment.yml
+    conda env create -n slendernode --file SlenderNodes/schema_org/environment.yml
 
 Install the slendernode adapter::
 
-   cd SlenderNodes/schema_org/src
+   cd SlenderNodes/schema_org
    python setup.py install
 
 Create a script for running the adapter in ``/var/local/dataone/minconda_arm_adapter``.  Here is such a script::

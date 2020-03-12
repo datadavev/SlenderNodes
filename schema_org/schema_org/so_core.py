@@ -6,12 +6,13 @@ individual adaptors for different Slendernodes.
 # Standard library imports
 import json
 import re
+import urllib.parse
 
 # 3rd party library imports
 import lxml.etree
 
 # Local imports
-from .core import CoreHarvester, NO_JSON_LD_SCRIPT_ELEMENTS
+from .core import CoreHarvester, NO_JSON_LD_SCRIPT_ELEMENTS, SkipError
 from .jsonld_validator import JSONLD_Validator, JsonLdError
 from . import sotools
 
@@ -67,41 +68,32 @@ class SchemaDotOrgHarvester(CoreHarvester):
 
         return jsonld
 
-    def extract_series_identifier(self, d):
+    def extract_series_identifier(self, sid):
         """
-        Parse the DOI from the json['@id'] value.  The identifiers should
-        look something like
-
-            'https://dx.doi.org/10.5439/1025173
-
-        The DOI in this case would be 'doi:10.5439/1025173'.  This will be used
-        as the series identifier.
+        Retrieve (or at least validate) the series identifier.
 
         Parameters
         ----------
-        d : a valid python dictionary created from a JSON-LD string
-            This has hopefully been extracted from a JSON-LD <SCRIPT> element
-            from a landing page.
+        sid : str
+            An identifier parsed from the JSON-LD.
 
         Returns
         -------
-        the DOI identifier
+        the identifier
         """
-        pattern = r'''
-                  # DOI:prefix/suffix - ARM style
-                  (https?://dx.doi.org/(?P<doi>10\.\w+/\w+))
-                  '''
-        regex = re.compile(pattern, re.VERBOSE)
-        m = regex.search(d['@id'])
-        if m is None:
+        # Just make sure we can parse it as a URL.
+        p = urllib.parse.urlparse(sid)
+        if (
+            'http' not in p.scheme 
+            or len(p.netloc) == 0
+            or len(p.path) == 0
+        ):
             msg = (
                 f"DOI ID parsing error, could not parse an ID out of "
-                f"JSON-LD '@id' element \"{d['@id']}\""
+                f"JSON-LD '@id' element \"sid\""
             )
             raise JsonLdError(msg)
-
-        identifier = f"doi:{m.group('doi')}"
-        return identifier
+        return sid
 
     async def retrieve_landing_page_content(self, landing_page_url):
         """
@@ -160,30 +152,32 @@ class SchemaDotOrgHarvester(CoreHarvester):
         content, _ = await self.retrieve_url(landing_page_url)
         html = content.decode('utf-8')
         doc = lxml.etree.HTML(content)
+        if doc is None:
+            msg = "The landing page at {landing_page_url} has no content."
+            raise RuntimeError(msg)
 
         # This section of code may be removable.
         jsonld = self.get_jsonld(doc)
         self.validate_dataone_so_jsonld(jsonld)
 
         g = sotools.common.loadSOGraphFromHtml(html, landing_page_url)
+
+        # Try as ARM-style SO content first.
         mlinks = sotools.common.getDatasetMetadataLinks(g)
+        if len(mlinks) == 0:
+            # Try as BCO-DMO-style if necessary.
+            mlinks = sotools.common.getDatasetMetadataLinksFromSubjectOf(g)
+            if len(mlinks) == 0:
+                msg = f"Unable to extract metadata links from {landing_page_url}."
+                raise RuntimeError(msg)
 
         # extract the XML metadata URL
         metadata_url = mlinks[0]['contentUrl']
 
         # extract the series identifier
         subjectOf = mlinks[0]['subjectOf']
-        pattern = r'''(https?://dx.doi.org/(?P<doi>10\.\w+/\w+))'''
-        regex = re.compile(pattern, re.VERBOSE)
-        m = regex.search(subjectOf)
-        if m is None:
-            msg = (
-                f"DOI ID parsing error, could not parse a series ID from "
-                f"\"{subjectOf}\""
-            )
-            raise RuntimeError(msg)
 
-        sid = f"doi:{m.group('doi')}"
+        sid = self.extract_series_identifier(subjectOf)
         self.logger.debug(f"Series ID (sid): {sid}")
 
         # extract the PID

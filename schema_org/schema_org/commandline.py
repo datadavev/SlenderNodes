@@ -8,6 +8,7 @@ import d1_scimeta.util
 # Local imports
 from .abds import AbdsIptHarvester
 from .arm import ARMHarvester
+from .bcodmo import BCODMOHarvester
 from .cuahsi import CUAHSIHarvester
 from .ieda import IEDAHarvester
 from .nkn import NKNHarvester
@@ -141,6 +142,18 @@ def arm():
     args = parser.parse_args()
 
     harvester = ARMHarvester(**args.__dict__)
+    asyncio.run(harvester.run())
+
+
+def bcodmo():
+
+    id = "bco-dmo"
+    parser = setup_common_parser(id)
+    add_harvesting_options(parser, id)
+
+    args = parser.parse_args()
+
+    harvester = BCODMOHarvester(**args.__dict__)
     asyncio.run(harvester.run())
 
 

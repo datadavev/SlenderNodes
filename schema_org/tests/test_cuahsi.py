@@ -440,7 +440,6 @@ class TestSuite(TestCommon):
 
             with self.assertLogs(logger=harvester.logger, level='DEBUG') as cm:
                 asyncio.run(harvester.run())
-                print('\n'.join(cm.output))
 
         self.assertEqual(mock_load_science_metadata.call_count, 0),
         self.assertEqual(mock_update_science_metadata.call_count, 1),

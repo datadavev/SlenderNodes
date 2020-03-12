@@ -78,41 +78,6 @@ class TestSuite(TestCommon):
 
         self.assertEqual(identifier, '59876921-fda6-4fd5-af5d-cba2a7152527')
 
-    def test_check_if_can_be_updated__document_has_not_changed(self):
-        """
-        SCENARIO:  The GMN existance check shows that the document has already
-        been harvested.  The new document, is the same.  For GMD documents,
-        this will raise an exception.  In this case, though, we let it pass
-        because the check doesn't support EML 2.1.1
-
-        EXPECTED RESULT:  No exception is raised.
-        """
-        host, port = 'abds.mn.org', 443
-        harvester = AbdsIptHarvester(host=host, port=port)
-
-        # This is the existing document in the MN.  It is marked as complete.
-        existing_content = ir.read_binary('tests.data.abds.ipt',
-                                          'arcod_2007p6.xml')
-
-        # Verify the document.  This has the effect of setting the format ID,
-        # which is EML 2.1.1, not the default GMD.
-        doc = lxml.etree.parse(io.BytesIO(existing_content))
-        with self.assertLogs(logger=harvester.logger, level='INFO'):
-            harvester.validate_document(doc)
-
-        # This is the "update" document, same as the existing document.  Change
-        # the progress code.
-        doc_bytes = ir.read_binary('tests.data.abds.ipt', 'arcod_2007p6.xml')
-
-        current_sid = 1
-        doi = 'doi.10000/abcde'
-
-        regex = re.compile(f'https://{host}:{port}/')
-        with aioresponses() as m:
-            m.get(regex, body=existing_content)
-            asyncio.run(harvester.check_if_can_be_updated(doc_bytes, doi,
-                                                          current_sid))
-
     @patch('schema_org.d1_client_manager.D1ClientManager.load_science_metadata')  # noqa: E501
     @patch('schema_org.d1_client_manager.D1ClientManager.update_science_metadata')  # noqa: E501
     @patch('schema_org.d1_client_manager.D1ClientManager.check_if_identifier_exists')  # noqa: E501

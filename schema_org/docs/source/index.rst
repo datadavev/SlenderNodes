@@ -14,6 +14,7 @@ Command line tools and core functionality for harvesting Schema.org sites into G
 
    introduction
    arm
+   bco_dmo
    site-checker
 
 
