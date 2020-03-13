@@ -1,0 +1,5 @@
+aioresponses==0.6.1
+dataone-cli==3.4.7
+dataone-common==3.4.7
+dataone-scimeta==3.4.7
+extruct==0.8.0
