@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns0:MD_Metadata id="ARM_wsacrcrcal" xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns2="http://www.isotc211.org/2005/gco" xmlns:ns3="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd">
+	<ns0:fileIdentifier>
+		<ns2:CharacterString>wsacrcrcal</ns2:CharacterString>
+	</ns0:fileIdentifier>
+	<ns0:contact>
+		<ns0:CI_ResponsibleParty>
+			<ns0:organisationName>
+				<ns2:CharacterString>Atmospheric Radiation Measurement Data Center</ns2:CharacterString>
+			</ns0:organisationName>
+			<ns0:contactInfo>
+				<ns0:CI_Contact>
+					<ns0:onlineResource>
+						<ns0:CI_OnlineResource>
+							<ns0:linkage>
+								<ns0:URL>https://adc.arm.gov/data</ns0:URL>
+							</ns0:linkage>
+							<ns0:function>
+								<ns0:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode_information">information</ns0:CI_OnLineFunctionCode>
+							</ns0:function>
+						</ns0:CI_OnlineResource>
+					</ns0:onlineResource>
+				</ns0:CI_Contact>
+			</ns0:contactInfo>
+			<ns0:role>
+				<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_pointOfContact">pointOfContact</ns0:CI_RoleCode>
+			</ns0:role>
+		</ns0:CI_ResponsibleParty>
+	</ns0:contact>
+	<ns0:dateStamp>
+		<ns2:DateTime>2019-11-25T16:00:21.770088</ns2:DateTime>
+	</ns0:dateStamp>
+	<ns0:dataSetURI>
+		<ns2:CharacterString>http://dx.doi.org/10.5439/1150280</ns2:CharacterString>
+	</ns0:dataSetURI>
+	<ns0:identificationInfo>
+		<ns0:MD_DataIdentification>
+			<ns0:citation>
+				<ns0:CI_Citation>
+					<ns0:title>
+						<ns2:CharacterString>W-Band Scanning ARM Cloud Radar (W-SACR) Corner Reflector Calibration - wsacrcrcal</ns2:CharacterString>
+					</ns0:title>
+					<ns0:date>
+						<ns0:CI_Date>
+							<ns0:date>
+								<ns2:DateTime>2013-05-07T22:30:15</ns2:DateTime>
+							</ns0:date>
+							<ns0:dateType>
+								<ns0:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode_publication">publication</ns0:CI_DateTypeCode>
+							</ns0:dateType>
+						</ns0:CI_Date>
+					</ns0:date>
+					<ns0:identifier>
+						<ns0:MD_Identifier>
+							<ns0:code>
+								<ns2:CharacterString>http://dx.doi.org/10.5439/1150280</ns2:CharacterString>
+							</ns0:code>
+						</ns0:MD_Identifier>
+					</ns0:identifier>
+					
+                    <ns0:citedResponsibleParty>
+						<ns0:CI_ResponsibleParty id="person.cited.7827">
+							<ns0:individualName>
+								<ns2:CharacterString>Nitin Bharadwaj</ns2:CharacterString>
+							</ns0:individualName>
+							<ns0:role>
+								<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_author">author</ns0:CI_RoleCode>
+							</ns0:role>
+						</ns0:CI_ResponsibleParty>
+					</ns0:citedResponsibleParty>
+                    
+                    <ns0:citedResponsibleParty>
+						<ns0:CI_ResponsibleParty id="person.cited.1521">
+							<ns0:individualName>
+								<ns2:CharacterString>Karen Johnson</ns2:CharacterString>
+							</ns0:individualName>
+							<ns0:role>
+								<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_author">author</ns0:CI_RoleCode>
+							</ns0:role>
+						</ns0:CI_ResponsibleParty>
+					</ns0:citedResponsibleParty>
+                    
+                    <ns0:citedResponsibleParty>
+						<ns0:CI_ResponsibleParty id="person.cited.16432">
+							<ns0:individualName>
+								<ns2:CharacterString>Bradley Isom</ns2:CharacterString>
+							</ns0:individualName>
+							<ns0:role>
+								<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_author">author</ns0:CI_RoleCode>
+							</ns0:role>
+						</ns0:CI_ResponsibleParty>
+					</ns0:citedResponsibleParty>
+                    
+                    <ns0:citedResponsibleParty>
+						<ns0:CI_ResponsibleParty id="person.cited.13833">
+							<ns0:individualName>
+								<ns2:CharacterString>Iosif (Andrei) Lindenmaier</ns2:CharacterString>
+							</ns0:individualName>
+							<ns0:role>
+								<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_author">author</ns0:CI_RoleCode>
+							</ns0:role>
+						</ns0:CI_ResponsibleParty>
+					</ns0:citedResponsibleParty>
+                    
+                    <ns0:citedResponsibleParty>
+						<ns0:CI_ResponsibleParty id="person.cited.12067">
+							<ns0:individualName>
+								<ns2:CharacterString>Joseph Hardin</ns2:CharacterString>
+							</ns0:individualName>
+							<ns0:role>
+								<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_author">author</ns0:CI_RoleCode>
+							</ns0:role>
+						</ns0:CI_ResponsibleParty>
+					</ns0:citedResponsibleParty>
+                    
+                    <ns0:citedResponsibleParty>
+						<ns0:CI_ResponsibleParty id="person.cited.118">
+							<ns0:individualName>
+								<ns2:CharacterString>Danny Nelson</ns2:CharacterString>
+							</ns0:individualName>
+							<ns0:role>
+								<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_author">author</ns0:CI_RoleCode>
+							</ns0:role>
+						</ns0:CI_ResponsibleParty>
+					</ns0:citedResponsibleParty>
+                    
+                    <ns0:citedResponsibleParty>
+						<ns0:CI_ResponsibleParty id="person.cited.7497">
+							<ns0:individualName>
+								<ns2:CharacterString>Scott Giangrande</ns2:CharacterString>
+							</ns0:individualName>
+							<ns0:role>
+								<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_author">author</ns0:CI_RoleCode>
+							</ns0:role>
+						</ns0:CI_ResponsibleParty>
+					</ns0:citedResponsibleParty>
+                    
+                    <ns0:citedResponsibleParty>
+						<ns0:CI_ResponsibleParty id="person.cited.16343">
+							<ns0:individualName>
+								<ns2:CharacterString>Alyssa Matthews</ns2:CharacterString>
+							</ns0:individualName>
+							<ns0:role>
+								<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_author">author</ns0:CI_RoleCode>
+							</ns0:role>
+						</ns0:CI_ResponsibleParty>
+					</ns0:citedResponsibleParty>
+                    
+					<ns0:presentationForm>
+						<ns0:CI_PresentationFormCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode_tableDigital">tableDigital</ns0:CI_PresentationFormCode>
+					</ns0:presentationForm>
+					<ns0:otherCitationDetails>
+						<ns2:CharacterString>Atmospheric Radiation Measurement (ARM) user facility. 2013, updated hourly. W-band Scanning ARM Cloud Radar (WSACRCRCAL). 2013-05-07 to 2013-05-15, North Slope Alaska (NSA) Central Facility, Barrow AK (C1). Compiled by K. Johnson, S. Giangrande, N. Bharadwaj, I. Lindenmaier, D. Nelson, J. Hardin, A. Matthews and B. Isom. ARM Data Center. Data set accessed  at http://dx.doi.org/10.5439/1150280.</ns2:CharacterString>
+					</ns0:otherCitationDetails>
+				</ns0:CI_Citation>
+			</ns0:citation>
+			<ns0:abstract>
+				<ns2:CharacterString>ARM&#39;s scanning cloud radars are fully coherent dual-frequency, dual-polarization Doppler radars mounted on a common scanning pedestal. Each pedestal includes a Ka-band radar (2kW peak power) and the deployment location determines whether the second radar is a W-band (WSACR; 1.7 kW peak power) or X-band (XSACR; 20 kW peak power). Beamwidths at Ka and W bands are roughly matched at 0.3 degrees. \n \nDue to the narrow antenna beamwidth, ARM s scanning cloud radars use scanning strategies that are unlike typical weather radars. Rather than focusing on plan position indicator, or PPI, scans, the Ka-SACR uses range height indicator, or RHI, scans at numerous azimuths to obtain cloud volume data. \n \nMeasurements collected with the W-SACR are copolar and cross-polar radar reflectivity, Doppler velocity, spectra width and spectra when not scanning, and linear depolarization ration.</ns2:CharacterString>
+			</ns0:abstract>
+			<ns0:status>
+				<ns0:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode_completed">completed</ns0:MD_ProgressCode>
+			</ns0:status>
+			<ns0:pointOfContact>
+				
+				<ns0:CI_ResponsibleParty id="person.poc.7827">
+					<ns0:individualName>
+						<ns2:CharacterString>Nitin Bharadwaj</ns2:CharacterString>
+					</ns0:individualName>
+					<ns0:contactInfo>
+						<ns0:CI_Contact>
+							<ns0:address>
+								<ns0:CI_Address>
+									<ns0:electronicMailAddress>
+										<ns2:CharacterString>nitin@pnnl.gov</ns2:CharacterString>
+									</ns0:electronicMailAddress>
+								</ns0:CI_Address>
+							</ns0:address>
+						</ns0:CI_Contact>
+					</ns0:contactInfo>
+					<ns0:role>
+						<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_principalInvestigator">principalInvestigator</ns0:CI_RoleCode>
+					</ns0:role>
+				</ns0:CI_ResponsibleParty>
+				
+			</ns0:pointOfContact>
+			<ns0:resourceConstraints>
+				<ns0:MD_LegalConstraints>
+					<ns0:otherConstraints>
+						<ns2:CharacterString>CC-BY: Creative Commons Attribution 4.0</ns2:CharacterString>
+					</ns0:otherConstraints>
+				</ns0:MD_LegalConstraints>
+			</ns0:resourceConstraints>
+			<ns0:spatialRepresentationType>
+				<ns0:MD_SpatialRepresentationTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode_textTable">textTable</ns0:MD_SpatialRepresentationTypeCode>
+			</ns0:spatialRepresentationType>
+			<ns0:language>
+				<ns0:LanguageCode codeList="http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml#LanguageCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/ML_gmxCodelists.xml#LanguageCode_eng">eng</ns0:LanguageCode>
+			</ns0:language>
+			<ns0:topicCategory>
+				<ns0:MD_TopicCategoryCode>geoscientificInformation</ns0:MD_TopicCategoryCode>
+			</ns0:topicCategory>
+			<ns0:extent>
+				<ns0:EX_Extent>
+					<ns0:geographicElement>
+						<ns0:EX_GeographicBoundingBox>
+							<ns0:westBoundLongitude>
+								<ns2:Decimal>-156.609</ns2:Decimal>
+							</ns0:westBoundLongitude>
+							<ns0:eastBoundLongitude>
+								<ns2:Decimal>-156.609</ns2:Decimal>
+							</ns0:eastBoundLongitude>
+							<ns0:southBoundLatitude>
+								<ns2:Decimal>71.323</ns2:Decimal>
+							</ns0:southBoundLatitude>
+							<ns0:northBoundLatitude>
+								<ns2:Decimal>71.323</ns2:Decimal>
+							</ns0:northBoundLatitude>
+						</ns0:EX_GeographicBoundingBox>
+					</ns0:geographicElement>
+				</ns0:EX_Extent>
+			</ns0:extent>
+			<ns0:supplementalInformation>
+				<ns2:CharacterString>ARM&#39;s scanning cloud radars are fully coherent dual-frequency, dual-polarization Doppler radars mounted on a common scanning pedestal. Each pedestal includes a Ka-band radar (2kW peak power) and the deployment location determines whether the second radar is a W-band (WSACR; 1.7 kW peak power) or X-band (XSACR; 20 kW peak power). Beamwidths at Ka and W bands are roughly matched at 0.3 degrees. \n \nDue to the narrow antenna beamwidth, ARM s scanning cloud radars use scanning strategies that are unlike typical weather radars. Rather than focusing on plan position indicator, or PPI, scans, the Ka-SACR uses range height indicator, or RHI, scans at numerous azimuths to obtain cloud volume data. \n \nMeasurements collected with the W-SACR are copolar and cross-polar radar reflectivity, Doppler velocity, spectra width and spectra when not scanning, and linear depolarization ration.</ns2:CharacterString>
+			</ns0:supplementalInformation>
+		</ns0:MD_DataIdentification>
+	</ns0:identificationInfo>
+	<ns0:contentInfo>
+		<ns0:MD_CoverageDescription>
+			<ns0:attributeDescription>
+				<ns2:RecordType>Uniform resource locator/link to file</ns2:RecordType>
+			</ns0:attributeDescription>
+			<ns0:contentType>
+				<ns0:MD_CoverageContentTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode_thematicClassification">thematicClassification</ns0:MD_CoverageContentTypeCode>
+			</ns0:contentType>
+		</ns0:MD_CoverageDescription>
+	</ns0:contentInfo>
+	<ns0:contentInfo>
+		<ns0:MD_CoverageDescription>
+			<ns0:attributeDescription>
+				<ns2:RecordType>File name</ns2:RecordType>
+			</ns0:attributeDescription>
+			<ns0:contentType>
+				<ns0:MD_CoverageContentTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode_thematicClassification">thematicClassification</ns0:MD_CoverageContentTypeCode>
+			</ns0:contentType>
+		</ns0:MD_CoverageDescription>
+	</ns0:contentInfo>
+	<ns0:contentInfo>
+		<ns0:MD_CoverageDescription>
+			<ns0:attributeDescription>
+				<ns2:RecordType>File size</ns2:RecordType>
+			</ns0:attributeDescription>
+			<ns0:contentType>
+				<ns0:MD_CoverageContentTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode_physicalMeasurement">physicalMeasurement</ns0:MD_CoverageContentTypeCode>
+			</ns0:contentType>
+			<!--<ns0:dimension>
+				<ns0:MD_Band>
+				</ns0:MD_Band>
+			</ns0:dimension>-->
+		</ns0:MD_CoverageDescription>
+	</ns0:contentInfo>
+	<ns0:contentInfo>
+		<ns0:MD_CoverageDescription>
+			<ns0:attributeDescription>
+				<ns2:RecordType>File type</ns2:RecordType>
+			</ns0:attributeDescription>
+			<ns0:contentType>
+				<ns0:MD_CoverageContentTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode_thematicClassification">thematicClassification</ns0:MD_CoverageContentTypeCode>
+			</ns0:contentType>
+		</ns0:MD_CoverageDescription>
+	</ns0:contentInfo>
+	<ns0:distributionInfo>
+		<ns0:MD_Distribution>
+			<ns0:distributionFormat>
+				<ns0:MD_Format>
+					<ns0:name>
+						<ns2:CharacterString>text/tab-separated-values</ns2:CharacterString>
+					</ns0:name>
+					<ns0:version>
+						<ns2:CharacterString>unknown</ns2:CharacterString>
+					</ns0:version>
+				</ns0:MD_Format>
+			</ns0:distributionFormat>
+			<ns0:distributor>
+				<ns0:MD_Distributor>
+					<ns0:distributorContact>
+						<ns0:CI_ResponsibleParty>
+							<ns0:organisationName>
+								<ns2:CharacterString>Atmospheric Radiation Measurement Data Center</ns2:CharacterString>
+							</ns0:organisationName>
+							<ns0:contactInfo>
+								<ns0:CI_Contact>
+									<ns0:onlineResource>
+										<ns0:CI_OnlineResource>
+											<ns0:linkage>
+												<ns0:URL>https://adc.arm.gov/data</ns0:URL>
+											</ns0:linkage>
+											<ns0:function>
+												<ns0:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode_information">information</ns0:CI_OnLineFunctionCode>
+											</ns0:function>
+										</ns0:CI_OnlineResource>
+									</ns0:onlineResource>
+								</ns0:CI_Contact>
+							</ns0:contactInfo>
+							<ns0:role>
+								<ns0:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode_distributor">distributor</ns0:CI_RoleCode>
+							</ns0:role>
+						</ns0:CI_ResponsibleParty>
+					</ns0:distributorContact>
+				</ns0:MD_Distributor>
+			</ns0:distributor>
+			<ns0:transferOptions>
+				<ns0:MD_DigitalTransferOptions>
+					<ns0:onLine>
+						<ns0:CI_OnlineResource>
+							<ns0:linkage>
+								<ns0:URL>http://dx.doi.org/10.5439/1150280</ns0:URL>
+							</ns0:linkage>
+							<ns0:function>
+								<ns0:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode_download">download</ns0:CI_OnLineFunctionCode>
+							</ns0:function>
+						</ns0:CI_OnlineResource>
+					</ns0:onLine>
+				</ns0:MD_DigitalTransferOptions>
+			</ns0:transferOptions>
+		</ns0:MD_Distribution>
+	</ns0:distributionInfo>
+	<ns0:dataQualityInfo>
+		<ns0:DQ_DataQuality>
+			<ns0:scope>
+				<ns0:DQ_Scope>
+					<ns0:level>
+						<ns0:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode_dataset">dataset</ns0:MD_ScopeCode>
+					</ns0:level>
+				</ns0:DQ_Scope>
+			</ns0:scope>
+			<ns0:lineage>
+				<ns0:LI_Lineage>
+					<ns0:statement>
+						<ns2:CharacterString>The data set was checked for completeness, correctness, and consistency of metainformation. Validity of used methods was checked and - if applicable - precision and range of data.</ns2:CharacterString>
+					</ns0:statement>
+					<ns0:processStep>
+						<ns0:LI_ProcessStep id="site.nsaC1">
+							<ns0:description>
+								<ns2:CharacterString>* LATITUDE: 71.323 * LONGITUDE: 71.323 * LOCATION: North Slope Alaska</ns2:CharacterString>
+							</ns0:description>
+						</ns0:LI_ProcessStep>
+					</ns0:processStep>
+				</ns0:LI_Lineage>
+			</ns0:lineage>
+		</ns0:DQ_DataQuality>
+	</ns0:dataQualityInfo>
+</ns0:MD_Metadata>
