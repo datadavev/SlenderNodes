@@ -66,4 +66,3 @@ d1:subjectofMediaObjectShape
             sh:minCount 1;
         ]
     ) .
-
